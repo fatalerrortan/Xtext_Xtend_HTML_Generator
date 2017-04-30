@@ -9,6 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 //get data structure of "Entity" we have defined in DSL
 import org.xtext.example.mydsl.myDsl.Entity
+import org.xtext.example.mydsl.myDsl.Feature
 //use annotation @inject
 import com.google.inject.Inject
 //determine the file name of the Java class that each Entity should yield. 
@@ -23,20 +24,35 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider
 class MyDslGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-		   for (e : resource.allContents.toIterable.filter(Entity)) {
-        		fsa.generateFile(
-            	e.fullyQualifiedName.toString("/") + ".java",
-            	e.compile)
-    	}
-	}
+    for (e : resource.allContents.toIterable.filter(Entity)) {
+        fsa.generateFile(
+            e.fullyQualifiedName.toString("/") + ".java",
+            e.compile)
+    }
+}
 	
 	def compile(Entity e) '''
-    	<<IF e.eContainer.fullyQualifiedName !== null>>;
-    	package <<e.eContainer.fullyQualifiedNam>>;
-    	<<ENDIF>>
-        
-    	  public class <<e.name>> <<IF e.superType !== null
-    	            >>extends　<<e.superType.fullyQualifiedName>> <<ENDI>>{
+    	«IF e.eContainer.fullyQualifiedName !== null»
+    	        package «e.eContainer.fullyQualifiedName»;
+    	    «ENDIF»
+    	
+    	    public class «e.name» «IF e.superType !== null
+    	            »extends «e.superType.fullyQualifiedName» «ENDIF»{
+    	            	«FOR f:e.feature»
+    	                        «f.compile»
+    	            	«ENDFOR»
     	    }
 '''	
+
+	def compile(Feature f) '''
+    	private «f.type.fullyQualifiedName» «f.name»;
+    	
+    	public «f.type.fullyQualifiedName» get«f.name.toFirstUpper»() {	
+    	return «f.name»;
+    	}
+    	
+    	public void set«f.name.toFirstUpper»(«f.type.fullyQualifiedName» «f.name») {
+    	this.«f.name» = «f.name»;
+    	}
+'''
 }
