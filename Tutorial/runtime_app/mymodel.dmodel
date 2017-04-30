@@ -1,0 +1,20 @@
+datatype String
+
+entity Blog{
+	title : String // datatype String is already defined in line 1 
+	many posts : Post
+}
+
+entity HasAuthor{
+	author : String
+}
+
+entity Post extend HasAuthor{
+	title : String
+	content: String
+	many comments : Comment	
+}
+
+entity Comment extend HasAuthor{
+	content : String
+}

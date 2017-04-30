@@ -1,0 +1,10 @@
+package my.project.blog{
+	import my.project.common.*
+	entity blog{
+		title : String
+		article: xuling
+	}
+	entity son extend mother{
+		
+	}
+}

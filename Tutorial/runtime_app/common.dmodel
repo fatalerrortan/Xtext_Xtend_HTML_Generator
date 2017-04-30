@@ -1,0 +1,5 @@
+package my.project.common {
+	entity mother{
+		fitstname: xuling
+	}
+}
