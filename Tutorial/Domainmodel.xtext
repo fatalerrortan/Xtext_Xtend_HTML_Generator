@@ -3,9 +3,30 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Domainmodel:
-	(elements+=Type)*;
+//	(elements+=Type)*;
 	//It says that a Domainmodel contains an arbitrary number (*) of Types which 
 	//are added (+=) to a feature called elements.
+	(elements += AbstractElement)*;
+	
+AbstractElement:
+	PackageDeclaration | Type | Import;
+	
+PackageDeclaration:
+	'package' name=QualifiedName '{'
+		(elements += AbstractElement)*
+	'}';
+	
+QualifiedName:
+	ID('.'ID)*;
+	
+//Imports can be defined in a very convenient way with Xtext. If you use the name importedNamespace 
+//in a parser rule, the framework will treat the value as an import. It even supports wildcards and 
+//handles them as expected:	
+Import:
+    'import' importedNamespace=QualifiedNameWithWildcard;
+    
+QualifiedNameWithWildcard:
+    QualifiedName '.*'?;
 
 Type:
 	DataType | Entity;
@@ -16,11 +37,11 @@ DataType:
 	//The DataType starts with the keywords "datatype", followed by an identifier 'name'
 	//The identifier 'name' will be parsed by a pre-defined rule 'ID'(super grammar)
 Entity:
-	'entity' name=ID ('extend' superType=[Entity])? '{'
+	'entity' name=ID ('extend' superType=[Entity|QualifiedName])? '{'
 		(feature+=Feature)*
 	'}';
 	//optional ? ; square brackets means cross-reference
 Feature:
-	(many?='many')? name=ID ':' type=[Type];
+	(many?='many')? name=ID ':' type=[Type|QualifiedName];
 	//'?=' implies that the feature many is of type 'boolean'
 	// Using the keyword 'many' to model a multi-valued Feature in the DSL  
