@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ssf17.hausarbeit.xtan.mensa.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: ssf17.hausarbeit.xtan.mensa.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: ssf17.hausarbeit.xtan.mensa,
+ ssf17.hausarbeit.xtan.mensa.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.5.0",
+ org.eclipse.ui.ide;bundle-version="3.5.0",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder,
+ org.eclipse.xtend.lib;resolution:=optional,
+ org.eclipse.xtext.xbase.lib
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: ssf17.hausarbeit.xtan.mensa.ui.internal,
+ org.xtext.example.mydsl.ui.quickfix,
+ org.xtext.example.mydsl.ui.contentassist
+Bundle-Activator: ssf17.hausarbeit.xtan.mensa.ui.internal.MensaActivator
