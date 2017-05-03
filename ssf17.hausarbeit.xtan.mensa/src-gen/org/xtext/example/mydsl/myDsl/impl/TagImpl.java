@@ -19,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.mydsl.myDsl.Children;
 import org.xtext.example.mydsl.myDsl.Content;
 import org.xtext.example.mydsl.myDsl.Html_Class;
 import org.xtext.example.mydsl.myDsl.Html_Id;
@@ -36,7 +35,7 @@ import org.xtext.example.mydsl.myDsl.Tag;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getId <em>Id</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getClass_ <em>Class</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getClass_h <em>Class h</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.TagImpl#getChildren <em>Children</em>}</li>
  * </ul>
@@ -76,14 +75,14 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
   protected Html_Id id;
 
   /**
-   * The cached value of the '{@link #getClass_() <em>Class</em>}' containment reference.
+   * The cached value of the '{@link #getClass_h() <em>Class h</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getClass_()
+   * @see #getClass_h()
    * @generated
    * @ordered
    */
-  protected Html_Class class_;
+  protected Html_Class class_h;
 
   /**
    * The cached value of the '{@link #getContent() <em>Content</em>}' containment reference.
@@ -103,7 +102,7 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
    * @generated
    * @ordered
    */
-  protected EList<Children> children;
+  protected EList<Tag> children;
 
   /**
    * <!-- begin-user-doc -->
@@ -202,9 +201,9 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
    * <!-- end-user-doc -->
    * @generated
    */
-  public Html_Class getClass_()
+  public Html_Class getClass_h()
   {
-    return class_;
+    return class_h;
   }
 
   /**
@@ -212,13 +211,13 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetClass(Html_Class newClass, NotificationChain msgs)
+  public NotificationChain basicSetClass_h(Html_Class newClass_h, NotificationChain msgs)
   {
-    Html_Class oldClass = class_;
-    class_ = newClass;
+    Html_Class oldClass_h = class_h;
+    class_h = newClass_h;
     if (eNotificationRequired())
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.TAG__CLASS, oldClass, newClass);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.TAG__CLASS_H, oldClass_h, newClass_h);
       if (msgs == null) msgs = notification; else msgs.add(notification);
     }
     return msgs;
@@ -229,20 +228,20 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setClass(Html_Class newClass)
+  public void setClass_h(Html_Class newClass_h)
   {
-    if (newClass != class_)
+    if (newClass_h != class_h)
     {
       NotificationChain msgs = null;
-      if (class_ != null)
-        msgs = ((InternalEObject)class_).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TAG__CLASS, null, msgs);
-      if (newClass != null)
-        msgs = ((InternalEObject)newClass).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TAG__CLASS, null, msgs);
-      msgs = basicSetClass(newClass, msgs);
+      if (class_h != null)
+        msgs = ((InternalEObject)class_h).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TAG__CLASS_H, null, msgs);
+      if (newClass_h != null)
+        msgs = ((InternalEObject)newClass_h).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.TAG__CLASS_H, null, msgs);
+      msgs = basicSetClass_h(newClass_h, msgs);
       if (msgs != null) msgs.dispatch();
     }
     else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.TAG__CLASS, newClass, newClass));
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.TAG__CLASS_H, newClass_h, newClass_h));
   }
 
   /**
@@ -298,11 +297,11 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Children> getChildren()
+  public EList<Tag> getChildren()
   {
     if (children == null)
     {
-      children = new EObjectContainmentEList<Children>(Children.class, this, MyDslPackage.TAG__CHILDREN);
+      children = new EObjectContainmentEList<Tag>(Tag.class, this, MyDslPackage.TAG__CHILDREN);
     }
     return children;
   }
@@ -319,8 +318,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
     {
       case MyDslPackage.TAG__ID:
         return basicSetId(null, msgs);
-      case MyDslPackage.TAG__CLASS:
-        return basicSetClass(null, msgs);
+      case MyDslPackage.TAG__CLASS_H:
+        return basicSetClass_h(null, msgs);
       case MyDslPackage.TAG__CONTENT:
         return basicSetContent(null, msgs);
       case MyDslPackage.TAG__CHILDREN:
@@ -343,8 +342,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
         return getName();
       case MyDslPackage.TAG__ID:
         return getId();
-      case MyDslPackage.TAG__CLASS:
-        return getClass_();
+      case MyDslPackage.TAG__CLASS_H:
+        return getClass_h();
       case MyDslPackage.TAG__CONTENT:
         return getContent();
       case MyDslPackage.TAG__CHILDREN:
@@ -370,15 +369,15 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
       case MyDslPackage.TAG__ID:
         setId((Html_Id)newValue);
         return;
-      case MyDslPackage.TAG__CLASS:
-        setClass((Html_Class)newValue);
+      case MyDslPackage.TAG__CLASS_H:
+        setClass_h((Html_Class)newValue);
         return;
       case MyDslPackage.TAG__CONTENT:
         setContent((Content)newValue);
         return;
       case MyDslPackage.TAG__CHILDREN:
         getChildren().clear();
-        getChildren().addAll((Collection<? extends Children>)newValue);
+        getChildren().addAll((Collection<? extends Tag>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -400,8 +399,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
       case MyDslPackage.TAG__ID:
         setId((Html_Id)null);
         return;
-      case MyDslPackage.TAG__CLASS:
-        setClass((Html_Class)null);
+      case MyDslPackage.TAG__CLASS_H:
+        setClass_h((Html_Class)null);
         return;
       case MyDslPackage.TAG__CONTENT:
         setContent((Content)null);
@@ -427,8 +426,8 @@ public class TagImpl extends MinimalEObjectImpl.Container implements Tag
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.TAG__ID:
         return id != null;
-      case MyDslPackage.TAG__CLASS:
-        return class_ != null;
+      case MyDslPackage.TAG__CLASS_H:
+        return class_h != null;
       case MyDslPackage.TAG__CONTENT:
         return content != null;
       case MyDslPackage.TAG__CHILDREN:

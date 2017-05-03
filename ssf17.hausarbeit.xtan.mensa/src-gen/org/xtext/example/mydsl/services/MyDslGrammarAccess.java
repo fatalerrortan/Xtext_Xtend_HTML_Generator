@@ -45,24 +45,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cIdAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cIdHtml_IdParserRuleCall_3_0 = (RuleCall)cIdAssignment_3.eContents().get(0);
-		private final Assignment cClassAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cClassHtml_ClassParserRuleCall_4_0 = (RuleCall)cClassAssignment_4.eContents().get(0);
+		private final Assignment cClass_hAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cClass_hHtml_ClassParserRuleCall_4_0 = (RuleCall)cClass_hAssignment_4.eContents().get(0);
 		private final Assignment cContentAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cContentContentParserRuleCall_5_0 = (RuleCall)cContentAssignment_5.eContents().get(0);
 		private final Assignment cChildrenAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cChildrenChildrenParserRuleCall_6_0 = (RuleCall)cChildrenAssignment_6.eContents().get(0);
+		private final RuleCall cChildrenTagParserRuleCall_6_0 = (RuleCall)cChildrenAssignment_6.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Tag:
 		//	'tag' name=STRING '{'
 		//	id=Html_Id?
-		//	class=Html_Class?
+		//	class_h=Html_Class?
 		//	content=Content?
-		//	children+=Children*
+		//	children+=Tag*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'tag' name=STRING '{' id=Html_Id? class=Html_Class? content=Content? children+=Children* '}'
+		//'tag' name=STRING '{' id=Html_Id? class_h=Html_Class? content=Content? children+=Tag* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'tag'
@@ -83,11 +83,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Html_Id
 		public RuleCall getIdHtml_IdParserRuleCall_3_0() { return cIdHtml_IdParserRuleCall_3_0; }
 		
-		//class=Html_Class?
-		public Assignment getClassAssignment_4() { return cClassAssignment_4; }
+		//class_h=Html_Class?
+		public Assignment getClass_hAssignment_4() { return cClass_hAssignment_4; }
 		
 		//Html_Class
-		public RuleCall getClassHtml_ClassParserRuleCall_4_0() { return cClassHtml_ClassParserRuleCall_4_0; }
+		public RuleCall getClass_hHtml_ClassParserRuleCall_4_0() { return cClass_hHtml_ClassParserRuleCall_4_0; }
 		
 		//content=Content?
 		public Assignment getContentAssignment_5() { return cContentAssignment_5; }
@@ -95,11 +95,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Content
 		public RuleCall getContentContentParserRuleCall_5_0() { return cContentContentParserRuleCall_5_0; }
 		
-		//children+=Children*
+		//children+=Tag*
 		public Assignment getChildrenAssignment_6() { return cChildrenAssignment_6; }
 		
-		//Children
-		public RuleCall getChildrenChildrenParserRuleCall_6_0() { return cChildrenChildrenParserRuleCall_6_0; }
+		//Tag
+		public RuleCall getChildrenTagParserRuleCall_6_0() { return cChildrenTagParserRuleCall_6_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
@@ -173,47 +173,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
 	}
-	public class ChildrenElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Children");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cChildrenKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameSTRINGTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cTagsAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cTagsTagParserRuleCall_3_0 = (RuleCall)cTagsAssignment_3.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Children:
-		//	'children' name=STRING '{'
-		//	tags+=Tag
-		//	'}';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//'children' name=STRING '{' tags+=Tag '}'
-		public Group getGroup() { return cGroup; }
-		
-		//'children'
-		public Keyword getChildrenKeyword_0() { return cChildrenKeyword_0; }
-		
-		//name=STRING
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
-		
-		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_1_0() { return cNameSTRINGTerminalRuleCall_1_0; }
-		
-		//'{'
-		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
-		
-		//tags+=Tag
-		public Assignment getTagsAssignment_3() { return cTagsAssignment_3; }
-		
-		//Tag
-		public RuleCall getTagsTagParserRuleCall_3_0() { return cTagsTagParserRuleCall_3_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
-	}
 	
 	
 	private final MensamodelElements pMensamodel;
@@ -221,7 +180,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final Html_IdElements pHtml_Id;
 	private final Html_ClassElements pHtml_Class;
 	private final ContentElements pContent;
-	private final ChildrenElements pChildren;
 	
 	private final Grammar grammar;
 	
@@ -237,7 +195,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pHtml_Id = new Html_IdElements();
 		this.pHtml_Class = new Html_ClassElements();
 		this.pContent = new ContentElements();
-		this.pChildren = new ChildrenElements();
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -280,9 +237,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Tag:
 	//	'tag' name=STRING '{'
 	//	id=Html_Id?
-	//	class=Html_Class?
+	//	class_h=Html_Class?
 	//	content=Content?
-	//	children+=Children*
+	//	children+=Tag*
 	//	'}';
 	public TagElements getTagAccess() {
 		return pTag;
@@ -322,18 +279,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getContentAccess().getRule();
 	}
 	
-	//Children:
-	//	'children' name=STRING '{'
-	//	tags+=Tag
-	//	'}';
-	public ChildrenElements getChildrenAccess() {
-		return pChildren;
-	}
-	
-	public ParserRule getChildrenRule() {
-		return getChildrenAccess().getRule();
-	}
-	
 	//terminal ID:
 	//	'^'? ('a'..'z' | 'A'..'Z' | '_') ('a'..'z' | 'A'..'Z' | '_' | '0'..'9')*;
 	public TerminalRule getIDRule() {
@@ -347,8 +292,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//terminal STRING:
-	//	'"' ('\\' . | !('\\' | '"'))* '"' |
-	//	"'" ('\\' . | !('\\' | "'"))* "'";
+	//	'"' ('\\' . | !('\\' | '"'))* '"' | "'" ('\\' . | !('\\' | "'"))* "'";
 	public TerminalRule getSTRINGRule() {
 		return gaTerminals.getSTRINGRule();
 	}

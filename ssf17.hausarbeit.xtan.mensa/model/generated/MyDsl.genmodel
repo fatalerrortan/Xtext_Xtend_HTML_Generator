@@ -12,7 +12,7 @@
     <genClasses ecoreClass="MyDsl.ecore#//Tag">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Tag/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Tag/id"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Tag/class"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Tag/class_h"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Tag/content"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Tag/children"/>
     </genClasses>
@@ -24,10 +24,6 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Content">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Content/name"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Children">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Children/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Children/tags"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

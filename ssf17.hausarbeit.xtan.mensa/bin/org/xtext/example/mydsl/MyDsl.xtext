@@ -3,31 +3,61 @@ grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Mensamodel:
-	(elements+=Tag)*
+	header=Header
+	footer=Footer
+	siderbar=Siderbar
+	(menus+=Menu)*
 ;	
-Tag:
-	'tag' name=STRING '{'
-		(id=Html_Id)?
-		(class=Html_Class)?
-		(content=Content)?
-		(children+=Children)*
-	'}'	
+Header:
+	'header' name=ID '{'
+		description=Description
+		(nav+=NAV)*
+	'}' 
 ;
-Html_Id:
-	'id' name=ID
+Description:
+	'description' name=STRING
 ;
-Html_Class:
-	'class' name=STRING
-;
-Content:
-	'content' name=STRING
-;
-Children:
-	'children' name=STRING '{'
-		tags+=Tag
+NAV:
+	'nav' name=ID '{'
+		'href' href=STRING
 	'}'
 ;
-	
-
-	
-
+Siderbar:
+	'siderbar' name=ID '{'
+		description=Description
+		(components+=Component)*
+		
+	'}' 
+;
+Component:
+	Selector | Button | Radio
+;
+Radio:
+	'radio' name=ID '{'
+		'title' title=Description
+		('option' options+=STRING)*
+	'}'
+;
+Button:
+	'button' name=ID '{'
+		'title' title=Description
+	    'href' href=STRING
+	'}'
+;
+Selector:
+	'selector' name=ID '{'
+		'title' title=Description
+		('option' options+=STRING)*
+	'}'
+;
+Footer:
+	'footer' name=ID '{'
+		description=Description
+		('lins' links+=STRING)*
+	'}' 
+;
+Menu:
+	'menu' name=ID '{'
+		
+	'}' 
+;

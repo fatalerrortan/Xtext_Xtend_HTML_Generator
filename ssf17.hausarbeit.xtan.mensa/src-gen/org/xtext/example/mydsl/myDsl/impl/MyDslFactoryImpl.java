@@ -70,7 +70,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.HTML_ID: return createHtml_Id();
       case MyDslPackage.HTML_CLASS: return createHtml_Class();
       case MyDslPackage.CONTENT: return createContent();
-      case MyDslPackage.CHILDREN: return createChildren();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -129,17 +128,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     ContentImpl content = new ContentImpl();
     return content;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Children createChildren()
-  {
-    ChildrenImpl children = new ChildrenImpl();
-    return children;
   }
 
   /**

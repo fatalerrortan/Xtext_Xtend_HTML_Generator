@@ -114,13 +114,13 @@ public interface MyDslPackage extends EPackage
   int TAG__ID = 1;
 
   /**
-   * The feature id for the '<em><b>Class</b></em>' containment reference.
+   * The feature id for the '<em><b>Class h</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TAG__CLASS = 2;
+  int TAG__CLASS_H = 2;
 
   /**
    * The feature id for the '<em><b>Content</b></em>' containment reference.
@@ -233,43 +233,6 @@ public interface MyDslPackage extends EPackage
    */
   int CONTENT_FEATURE_COUNT = 1;
 
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ChildrenImpl <em>Children</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.ChildrenImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getChildren()
-   * @generated
-   */
-  int CHILDREN = 5;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHILDREN__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Tags</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHILDREN__TAGS = 1;
-
-  /**
-   * The number of structural features of the '<em>Children</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CHILDREN_FEATURE_COUNT = 2;
-
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Mensamodel <em>Mensamodel</em>}'.
@@ -325,15 +288,15 @@ public interface MyDslPackage extends EPackage
   EReference getTag_Id();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Tag#getClass_ <em>Class</em>}'.
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Tag#getClass_h <em>Class h</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Class</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Tag#getClass_()
+   * @return the meta object for the containment reference '<em>Class h</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Tag#getClass_h()
    * @see #getTag()
    * @generated
    */
-  EReference getTag_Class();
+  EReference getTag_Class_h();
 
   /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Tag#getContent <em>Content</em>}'.
@@ -421,38 +384,6 @@ public interface MyDslPackage extends EPackage
   EAttribute getContent_Name();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Children <em>Children</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Children</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Children
-   * @generated
-   */
-  EClass getChildren();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Children#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Children#getName()
-   * @see #getChildren()
-   * @generated
-   */
-  EAttribute getChildren_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Children#getTags <em>Tags</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Tags</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Children#getTags()
-   * @see #getChildren()
-   * @generated
-   */
-  EReference getChildren_Tags();
-
-  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -520,12 +451,12 @@ public interface MyDslPackage extends EPackage
     EReference TAG__ID = eINSTANCE.getTag_Id();
 
     /**
-     * The meta object literal for the '<em><b>Class</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Class h</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference TAG__CLASS = eINSTANCE.getTag_Class();
+    EReference TAG__CLASS_H = eINSTANCE.getTag_Class_h();
 
     /**
      * The meta object literal for the '<em><b>Content</b></em>' containment reference feature.
@@ -596,32 +527,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute CONTENT__NAME = eINSTANCE.getContent_Name();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ChildrenImpl <em>Children</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.ChildrenImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getChildren()
-     * @generated
-     */
-    EClass CHILDREN = eINSTANCE.getChildren();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CHILDREN__NAME = eINSTANCE.getChildren_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Tags</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CHILDREN__TAGS = eINSTANCE.getChildren_Tags();
 
   }
 

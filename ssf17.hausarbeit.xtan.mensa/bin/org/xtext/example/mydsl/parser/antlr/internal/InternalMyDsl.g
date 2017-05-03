@@ -160,17 +160,17 @@ ruleTag returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTagAccess().getClassHtml_ClassParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getTagAccess().getClass_hHtml_ClassParserRuleCall_4_0());
 				}
-				lv_class_4_0=ruleHtml_Class
+				lv_class_h_4_0=ruleHtml_Class
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTagRule());
 					}
 					set(
 						$current,
-						"class",
-						lv_class_4_0,
+						"class_h",
+						lv_class_h_4_0,
 						"org.xtext.example.mydsl.MyDsl.Html_Class");
 					afterParserOrEnumRuleCall();
 				}
@@ -198,9 +198,9 @@ ruleTag returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getTagAccess().getChildrenChildrenParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getTagAccess().getChildrenTagParserRuleCall_6_0());
 				}
-				lv_children_6_0=ruleChildren
+				lv_children_6_0=ruleTag
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getTagRule());
@@ -209,7 +209,7 @@ ruleTag returns [EObject current=null]
 						$current,
 						"children",
 						lv_children_6_0,
-						"org.xtext.example.mydsl.MyDsl.Children");
+						"org.xtext.example.mydsl.MyDsl.Tag");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -341,74 +341,6 @@ ruleContent returns [EObject current=null]
 				}
 			)
 		)
-	)
-;
-
-// Entry rule entryRuleChildren
-entryRuleChildren returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getChildrenRule()); }
-	iv_ruleChildren=ruleChildren
-	{ $current=$iv_ruleChildren.current; }
-	EOF;
-
-// Rule Children
-ruleChildren returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		otherlv_0='children'
-		{
-			newLeafNode(otherlv_0, grammarAccess.getChildrenAccess().getChildrenKeyword_0());
-		}
-		(
-			(
-				lv_name_1_0=RULE_STRING
-				{
-					newLeafNode(lv_name_1_0, grammarAccess.getChildrenAccess().getNameSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getChildrenRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"name",
-						lv_name_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
-				}
-			)
-		)
-		otherlv_2='{'
-		{
-			newLeafNode(otherlv_2, grammarAccess.getChildrenAccess().getLeftCurlyBracketKeyword_2());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getChildrenAccess().getTagsTagParserRuleCall_3_0());
-				}
-				lv_tags_3_0=ruleTag
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getChildrenRule());
-					}
-					add(
-						$current,
-						"tags",
-						lv_tags_3_0,
-						"org.xtext.example.mydsl.MyDsl.Tag");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_4='}'
-		{
-			newLeafNode(otherlv_4, grammarAccess.getChildrenAccess().getRightCurlyBracketKeyword_4());
-		}
 	)
 ;
 

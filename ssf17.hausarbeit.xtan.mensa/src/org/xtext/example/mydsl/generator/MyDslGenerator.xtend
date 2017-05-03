@@ -3,14 +3,14 @@
  */
 package org.xtext.example.mydsl.generator
 
-import com.google.inject.Inject
 import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.eclipse.xtext.naming.IQualifiedNameProvider
 import org.xtext.example.mydsl.myDsl.Tag
-
+//determine the file name of the Java class that each Entity should yield. 
+import org.eclipse.xtext.naming.IQualifiedNameProvider
+import com.google.inject.Inject
 
 /**
  * Generates code from your model files on save.
@@ -18,8 +18,9 @@ import org.xtext.example.mydsl.myDsl.Tag
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyDslGenerator extends AbstractGenerator {
-
-	@Inject extension IQualifiedNameProvider	
+	
+	@Inject extension IQualifiedNameProvider
+//	@Inject extension IQualifiedNameProvider	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
     
    	val html = '''
@@ -30,13 +31,19 @@ class MyDslGenerator extends AbstractGenerator {
 			</head>
 			<body>
 					«FOR Tag tag : resource.allContents.toIterable.filter(Tag)»
-«««						<li>«person.name.escapeHtml4()» from «person.homeTown.escapeHtml4()»</li>
-						<«tag.name» id="«tag.id.name»">
-							«tag.content.name»
-						<«tag.name»/>	
+«««						«IF tag.children === null»
+«««key word "class" is pre-deifined => class_h instead of class
+							<«tag.name» id="«tag.id.name»" class="«tag.class_h.name»">
+								«tag.content.name»
+								«IF tag.children !== null»
+«««									«FOR Tag child : resource.allContents.toIterable.filter(tag.children)»
+«««										
+«««									«ENDFOR»
+									<h3>!Children!</h3>
+								«ENDIF»
+							<«tag.name»/>	
+«««						«ENDIF»
 					«ENDFOR»
-				
-				
 			</body>
 			</html>
 		'''

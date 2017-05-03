@@ -14,7 +14,6 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.mydsl.myDsl.Children;
 import org.xtext.example.mydsl.myDsl.Content;
 import org.xtext.example.mydsl.myDsl.Html_Class;
 import org.xtext.example.mydsl.myDsl.Html_Id;
@@ -37,9 +36,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MyDslPackage.CHILDREN:
-				sequence_Children(context, (Children) semanticObject); 
-				return; 
 			case MyDslPackage.CONTENT:
 				sequence_Content(context, (Content) semanticObject); 
 				return; 
@@ -59,18 +55,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		if (errorAcceptor != null)
 			errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
-	
-	/**
-	 * Contexts:
-	 *     Children returns Children
-	 *
-	 * Constraint:
-	 *     (name=STRING tags+=Tag)
-	 */
-	protected void sequence_Children(ISerializationContext context, Children semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
 	
 	/**
 	 * Contexts:
@@ -143,7 +127,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Tag returns Tag
 	 *
 	 * Constraint:
-	 *     (name=STRING id=Html_Id? class=Html_Class? content=Content? children+=Children*)
+	 *     (name=STRING id=Html_Id? class_h=Html_Class? content=Content? children+=Tag*)
 	 */
 	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

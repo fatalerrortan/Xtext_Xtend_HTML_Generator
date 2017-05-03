@@ -18,7 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getId <em>Id</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getClass_ <em>Class</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getClass_h <em>Class h</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getContent <em>Content</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Tag#getChildren <em>Children</em>}</li>
  * </ul>
@@ -82,30 +82,30 @@ public interface Tag extends EObject
   void setId(Html_Id value);
 
   /**
-   * Returns the value of the '<em><b>Class</b></em>' containment reference.
+   * Returns the value of the '<em><b>Class h</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Class</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Class h</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Class</em>' containment reference.
-   * @see #setClass(Html_Class)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getTag_Class()
+   * @return the value of the '<em>Class h</em>' containment reference.
+   * @see #setClass_h(Html_Class)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getTag_Class_h()
    * @model containment="true"
    * @generated
    */
-  Html_Class getClass_();
+  Html_Class getClass_h();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Tag#getClass_ <em>Class</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Tag#getClass_h <em>Class h</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Class</em>' containment reference.
-   * @see #getClass_()
+   * @param value the new value of the '<em>Class h</em>' containment reference.
+   * @see #getClass_h()
    * @generated
    */
-  void setClass(Html_Class value);
+  void setClass_h(Html_Class value);
 
   /**
    * Returns the value of the '<em><b>Content</b></em>' containment reference.
@@ -135,7 +135,7 @@ public interface Tag extends EObject
 
   /**
    * Returns the value of the '<em><b>Children</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Children}.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Tag}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Children</em>' containment reference list isn't clear,
@@ -147,6 +147,6 @@ public interface Tag extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<Children> getChildren();
+  EList<Tag> getChildren();
 
 } // Tag

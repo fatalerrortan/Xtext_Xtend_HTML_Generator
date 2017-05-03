@@ -5,6 +5,7 @@ package org.xtext.example.mydsl.generator;
 
 import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
@@ -16,6 +17,7 @@ import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Content;
+import org.xtext.example.mydsl.myDsl.Html_Class;
 import org.xtext.example.mydsl.myDsl.Html_Id;
 import org.xtext.example.mydsl.myDsl.Tag;
 
@@ -59,26 +61,36 @@ public class MyDslGenerator extends AbstractGenerator {
         Html_Id _id = tag.getId();
         String _name_1 = _id.getName();
         _builder.append(_name_1, "\t\t");
+        _builder.append("\" class=\"");
+        Html_Class _class_h = tag.getClass_h();
+        String _name_2 = _class_h.getName();
+        _builder.append(_name_2, "\t\t");
         _builder.append("\">");
         _builder.newLineIfNotEmpty();
         _builder.append("\t\t");
         _builder.append("\t");
         Content _content = tag.getContent();
-        String _name_2 = _content.getName();
-        _builder.append(_name_2, "\t\t\t");
+        String _name_3 = _content.getName();
+        _builder.append(_name_3, "\t\t\t");
         _builder.newLineIfNotEmpty();
+        {
+          EList<Tag> _children = tag.getChildren();
+          boolean _tripleNotEquals = (_children != null);
+          if (_tripleNotEquals) {
+            _builder.append("\t\t");
+            _builder.append("\t");
+            _builder.append("<h3>!Children!</h3>");
+            _builder.newLine();
+          }
+        }
         _builder.append("\t\t");
         _builder.append("<");
-        String _name_3 = tag.getName();
-        _builder.append(_name_3, "\t\t");
+        String _name_4 = tag.getName();
+        _builder.append(_name_4, "\t\t");
         _builder.append("/>\t");
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.newLine();
     _builder.append("</body>");
     _builder.newLine();
     _builder.append("</html>");

@@ -39,18 +39,15 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getHtml_IdAccess().getGroup(), "rule__Html_Id__Group__0");
 					put(grammarAccess.getHtml_ClassAccess().getGroup(), "rule__Html_Class__Group__0");
 					put(grammarAccess.getContentAccess().getGroup(), "rule__Content__Group__0");
-					put(grammarAccess.getChildrenAccess().getGroup(), "rule__Children__Group__0");
 					put(grammarAccess.getMensamodelAccess().getElementsAssignment(), "rule__Mensamodel__ElementsAssignment");
 					put(grammarAccess.getTagAccess().getNameAssignment_1(), "rule__Tag__NameAssignment_1");
 					put(grammarAccess.getTagAccess().getIdAssignment_3(), "rule__Tag__IdAssignment_3");
-					put(grammarAccess.getTagAccess().getClassAssignment_4(), "rule__Tag__ClassAssignment_4");
+					put(grammarAccess.getTagAccess().getClass_hAssignment_4(), "rule__Tag__Class_hAssignment_4");
 					put(grammarAccess.getTagAccess().getContentAssignment_5(), "rule__Tag__ContentAssignment_5");
 					put(grammarAccess.getTagAccess().getChildrenAssignment_6(), "rule__Tag__ChildrenAssignment_6");
 					put(grammarAccess.getHtml_IdAccess().getNameAssignment_1(), "rule__Html_Id__NameAssignment_1");
 					put(grammarAccess.getHtml_ClassAccess().getNameAssignment_1(), "rule__Html_Class__NameAssignment_1");
 					put(grammarAccess.getContentAccess().getNameAssignment_1(), "rule__Content__NameAssignment_1");
-					put(grammarAccess.getChildrenAccess().getNameAssignment_1(), "rule__Children__NameAssignment_1");
-					put(grammarAccess.getChildrenAccess().getTagsAssignment_3(), "rule__Children__TagsAssignment_3");
 				}
 			};
 		}
