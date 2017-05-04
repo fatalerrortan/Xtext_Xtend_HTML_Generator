@@ -66,10 +66,17 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     switch (eClass.getClassifierID())
     {
       case MyDslPackage.MENSAMODEL: return createMensamodel();
-      case MyDslPackage.TAG: return createTag();
-      case MyDslPackage.HTML_ID: return createHtml_Id();
-      case MyDslPackage.HTML_CLASS: return createHtml_Class();
-      case MyDslPackage.CONTENT: return createContent();
+      case MyDslPackage.HEADER: return createHeader();
+      case MyDslPackage.DESCRIPTION: return createDescription();
+      case MyDslPackage.NAV: return createNAV();
+      case MyDslPackage.SIDERBAR: return createSiderbar();
+      case MyDslPackage.COMPONENT: return createComponent();
+      case MyDslPackage.RADIO: return createRadio();
+      case MyDslPackage.BUTTON: return createButton();
+      case MyDslPackage.SELECTOR: return createSelector();
+      case MyDslPackage.FOOTER: return createFooter();
+      case MyDslPackage.LINK: return createLink();
+      case MyDslPackage.MENU: return createMenu();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
     }
@@ -91,10 +98,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Tag createTag()
+  public Header createHeader()
   {
-    TagImpl tag = new TagImpl();
-    return tag;
+    HeaderImpl header = new HeaderImpl();
+    return header;
   }
 
   /**
@@ -102,10 +109,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Html_Id createHtml_Id()
+  public Description createDescription()
   {
-    Html_IdImpl html_Id = new Html_IdImpl();
-    return html_Id;
+    DescriptionImpl description = new DescriptionImpl();
+    return description;
   }
 
   /**
@@ -113,10 +120,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Html_Class createHtml_Class()
+  public NAV createNAV()
   {
-    Html_ClassImpl html_Class = new Html_ClassImpl();
-    return html_Class;
+    NAVImpl nav = new NAVImpl();
+    return nav;
   }
 
   /**
@@ -124,10 +131,87 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Content createContent()
+  public Siderbar createSiderbar()
   {
-    ContentImpl content = new ContentImpl();
-    return content;
+    SiderbarImpl siderbar = new SiderbarImpl();
+    return siderbar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Component createComponent()
+  {
+    ComponentImpl component = new ComponentImpl();
+    return component;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Radio createRadio()
+  {
+    RadioImpl radio = new RadioImpl();
+    return radio;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Button createButton()
+  {
+    ButtonImpl button = new ButtonImpl();
+    return button;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Selector createSelector()
+  {
+    SelectorImpl selector = new SelectorImpl();
+    return selector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Footer createFooter()
+  {
+    FooterImpl footer = new FooterImpl();
+    return footer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Link createLink()
+  {
+    LinkImpl link = new LinkImpl();
+    return link;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Menu createMenu()
+  {
+    MenuImpl menu = new MenuImpl();
+    return menu;
   }
 
   /**

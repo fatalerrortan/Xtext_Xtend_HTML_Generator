@@ -16,10 +16,14 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.naming.IQualifiedNameProvider;
 import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
-import org.xtext.example.mydsl.myDsl.Content;
-import org.xtext.example.mydsl.myDsl.Html_Class;
-import org.xtext.example.mydsl.myDsl.Html_Id;
-import org.xtext.example.mydsl.myDsl.Tag;
+import org.xtext.example.mydsl.myDsl.Button;
+import org.xtext.example.mydsl.myDsl.Component;
+import org.xtext.example.mydsl.myDsl.Description;
+import org.xtext.example.mydsl.myDsl.Footer;
+import org.xtext.example.mydsl.myDsl.Header;
+import org.xtext.example.mydsl.myDsl.Link;
+import org.xtext.example.mydsl.myDsl.NAV;
+import org.xtext.example.mydsl.myDsl.Siderbar;
 
 /**
  * Generates code from your model files on save.
@@ -35,67 +39,241 @@ public class MyDslGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("<!DOCTYPE html>");
+    _builder.append("<nav class=\"navbar navbar-inverse navbar-fixed-top\" role=\"navigation\">");
     _builder.newLine();
-    _builder.append("<html>");
+    _builder.append("    ");
+    _builder.append("<div class=\"container\">");
     _builder.newLine();
-    _builder.append("<head>");
+    _builder.append("        ");
+    _builder.append("<div class=\"navbar-header\">");
     _builder.newLine();
-    _builder.append("\t");
-    _builder.append("<title>Greetings, Earthlings!</title>");
+    _builder.append("            ");
+    _builder.append("<button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\"#bs-example-navbar-collapse-1\">");
     _builder.newLine();
-    _builder.append("</head>");
+    _builder.append("                ");
+    _builder.append("<span class=\"sr-only\">Toggle navigation</span>");
     _builder.newLine();
-    _builder.append("<body>");
+    _builder.append("                ");
+    _builder.append("<span class=\"icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<span class=\"icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("<span class=\"icon-bar\"></span>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("</button>");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<a class=\"navbar-brand\" href=\"#\">Mensa</a>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("<ul class=\"nav navbar-nav\">");
     _builder.newLine();
     {
       TreeIterator<EObject> _allContents = resource.getAllContents();
       Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
-      Iterable<Tag> _filter = Iterables.<Tag>filter(_iterable, Tag.class);
-      for(final Tag tag : _filter) {
-        _builder.append("\t\t");
-        _builder.append("<");
-        String _name = tag.getName();
-        _builder.append(_name, "\t\t");
-        _builder.append(" id=\"");
-        Html_Id _id = tag.getId();
-        String _name_1 = _id.getName();
-        _builder.append(_name_1, "\t\t");
-        _builder.append("\" class=\"");
-        Html_Class _class_h = tag.getClass_h();
-        String _name_2 = _class_h.getName();
-        _builder.append(_name_2, "\t\t");
-        _builder.append("\">");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t");
-        _builder.append("\t");
-        Content _content = tag.getContent();
-        String _name_3 = _content.getName();
-        _builder.append(_name_3, "\t\t\t");
+      Iterable<Header> _filter = Iterables.<Header>filter(_iterable, Header.class);
+      for(final Header header_html : _filter) {
+        _builder.append("               \t\t\t\t");
+        _builder.append("<h1>");
+        Description _description = header_html.getDescription();
+        String _name = _description.getName();
+        _builder.append(_name, "               \t\t\t\t");
+        _builder.append("</h1>");
         _builder.newLineIfNotEmpty();
         {
-          EList<Tag> _children = tag.getChildren();
-          boolean _tripleNotEquals = (_children != null);
-          if (_tripleNotEquals) {
-            _builder.append("\t\t");
-            _builder.append("\t");
-            _builder.append("<h3>!Children!</h3>");
+          EList<NAV> _nav = header_html.getNav();
+          for(final NAV nav : _nav) {
+            _builder.append("               \t\t\t\t");
+            _builder.append("<li>");
+            _builder.newLine();
+            _builder.append("               \t\t\t\t");
+            _builder.append("<a href=\"");
+            String _href = nav.getHref();
+            _builder.append(_href, "               \t\t\t\t");
+            _builder.append("\">");
+            String _name_1 = nav.getName();
+            _builder.append(_name_1, "               \t\t\t\t");
+            _builder.append("</a>");
+            _builder.newLineIfNotEmpty();
+            _builder.append("               \t\t\t\t");
+            _builder.append("</li>\t");
             _builder.newLine();
           }
         }
-        _builder.append("\t\t");
-        _builder.append("<");
-        String _name_4 = tag.getName();
-        _builder.append(_name_4, "\t\t");
-        _builder.append("/>\t");
-        _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("</body>");
+    _builder.append("            ");
+    _builder.append("</ul>");
     _builder.newLine();
-    _builder.append("</html>");
+    _builder.append("        ");
+    _builder.append("</div>");
     _builder.newLine();
-    final String html = _builder.toString();
+    _builder.append("    ");
+    _builder.append("</div>");
+    _builder.newLine();
+    _builder.append("</nav>");
+    _builder.newLine();
+    final String header_html_1 = _builder.toString();
+    StringConcatenation _builder_1 = new StringConcatenation();
+    _builder_1.append("<div class=\"col-md-4\">");
+    _builder_1.newLine();
+    _builder_1.append("         ");
+    _builder_1.append("<div class=\"well\">\t\t\t\t                 ");
+    _builder_1.newLine();
+    {
+      TreeIterator<EObject> _allContents_1 = resource.getAllContents();
+      Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
+      Iterable<Siderbar> _filter_1 = Iterables.<Siderbar>filter(_iterable_1, Siderbar.class);
+      for(final Siderbar siderbar_html : _filter_1) {
+        _builder_1.append("             ");
+        _builder_1.append("<h4>");
+        Description _description_1 = siderbar_html.getDescription();
+        String _name_2 = _description_1.getName();
+        _builder_1.append(_name_2, "             ");
+        _builder_1.append("</h4>");
+        _builder_1.newLineIfNotEmpty();
+        {
+          EList<Component> _components = siderbar_html.getComponents();
+          for(final Component component : _components) {
+            {
+              EList<Button> _button = component.getButton();
+              boolean _tripleNotEquals = (_button != null);
+              if (_tripleNotEquals) {
+                {
+                  EList<Button> _button_1 = component.getButton();
+                  for(final Button html_button : _button_1) {
+                    _builder_1.append("             ");
+                    _builder_1.append("<a href=\"");
+                    String _href_1 = html_button.getHref();
+                    _builder_1.append(_href_1, "             ");
+                    _builder_1.append("\"><button type=\"button\" class=\"btn btn-info\">");
+                    String _name_3 = html_button.getName();
+                    _builder_1.append(_name_3, "             ");
+                    _builder_1.append("</button></a>");
+                    _builder_1.newLineIfNotEmpty();
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    _builder_1.append("         ");
+    _builder_1.append("</div>");
+    _builder_1.newLine();
+    _builder_1.append("     ");
+    _builder_1.append("</div>");
+    _builder_1.newLine();
+    final String siderbar_html_1 = _builder_1.toString();
+    StringConcatenation _builder_2 = new StringConcatenation();
+    _builder_2.append("<footer>");
+    _builder_2.newLine();
+    _builder_2.append("    ");
+    _builder_2.append("<div class=\"row\">");
+    _builder_2.newLine();
+    _builder_2.append("        ");
+    _builder_2.append("<div class=\"col-lg-12\">");
+    _builder_2.newLine();
+    {
+      TreeIterator<EObject> _allContents_2 = resource.getAllContents();
+      Iterable<EObject> _iterable_2 = IteratorExtensions.<EObject>toIterable(_allContents_2);
+      Iterable<Footer> _filter_2 = Iterables.<Footer>filter(_iterable_2, Footer.class);
+      for(final Footer footer_html : _filter_2) {
+        _builder_2.append("            ");
+        _builder_2.append("<h1>");
+        Description _description_2 = footer_html.getDescription();
+        String _name_4 = _description_2.getName();
+        _builder_2.append(_name_4, "            ");
+        _builder_2.append("</h1>");
+        _builder_2.newLineIfNotEmpty();
+        {
+          EList<Link> _links = footer_html.getLinks();
+          for(final Link link : _links) {
+            _builder_2.append("<p><a href=\"");
+            String _url = link.getUrl();
+            _builder_2.append(_url, "");
+            _builder_2.append("\">");
+            String _name_5 = link.getName();
+            _builder_2.append(_name_5, "");
+            _builder_2.append("</a></p>");
+            _builder_2.newLineIfNotEmpty();
+          }
+        }
+      }
+    }
+    _builder_2.append("        ");
+    _builder_2.append("</div> \t\t\t        ");
+    _builder_2.newLine();
+    _builder_2.append("    ");
+    _builder_2.append("</div>");
+    _builder_2.newLine();
+    _builder_2.append("</footer>");
+    _builder_2.newLine();
+    final String footer_html_1 = _builder_2.toString();
+    StringConcatenation _builder_3 = new StringConcatenation();
+    _builder_3.append("<!DOCTYPE html>");
+    _builder_3.newLine();
+    _builder_3.append("<html>");
+    _builder_3.newLine();
+    _builder_3.append("\t");
+    _builder_3.append("<head>");
+    _builder_3.newLine();
+    _builder_3.append("\t\t");
+    _builder_3.append("<head>");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<meta charset=\"utf-8\">");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<title>Blog Home - Start Bootstrap Template</title>");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");
+    _builder_3.newLine();
+    _builder_3.append("\t\t    ");
+    _builder_3.append("<link href=\"css/blog-home.css\" rel=\"stylesheet\">");
+    _builder_3.newLine();
+    _builder_3.append("\t\t");
+    _builder_3.append("</head>");
+    _builder_3.newLine();
+    _builder_3.append("\t");
+    _builder_3.append("</head>");
+    _builder_3.newLine();
+    _builder_3.append("\t");
+    _builder_3.append("<body>");
+    _builder_3.newLine();
+    _builder_3.append("\t\t");
+    _builder_3.append(header_html_1, "\t\t");
+    _builder_3.newLineIfNotEmpty();
+    _builder_3.append("\t\t");
+    _builder_3.append(siderbar_html_1, "\t\t");
+    _builder_3.newLineIfNotEmpty();
+    _builder_3.append("\t\t");
+    _builder_3.append(footer_html_1, "\t\t");
+    _builder_3.append("\t\t");
+    _builder_3.newLineIfNotEmpty();
+    _builder_3.append("\t");
+    _builder_3.append("</body>");
+    _builder_3.newLine();
+    _builder_3.append("</html>");
+    _builder_3.newLine();
+    final String html = _builder_3.toString();
     String _string = html.toString();
     fsa.generateFile("mensa_speiseplan.html", _string);
   }

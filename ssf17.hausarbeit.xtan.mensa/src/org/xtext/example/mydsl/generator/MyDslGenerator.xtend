@@ -7,10 +7,17 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-import org.xtext.example.mydsl.myDsl.Tag
 //determine the file name of the Java class that each Entity should yield. 
 import org.eclipse.xtext.naming.IQualifiedNameProvider
 import com.google.inject.Inject
+import org.xtext.example.mydsl.myDsl.Header
+import org.xtext.example.mydsl.myDsl.NAV
+import org.xtext.example.mydsl.myDsl.Footer
+import javax.print.DocFlavor.STRING
+import org.xtext.example.mydsl.myDsl.Siderbar
+import java.awt.Component
+import org.xtext.example.mydsl.myDsl.Button
+import org.xtext.example.mydsl.myDsl.Link
 
 /**
  * Generates code from your model files on save.
@@ -22,37 +29,88 @@ class MyDslGenerator extends AbstractGenerator {
 	@Inject extension IQualifiedNameProvider
 //	@Inject extension IQualifiedNameProvider	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-    
-   	val html = '''
+   	val header_html = '''
+   			    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+   			        <div class="container">
+   			            <div class="navbar-header">
+   			                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+   			                    <span class="sr-only">Toggle navigation</span>
+   			                    <span class="icon-bar"></span>
+   			                    <span class="icon-bar"></span>
+   			                    <span class="icon-bar"></span>
+   			                </button>
+   			                <a class="navbar-brand" href="#">Mensa</a>
+   			            </div>
+   			            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+   			                <ul class="nav navbar-nav">
+   			                   				«FOR Header header_html : resource.allContents.toIterable.filter(Header)»
+   			                   					<h1>«header_html.description.name»</h1>
+   			                   					«FOR NAV nav : header_html.nav»
+   			                   						<li>
+   			                   						<a href="«nav.href»">«nav.name»</a>
+   			                   						</li>	
+   			                   					«ENDFOR»
+   			                   				«ENDFOR»
+   			                </ul>
+   			            </div>
+   			        </div>
+   			    </nav>
+		'''
+	val siderbar_html = '''
+				       <div class="col-md-4">
+				                <div class="well">				                 
+				                    «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
+				                     	<h4>«siderbar_html.description.name»</h4>
+				                     	«FOR component : siderbar_html.components»
+				                     		«IF component.button !== null»
+				                     		    «FOR Button html_button : component.button»
+				                     		    	<a href="«html_button.href»"><button type="button" class="btn btn-info">«html_button.name»</button></a>
+				                     		    «ENDFOR»
+				                     		«ENDIF»
+				                     	«ENDFOR»
+				                    «ENDFOR»
+				                </div>
+				            </div>
+		'''
+ 	val footer_html = '''
+ 			        <footer>
+ 			            <div class="row">
+ 			                <div class="col-lg-12">
+ 			                    «FOR Footer footer_html : resource.allContents.toIterable.filter(Footer)»
+ 			                       	<h1>«footer_html.description.name»</h1>
+ 			                     	«FOR Link link : footer_html.links»
+ 			                       	<p><a href="«link.url»">«link.name»</a></p>
+ 			                       «ENDFOR»
+ 			                    «ENDFOR»
+ 			                </div> 			        
+ 			            </div>
+ 			        </footer>
+		'''
+//	val menus_html = '''
+//		'''
+	val html = '''
 			<!DOCTYPE html>
 			<html>
-			<head>
-				<title>Greetings, Earthlings!</title>
-			</head>
-			<body>
-					«FOR Tag tag : resource.allContents.toIterable.filter(Tag)»
-«««						«IF tag.children === null»
-«««key word "class" is pre-deifined => class_h instead of class
-							<«tag.name» id="«tag.id.name»" class="«tag.class_h.name»">
-								«tag.content.name»
-								«IF tag.children !== null»
-«««									«FOR Tag child : resource.allContents.toIterable.filter(tag.children)»
-«««										
-«««									«ENDFOR»
-									<h3>!Children!</h3>
-								«ENDIF»
-							<«tag.name»/>	
-«««						«ENDIF»
-					«ENDFOR»
-			</body>
+				<head>
+					<head>
+					    <meta charset="utf-8">
+					    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+					    <meta name="viewport" content="width=device-width, initial-scale=1">
+					    <title>Blog Home - Start Bootstrap Template</title>
+					    <link href="css/bootstrap.min.css" rel="stylesheet">
+					    <link href="css/blog-home.css" rel="stylesheet">
+					</head>
+				</head>
+				<body>
+					«header_html»
+					«siderbar_html»
+«««					«menus_html»
+					«footer_html»		
+				</body>
 			</html>
 		'''
-   	
    	
    	fsa.generateFile('mensa_speiseplan.html', html.toString());
 
 	}
-//	    def htmlGenerator(){
-//    	
-//    }
 }

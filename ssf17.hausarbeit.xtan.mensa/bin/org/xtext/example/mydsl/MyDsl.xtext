@@ -30,7 +30,7 @@ Siderbar:
 	'}' 
 ;
 Component:
-	Selector | Button | Radio
+	(selector+=Selector)* | (button+=Button)* | (radio+=Radio)*
 ;
 Radio:
 	'radio' name=ID '{'
@@ -40,7 +40,7 @@ Radio:
 ;
 Button:
 	'button' name=ID '{'
-		'title' title=Description
+		 title=Description
 	    'href' href=STRING
 	'}'
 ;
@@ -53,11 +53,17 @@ Selector:
 Footer:
 	'footer' name=ID '{'
 		description=Description
-		('lins' links+=STRING)*
+		(links+=Link)*
 	'}' 
+;
+Link:
+	'link' name=ID '{'
+		'url' url=STRING
+	'}'
 ;
 Menu:
 	'menu' name=ID '{'
-		
+		description=Description
+		'price' price=STRING
 	'}' 
 ;

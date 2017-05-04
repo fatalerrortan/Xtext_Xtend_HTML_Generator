@@ -33,40 +33,103 @@ public interface MyDslFactory extends EFactory
   Mensamodel createMensamodel();
 
   /**
-   * Returns a new object of class '<em>Tag</em>'.
+   * Returns a new object of class '<em>Header</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Tag</em>'.
+   * @return a new object of class '<em>Header</em>'.
    * @generated
    */
-  Tag createTag();
+  Header createHeader();
 
   /**
-   * Returns a new object of class '<em>Html Id</em>'.
+   * Returns a new object of class '<em>Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Html Id</em>'.
+   * @return a new object of class '<em>Description</em>'.
    * @generated
    */
-  Html_Id createHtml_Id();
+  Description createDescription();
 
   /**
-   * Returns a new object of class '<em>Html Class</em>'.
+   * Returns a new object of class '<em>NAV</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Html Class</em>'.
+   * @return a new object of class '<em>NAV</em>'.
    * @generated
    */
-  Html_Class createHtml_Class();
+  NAV createNAV();
 
   /**
-   * Returns a new object of class '<em>Content</em>'.
+   * Returns a new object of class '<em>Siderbar</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Content</em>'.
+   * @return a new object of class '<em>Siderbar</em>'.
    * @generated
    */
-  Content createContent();
+  Siderbar createSiderbar();
+
+  /**
+   * Returns a new object of class '<em>Component</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Component</em>'.
+   * @generated
+   */
+  Component createComponent();
+
+  /**
+   * Returns a new object of class '<em>Radio</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Radio</em>'.
+   * @generated
+   */
+  Radio createRadio();
+
+  /**
+   * Returns a new object of class '<em>Button</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Button</em>'.
+   * @generated
+   */
+  Button createButton();
+
+  /**
+   * Returns a new object of class '<em>Selector</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Selector</em>'.
+   * @generated
+   */
+  Selector createSelector();
+
+  /**
+   * Returns a new object of class '<em>Footer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Footer</em>'.
+   * @generated
+   */
+  Footer createFooter();
+
+  /**
+   * Returns a new object of class '<em>Link</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Link</em>'.
+   * @generated
+   */
+  Link createLink();
+
+  /**
+   * Returns a new object of class '<em>Menu</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Menu</em>'.
+   * @generated
+   */
+  Menu createMenu();
 
   /**
    * Returns the package supported by this factory.

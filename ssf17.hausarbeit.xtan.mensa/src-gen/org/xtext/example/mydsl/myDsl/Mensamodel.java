@@ -16,7 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getElements <em>Elements</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getHeader <em>Header</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSiderbar <em>Siderbar</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getMenus <em>Menus</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel()
@@ -26,19 +29,97 @@ import org.eclipse.emf.ecore.EObject;
 public interface Mensamodel extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Tag}.
+   * Returns the value of the '<em><b>Header</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Header</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Elements</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Elements()
+   * @return the value of the '<em>Header</em>' containment reference.
+   * @see #setHeader(Header)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Header()
    * @model containment="true"
    * @generated
    */
-  EList<Tag> getElements();
+  Header getHeader();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getHeader <em>Header</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Header</em>' containment reference.
+   * @see #getHeader()
+   * @generated
+   */
+  void setHeader(Header value);
+
+  /**
+   * Returns the value of the '<em><b>Footer</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Footer</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Footer</em>' containment reference.
+   * @see #setFooter(Footer)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Footer()
+   * @model containment="true"
+   * @generated
+   */
+  Footer getFooter();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Footer</em>' containment reference.
+   * @see #getFooter()
+   * @generated
+   */
+  void setFooter(Footer value);
+
+  /**
+   * Returns the value of the '<em><b>Siderbar</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Siderbar</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Siderbar</em>' containment reference.
+   * @see #setSiderbar(Siderbar)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Siderbar()
+   * @model containment="true"
+   * @generated
+   */
+  Siderbar getSiderbar();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSiderbar <em>Siderbar</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Siderbar</em>' containment reference.
+   * @see #getSiderbar()
+   * @generated
+   */
+  void setSiderbar(Siderbar value);
+
+  /**
+   * Returns the value of the '<em><b>Menus</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Menu}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Menus</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Menus</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Menus()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Menu> getMenus();
 
 } // Mensamodel

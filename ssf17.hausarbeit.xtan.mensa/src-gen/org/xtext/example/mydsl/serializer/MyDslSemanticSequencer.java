@@ -14,12 +14,19 @@ import org.eclipse.xtext.serializer.ISerializationContext;
 import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
-import org.xtext.example.mydsl.myDsl.Content;
-import org.xtext.example.mydsl.myDsl.Html_Class;
-import org.xtext.example.mydsl.myDsl.Html_Id;
+import org.xtext.example.mydsl.myDsl.Button;
+import org.xtext.example.mydsl.myDsl.Component;
+import org.xtext.example.mydsl.myDsl.Description;
+import org.xtext.example.mydsl.myDsl.Footer;
+import org.xtext.example.mydsl.myDsl.Header;
+import org.xtext.example.mydsl.myDsl.Link;
 import org.xtext.example.mydsl.myDsl.Mensamodel;
+import org.xtext.example.mydsl.myDsl.Menu;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
-import org.xtext.example.mydsl.myDsl.Tag;
+import org.xtext.example.mydsl.myDsl.NAV;
+import org.xtext.example.mydsl.myDsl.Radio;
+import org.xtext.example.mydsl.myDsl.Selector;
+import org.xtext.example.mydsl.myDsl.Siderbar;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -36,20 +43,41 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		Set<Parameter> parameters = context.getEnabledBooleanParameters();
 		if (epackage == MyDslPackage.eINSTANCE)
 			switch (semanticObject.eClass().getClassifierID()) {
-			case MyDslPackage.CONTENT:
-				sequence_Content(context, (Content) semanticObject); 
+			case MyDslPackage.BUTTON:
+				sequence_Button(context, (Button) semanticObject); 
 				return; 
-			case MyDslPackage.HTML_CLASS:
-				sequence_Html_Class(context, (Html_Class) semanticObject); 
+			case MyDslPackage.COMPONENT:
+				sequence_Component(context, (Component) semanticObject); 
 				return; 
-			case MyDslPackage.HTML_ID:
-				sequence_Html_Id(context, (Html_Id) semanticObject); 
+			case MyDslPackage.DESCRIPTION:
+				sequence_Description(context, (Description) semanticObject); 
+				return; 
+			case MyDslPackage.FOOTER:
+				sequence_Footer(context, (Footer) semanticObject); 
+				return; 
+			case MyDslPackage.HEADER:
+				sequence_Header(context, (Header) semanticObject); 
+				return; 
+			case MyDslPackage.LINK:
+				sequence_Link(context, (Link) semanticObject); 
 				return; 
 			case MyDslPackage.MENSAMODEL:
 				sequence_Mensamodel(context, (Mensamodel) semanticObject); 
 				return; 
-			case MyDslPackage.TAG:
-				sequence_Tag(context, (Tag) semanticObject); 
+			case MyDslPackage.MENU:
+				sequence_Menu(context, (Menu) semanticObject); 
+				return; 
+			case MyDslPackage.NAV:
+				sequence_NAV(context, (NAV) semanticObject); 
+				return; 
+			case MyDslPackage.RADIO:
+				sequence_Radio(context, (Radio) semanticObject); 
+				return; 
+			case MyDslPackage.SELECTOR:
+				sequence_Selector(context, (Selector) semanticObject); 
+				return; 
+			case MyDslPackage.SIDERBAR:
+				sequence_Siderbar(context, (Siderbar) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -58,54 +86,99 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Content returns Content
+	 *     Button returns Button
 	 *
 	 * Constraint:
-	 *     name=STRING
+	 *     (name=ID title=Description href=STRING)
 	 */
-	protected void sequence_Content(ISerializationContext context, Content semanticObject) {
+	protected void sequence_Button(ISerializationContext context, Button semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.CONTENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.CONTENT__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.BUTTON__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.BUTTON__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.BUTTON__TITLE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.BUTTON__TITLE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.BUTTON__HREF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.BUTTON__HREF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getContentAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getButtonAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getButtonAccess().getTitleDescriptionParserRuleCall_3_0(), semanticObject.getTitle());
+		feeder.accept(grammarAccess.getButtonAccess().getHrefSTRINGTerminalRuleCall_5_0(), semanticObject.getHref());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Html_Class returns Html_Class
+	 *     Component returns Component
+	 *
+	 * Constraint:
+	 *     (selector+=Selector+ | button+=Button+ | radio+=Radio+)
+	 */
+	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Description returns Description
 	 *
 	 * Constraint:
 	 *     name=STRING
 	 */
-	protected void sequence_Html_Class(ISerializationContext context, Html_Class semanticObject) {
+	protected void sequence_Description(ISerializationContext context, Description semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.HTML_CLASS__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.HTML_CLASS__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.DESCRIPTION__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.DESCRIPTION__NAME));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHtml_ClassAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getDescriptionAccess().getNameSTRINGTerminalRuleCall_1_0(), semanticObject.getName());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Html_Id returns Html_Id
+	 *     Footer returns Footer
 	 *
 	 * Constraint:
-	 *     name=ID
+	 *     (name=ID description=Description links+=Link*)
 	 */
-	protected void sequence_Html_Id(ISerializationContext context, Html_Id semanticObject) {
+	protected void sequence_Footer(ISerializationContext context, Footer semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Header returns Header
+	 *
+	 * Constraint:
+	 *     (name=ID description=Description nav+=NAV*)
+	 */
+	protected void sequence_Header(ISerializationContext context, Header semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Link returns Link
+	 *
+	 * Constraint:
+	 *     (name=ID url=STRING)
+	 */
+	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.HTML_ID__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.HTML_ID__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINK__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINK__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINK__URL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINK__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getHtml_IdAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getLinkAccess().getUrlSTRINGTerminalRuleCall_4_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
 	
@@ -115,7 +188,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Mensamodel returns Mensamodel
 	 *
 	 * Constraint:
-	 *     elements+=Tag+
+	 *     (header=Header footer=Footer siderbar=Siderbar menus+=Menu*)
 	 */
 	protected void sequence_Mensamodel(ISerializationContext context, Mensamodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -124,12 +197,81 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Tag returns Tag
+	 *     Menu returns Menu
 	 *
 	 * Constraint:
-	 *     (name=STRING id=Html_Id? class_h=Html_Class? content=Content? children+=Tag*)
+	 *     (name=ID description=Description price=STRING)
 	 */
-	protected void sequence_Tag(ISerializationContext context, Tag semanticObject) {
+	protected void sequence_Menu(ISerializationContext context, Menu semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__DESCRIPTION));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__PRICE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__PRICE));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getMenuAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getMenuAccess().getDescriptionDescriptionParserRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getMenuAccess().getPriceSTRINGTerminalRuleCall_5_0(), semanticObject.getPrice());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     NAV returns NAV
+	 *
+	 * Constraint:
+	 *     (name=ID href=STRING)
+	 */
+	protected void sequence_NAV(ISerializationContext context, NAV semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAV__NAME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAV__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAV__HREF) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAV__HREF));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getNAVAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
+		feeder.accept(grammarAccess.getNAVAccess().getHrefSTRINGTerminalRuleCall_4_0(), semanticObject.getHref());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Radio returns Radio
+	 *
+	 * Constraint:
+	 *     (name=ID title=Description options+=STRING*)
+	 */
+	protected void sequence_Radio(ISerializationContext context, Radio semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Selector returns Selector
+	 *
+	 * Constraint:
+	 *     (name=ID title=Description options+=STRING*)
+	 */
+	protected void sequence_Selector(ISerializationContext context, Selector semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Siderbar returns Siderbar
+	 *
+	 * Constraint:
+	 *     (name=ID description=Description components+=Component*)
+	 */
+	protected void sequence_Siderbar(ISerializationContext context, Siderbar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
