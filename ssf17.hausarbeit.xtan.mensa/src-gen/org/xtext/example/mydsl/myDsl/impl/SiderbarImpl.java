@@ -19,9 +19,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.xtext.example.mydsl.myDsl.Component;
+import org.xtext.example.mydsl.myDsl.Button;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
+import org.xtext.example.mydsl.myDsl.Radio;
+import org.xtext.example.mydsl.myDsl.Selector;
 import org.xtext.example.mydsl.myDsl.Siderbar;
 
 /**
@@ -34,7 +36,9 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getDescription <em>Description</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getRadio <em>Radio</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getButton <em>Button</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getSelector <em>Selector</em>}</li>
  * </ul>
  *
  * @generated
@@ -72,14 +76,34 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
   protected Description description;
 
   /**
-   * The cached value of the '{@link #getComponents() <em>Components</em>}' containment reference list.
+   * The cached value of the '{@link #getRadio() <em>Radio</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getComponents()
+   * @see #getRadio()
    * @generated
    * @ordered
    */
-  protected EList<Component> components;
+  protected EList<Radio> radio;
+
+  /**
+   * The cached value of the '{@link #getButton() <em>Button</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getButton()
+   * @generated
+   * @ordered
+   */
+  protected EList<Button> button;
+
+  /**
+   * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getSelector()
+   * @generated
+   * @ordered
+   */
+  protected EList<Selector> selector;
 
   /**
    * <!-- begin-user-doc -->
@@ -178,13 +202,41 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Component> getComponents()
+  public EList<Radio> getRadio()
   {
-    if (components == null)
+    if (radio == null)
     {
-      components = new EObjectContainmentEList<Component>(Component.class, this, MyDslPackage.SIDERBAR__COMPONENTS);
+      radio = new EObjectContainmentEList<Radio>(Radio.class, this, MyDslPackage.SIDERBAR__RADIO);
     }
-    return components;
+    return radio;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Button> getButton()
+  {
+    if (button == null)
+    {
+      button = new EObjectContainmentEList<Button>(Button.class, this, MyDslPackage.SIDERBAR__BUTTON);
+    }
+    return button;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Selector> getSelector()
+  {
+    if (selector == null)
+    {
+      selector = new EObjectContainmentEList<Selector>(Selector.class, this, MyDslPackage.SIDERBAR__SELECTOR);
+    }
+    return selector;
   }
 
   /**
@@ -199,8 +251,12 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
     {
       case MyDslPackage.SIDERBAR__DESCRIPTION:
         return basicSetDescription(null, msgs);
-      case MyDslPackage.SIDERBAR__COMPONENTS:
-        return ((InternalEList<?>)getComponents()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.SIDERBAR__RADIO:
+        return ((InternalEList<?>)getRadio()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return ((InternalEList<?>)getButton()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.SIDERBAR__SELECTOR:
+        return ((InternalEList<?>)getSelector()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -219,8 +275,12 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return getName();
       case MyDslPackage.SIDERBAR__DESCRIPTION:
         return getDescription();
-      case MyDslPackage.SIDERBAR__COMPONENTS:
-        return getComponents();
+      case MyDslPackage.SIDERBAR__RADIO:
+        return getRadio();
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return getButton();
+      case MyDslPackage.SIDERBAR__SELECTOR:
+        return getSelector();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -242,9 +302,17 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       case MyDslPackage.SIDERBAR__DESCRIPTION:
         setDescription((Description)newValue);
         return;
-      case MyDslPackage.SIDERBAR__COMPONENTS:
-        getComponents().clear();
-        getComponents().addAll((Collection<? extends Component>)newValue);
+      case MyDslPackage.SIDERBAR__RADIO:
+        getRadio().clear();
+        getRadio().addAll((Collection<? extends Radio>)newValue);
+        return;
+      case MyDslPackage.SIDERBAR__BUTTON:
+        getButton().clear();
+        getButton().addAll((Collection<? extends Button>)newValue);
+        return;
+      case MyDslPackage.SIDERBAR__SELECTOR:
+        getSelector().clear();
+        getSelector().addAll((Collection<? extends Selector>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -266,8 +334,14 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       case MyDslPackage.SIDERBAR__DESCRIPTION:
         setDescription((Description)null);
         return;
-      case MyDslPackage.SIDERBAR__COMPONENTS:
-        getComponents().clear();
+      case MyDslPackage.SIDERBAR__RADIO:
+        getRadio().clear();
+        return;
+      case MyDslPackage.SIDERBAR__BUTTON:
+        getButton().clear();
+        return;
+      case MyDslPackage.SIDERBAR__SELECTOR:
+        getSelector().clear();
         return;
     }
     super.eUnset(featureID);
@@ -287,8 +361,12 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case MyDslPackage.SIDERBAR__DESCRIPTION:
         return description != null;
-      case MyDslPackage.SIDERBAR__COMPONENTS:
-        return components != null && !components.isEmpty();
+      case MyDslPackage.SIDERBAR__RADIO:
+        return radio != null && !radio.isEmpty();
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return button != null && !button.isEmpty();
+      case MyDslPackage.SIDERBAR__SELECTOR:
+        return selector != null && !selector.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move 5 elements to &apos;test.project/src&apos;&#x0D;&#x0A;- Original project: &apos;my.project&apos;&#x0D;&#x0A;- Destination element: &apos;test.project/src&apos;&#x0D;&#x0A;- Original elements:&#x0D;&#x0A;     datatypes.dmodel&#x0D;&#x0A;     mymodel.dmodel&#x0D;&#x0A;     common.dmodel&#x0D;&#x0A;     blog.dmodel&#x0D;&#x0A;     test.dmodel&#x0D;&#x0A;- Update references to refactored element" description="Move files" destination="=test.project/src" element1="src/datatypes.dmodel" element2="src/mymodel.dmodel" element3="src/common.dmodel" element4="src/blog.dmodel" element5="src/test.dmodel" files="5" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1493589205311" units="0" version="1.0"/>
+</session>

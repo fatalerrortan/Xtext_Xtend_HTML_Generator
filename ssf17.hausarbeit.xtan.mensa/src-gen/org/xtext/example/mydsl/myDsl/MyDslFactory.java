@@ -69,15 +69,6 @@ public interface MyDslFactory extends EFactory
   Siderbar createSiderbar();
 
   /**
-   * Returns a new object of class '<em>Component</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Component</em>'.
-   * @generated
-   */
-  Component createComponent();
-
-  /**
    * Returns a new object of class '<em>Radio</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

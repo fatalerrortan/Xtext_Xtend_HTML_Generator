@@ -15,7 +15,6 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.myDsl.Button;
-import org.xtext.example.mydsl.myDsl.Component;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Footer;
 import org.xtext.example.mydsl.myDsl.Header;
@@ -45,9 +44,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case MyDslPackage.BUTTON:
 				sequence_Button(context, (Button) semanticObject); 
-				return; 
-			case MyDslPackage.COMPONENT:
-				sequence_Component(context, (Component) semanticObject); 
 				return; 
 			case MyDslPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
@@ -105,18 +101,6 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getButtonAccess().getTitleDescriptionParserRuleCall_3_0(), semanticObject.getTitle());
 		feeder.accept(grammarAccess.getButtonAccess().getHrefSTRINGTerminalRuleCall_5_0(), semanticObject.getHref());
 		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Component returns Component
-	 *
-	 * Constraint:
-	 *     (selector+=Selector+ | button+=Button+ | radio+=Radio+)
-	 */
-	protected void sequence_Component(ISerializationContext context, Component semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -269,7 +253,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Siderbar returns Siderbar
 	 *
 	 * Constraint:
-	 *     (name=ID description=Description components+=Component*)
+	 *     (name=ID description=Description radio+=Radio* button+=Button* selector+=Selector*)
 	 */
 	protected void sequence_Siderbar(ISerializationContext context, Siderbar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

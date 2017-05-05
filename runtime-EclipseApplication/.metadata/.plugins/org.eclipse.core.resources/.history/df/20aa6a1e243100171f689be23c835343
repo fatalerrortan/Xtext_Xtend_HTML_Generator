@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<head>
+		    <meta charset="utf-8">
+		    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+		    <meta name="viewport" content="width=device-width, initial-scale=1">
+		    <title>Blog Home - Start Bootstrap Template</title>
+		    <link href="css/bootstrap.min.css" rel="stylesheet">
+		    <link href="css/blog-home.css" rel="stylesheet">
+		</head>
+	</head>
+	<body>
+		<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+		    <div class="container">
+		        <div class="navbar-header">
+		            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+		                <span class="sr-only">Toggle navigation</span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		                <span class="icon-bar"></span>
+		            </button>
+		            <a class="navbar-brand" href="#">Start Bootstrap</a>
+		        </div>
+		        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		            <ul class="nav navbar-nav">
+		               				<h1>it is a Header</h1>
+		               				<li>
+		               				<a href="www.xulin.com">home</a>
+		               				</li>	
+		               				<li>
+		               				<a href="www.xulin.com">uni</a>
+		               				</li>	
+		            </ul>
+		        </div>
+		    </div>
+		</nav>
+		<footer>
+		    <div class="row">
+		        <div class="col-lg-12">
+		            <h1>it is a Footer</h1>
+		 			                     	<p><a href="www.xun-tan.de">link1</a></p>
+		 			                     	<p><a href="www.xun-tan.de">link2</a></p>
+		 			                     	<p><a href="www.xun-tan.de">link3</a></p>
+		 			                     	<p><a href="www.xun-tan.de">link4</a></p>
+		        </div> 			        
+		    </div>
+		</footer>
+	</body>
+</html>

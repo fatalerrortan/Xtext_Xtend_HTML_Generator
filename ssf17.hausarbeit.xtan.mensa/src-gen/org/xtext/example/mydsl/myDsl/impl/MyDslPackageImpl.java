@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.xtext.example.mydsl.myDsl.Button;
-import org.xtext.example.mydsl.myDsl.Component;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Footer;
 import org.xtext.example.mydsl.myDsl.Header;
@@ -66,13 +65,6 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * @generated
    */
   private EClass siderbarEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass componentEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -354,7 +346,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Components()
+  public EReference getSiderbar_Radio()
   {
     return (EReference)siderbarEClass.getEStructuralFeatures().get(2);
   }
@@ -364,9 +356,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getComponent()
+  public EReference getSiderbar_Button()
   {
-    return componentEClass;
+    return (EReference)siderbarEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -374,29 +366,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getComponent_Selector()
+  public EReference getSiderbar_Selector()
   {
-    return (EReference)componentEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponent_Button()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getComponent_Radio()
-  {
-    return (EReference)componentEClass.getEStructuralFeatures().get(2);
+    return (EReference)siderbarEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -680,12 +652,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     siderbarEClass = createEClass(SIDERBAR);
     createEAttribute(siderbarEClass, SIDERBAR__NAME);
     createEReference(siderbarEClass, SIDERBAR__DESCRIPTION);
-    createEReference(siderbarEClass, SIDERBAR__COMPONENTS);
-
-    componentEClass = createEClass(COMPONENT);
-    createEReference(componentEClass, COMPONENT__SELECTOR);
-    createEReference(componentEClass, COMPONENT__BUTTON);
-    createEReference(componentEClass, COMPONENT__RADIO);
+    createEReference(siderbarEClass, SIDERBAR__RADIO);
+    createEReference(siderbarEClass, SIDERBAR__BUTTON);
+    createEReference(siderbarEClass, SIDERBAR__SELECTOR);
 
     radioEClass = createEClass(RADIO);
     createEAttribute(radioEClass, RADIO__NAME);
@@ -769,12 +738,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEClass(siderbarEClass, Siderbar.class, "Siderbar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getSiderbar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getSiderbar_Description(), this.getDescription(), null, "description", null, 0, 1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Components(), this.getComponent(), null, "components", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(componentEClass, Component.class, "Component", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getComponent_Selector(), this.getSelector(), null, "selector", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Button(), this.getButton(), null, "button", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getComponent_Radio(), this.getRadio(), null, "radio", null, 0, -1, Component.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSiderbar_Radio(), this.getRadio(), null, "radio", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSiderbar_Button(), this.getButton(), null, "button", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSiderbar_Selector(), this.getSelector(), null, "selector", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(radioEClass, Radio.class, "Radio", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getRadio_Name(), ecorePackage.getEString(), "name", null, 0, 1, Radio.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

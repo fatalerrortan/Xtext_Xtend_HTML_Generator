@@ -70,7 +70,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
       case MyDslPackage.DESCRIPTION: return createDescription();
       case MyDslPackage.NAV: return createNAV();
       case MyDslPackage.SIDERBAR: return createSiderbar();
-      case MyDslPackage.COMPONENT: return createComponent();
       case MyDslPackage.RADIO: return createRadio();
       case MyDslPackage.BUTTON: return createButton();
       case MyDslPackage.SELECTOR: return createSelector();
@@ -135,17 +134,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     SiderbarImpl siderbar = new SiderbarImpl();
     return siderbar;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Component createComponent()
-  {
-    ComponentImpl component = new ComponentImpl();
-    return component;
   }
 
   /**

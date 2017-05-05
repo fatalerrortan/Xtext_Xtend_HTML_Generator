@@ -27,12 +27,9 @@
     <genClasses ecoreClass="MyDsl.ecore#//Siderbar">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Siderbar/name"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/description"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/components"/>
-    </genClasses>
-    <genClasses ecoreClass="MyDsl.ecore#//Component">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/selector"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/button"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Component/radio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/radio"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/button"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/selector"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Radio">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Radio/name"/>

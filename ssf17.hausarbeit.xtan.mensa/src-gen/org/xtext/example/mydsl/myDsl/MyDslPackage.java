@@ -252,41 +252,13 @@ public interface MyDslPackage extends EPackage
   int SIDERBAR__DESCRIPTION = 1;
 
   /**
-   * The feature id for the '<em><b>Components</b></em>' containment reference list.
+   * The feature id for the '<em><b>Radio</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIDERBAR__COMPONENTS = 2;
-
-  /**
-   * The number of structural features of the '<em>Siderbar</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SIDERBAR_FEATURE_COUNT = 3;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ComponentImpl <em>Component</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.ComponentImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getComponent()
-   * @generated
-   */
-  int COMPONENT = 5;
-
-  /**
-   * The feature id for the '<em><b>Selector</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int COMPONENT__SELECTOR = 0;
+  int SIDERBAR__RADIO = 2;
 
   /**
    * The feature id for the '<em><b>Button</b></em>' containment reference list.
@@ -295,25 +267,25 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int COMPONENT__BUTTON = 1;
+  int SIDERBAR__BUTTON = 3;
 
   /**
-   * The feature id for the '<em><b>Radio</b></em>' containment reference list.
+   * The feature id for the '<em><b>Selector</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT__RADIO = 2;
+  int SIDERBAR__SELECTOR = 4;
 
   /**
-   * The number of structural features of the '<em>Component</em>' class.
+   * The number of structural features of the '<em>Siderbar</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int COMPONENT_FEATURE_COUNT = 3;
+  int SIDERBAR_FEATURE_COUNT = 5;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RadioImpl <em>Radio</em>}' class.
@@ -323,7 +295,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRadio()
    * @generated
    */
-  int RADIO = 6;
+  int RADIO = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -369,7 +341,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 7;
+  int BUTTON = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -415,7 +387,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSelector()
    * @generated
    */
-  int SELECTOR = 8;
+  int SELECTOR = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -461,7 +433,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFooter()
    * @generated
    */
-  int FOOTER = 9;
+  int FOOTER = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -507,7 +479,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLink()
    * @generated
    */
-  int LINK = 10;
+  int LINK = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -544,7 +516,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getMenu()
    * @generated
    */
-  int MENU = 11;
+  int MENU = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -766,58 +738,37 @@ public interface MyDslPackage extends EPackage
   EReference getSiderbar_Description();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getComponents <em>Components</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Components</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getComponents()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EReference getSiderbar_Components();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Component <em>Component</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Component</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Component
-   * @generated
-   */
-  EClass getComponent();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Component#getSelector <em>Selector</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Selector</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Component#getSelector()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Selector();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Component#getButton <em>Button</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Button</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Component#getButton()
-   * @see #getComponent()
-   * @generated
-   */
-  EReference getComponent_Button();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Component#getRadio <em>Radio</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Radio</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Component#getRadio()
-   * @see #getComponent()
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getRadio()
+   * @see #getSiderbar()
    * @generated
    */
-  EReference getComponent_Radio();
+  EReference getSiderbar_Radio();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Button</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getButton()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Button();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Selector</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getSelector()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Selector();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Radio <em>Radio</em>}'.
@@ -1236,30 +1187,12 @@ public interface MyDslPackage extends EPackage
     EReference SIDERBAR__DESCRIPTION = eINSTANCE.getSiderbar_Description();
 
     /**
-     * The meta object literal for the '<em><b>Components</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Radio</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference SIDERBAR__COMPONENTS = eINSTANCE.getSiderbar_Components();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ComponentImpl <em>Component</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.ComponentImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getComponent()
-     * @generated
-     */
-    EClass COMPONENT = eINSTANCE.getComponent();
-
-    /**
-     * The meta object literal for the '<em><b>Selector</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference COMPONENT__SELECTOR = eINSTANCE.getComponent_Selector();
+    EReference SIDERBAR__RADIO = eINSTANCE.getSiderbar_Radio();
 
     /**
      * The meta object literal for the '<em><b>Button</b></em>' containment reference list feature.
@@ -1267,15 +1200,15 @@ public interface MyDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__BUTTON = eINSTANCE.getComponent_Button();
+    EReference SIDERBAR__BUTTON = eINSTANCE.getSiderbar_Button();
 
     /**
-     * The meta object literal for the '<em><b>Radio</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Selector</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference COMPONENT__RADIO = eINSTANCE.getComponent_Radio();
+    EReference SIDERBAR__SELECTOR = eINSTANCE.getSiderbar_Selector();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RadioImpl <em>Radio</em>}' class.

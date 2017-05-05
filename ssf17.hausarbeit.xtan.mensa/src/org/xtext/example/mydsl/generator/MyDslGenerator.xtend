@@ -7,17 +7,12 @@ import org.eclipse.emf.ecore.resource.Resource
 import org.eclipse.xtext.generator.AbstractGenerator
 import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
-//determine the file name of the Java class that each Entity should yield. 
-import org.eclipse.xtext.naming.IQualifiedNameProvider
-import com.google.inject.Inject
 import org.xtext.example.mydsl.myDsl.Header
 import org.xtext.example.mydsl.myDsl.NAV
-import org.xtext.example.mydsl.myDsl.Footer
-import javax.print.DocFlavor.STRING
 import org.xtext.example.mydsl.myDsl.Siderbar
-import java.awt.Component
-import org.xtext.example.mydsl.myDsl.Button
+import org.xtext.example.mydsl.myDsl.Footer
 import org.xtext.example.mydsl.myDsl.Link
+import org.xtext.example.mydsl.myDsl.Button
 
 /**
  * Generates code from your model files on save.
@@ -26,7 +21,6 @@ import org.xtext.example.mydsl.myDsl.Link
  */
 class MyDslGenerator extends AbstractGenerator {
 	
-	@Inject extension IQualifiedNameProvider
 //	@Inject extension IQualifiedNameProvider	
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
    	val header_html = '''
@@ -61,13 +55,10 @@ class MyDslGenerator extends AbstractGenerator {
 				                <div class="well">				                 
 				                    «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
 				                     	<h4>«siderbar_html.description.name»</h4>
-				                     	«FOR component : siderbar_html.components»
-				                     		«IF component.button !== null»
-				                     		    «FOR Button html_button : component.button»
-				                     		    	<a href="«html_button.href»"><button type="button" class="btn btn-info">«html_button.name»</button></a>
-				                     		    «ENDFOR»
-				                     		«ENDIF»
-				                     	«ENDFOR»
+				                     	 «FOR Button tool : siderbar_html.button»
+				                     	 	<h5>«tool.title»</h5>
+				                     	 	<button type="button" class="btn btn-info">«tool.name»</button>
+				                     	 «ENDFOR»
 				                    «ENDFOR»
 				                </div>
 				            </div>

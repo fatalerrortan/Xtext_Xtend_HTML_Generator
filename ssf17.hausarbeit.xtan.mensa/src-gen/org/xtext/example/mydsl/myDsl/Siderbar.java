@@ -18,7 +18,9 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getComponents <em>Components</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar()
@@ -80,19 +82,51 @@ public interface Siderbar extends EObject
   void setDescription(Description value);
 
   /**
-   * Returns the value of the '<em><b>Components</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Component}.
+   * Returns the value of the '<em><b>Radio</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Radio}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Components</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Radio</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Components</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Components()
+   * @return the value of the '<em>Radio</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Radio()
    * @model containment="true"
    * @generated
    */
-  EList<Component> getComponents();
+  EList<Radio> getRadio();
+
+  /**
+   * Returns the value of the '<em><b>Button</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Button}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Button</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Button</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Button()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Button> getButton();
+
+  /**
+   * Returns the value of the '<em><b>Selector</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Selector}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Selector</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Selector</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Selector()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Selector> getSelector();
 
 } // Siderbar

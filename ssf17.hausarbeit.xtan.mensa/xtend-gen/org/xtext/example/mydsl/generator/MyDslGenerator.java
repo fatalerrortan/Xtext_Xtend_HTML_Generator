@@ -4,7 +4,6 @@
 package org.xtext.example.mydsl.generator;
 
 import com.google.common.collect.Iterables;
-import com.google.inject.Inject;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
@@ -13,11 +12,8 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
-import org.eclipse.xtext.naming.IQualifiedNameProvider;
-import org.eclipse.xtext.xbase.lib.Extension;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Button;
-import org.xtext.example.mydsl.myDsl.Component;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Footer;
 import org.xtext.example.mydsl.myDsl.Header;
@@ -32,10 +28,6 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  */
 @SuppressWarnings("all")
 public class MyDslGenerator extends AbstractGenerator {
-  @Inject
-  @Extension
-  private IQualifiedNameProvider _iQualifiedNameProvider;
-  
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
     StringConcatenation _builder = new StringConcatenation();
@@ -142,28 +134,22 @@ public class MyDslGenerator extends AbstractGenerator {
         _builder_1.append("</h4>");
         _builder_1.newLineIfNotEmpty();
         {
-          EList<Component> _components = siderbar_html.getComponents();
-          for(final Component component : _components) {
-            {
-              EList<Button> _button = component.getButton();
-              boolean _tripleNotEquals = (_button != null);
-              if (_tripleNotEquals) {
-                {
-                  EList<Button> _button_1 = component.getButton();
-                  for(final Button html_button : _button_1) {
-                    _builder_1.append("             ");
-                    _builder_1.append("<a href=\"");
-                    String _href_1 = html_button.getHref();
-                    _builder_1.append(_href_1, "             ");
-                    _builder_1.append("\"><button type=\"button\" class=\"btn btn-info\">");
-                    String _name_3 = html_button.getName();
-                    _builder_1.append(_name_3, "             ");
-                    _builder_1.append("</button></a>");
-                    _builder_1.newLineIfNotEmpty();
-                  }
-                }
-              }
-            }
+          EList<Button> _button = siderbar_html.getButton();
+          for(final Button tool : _button) {
+            _builder_1.append("             ");
+            _builder_1.append(" ");
+            _builder_1.append("<h5>");
+            Description _title = tool.getTitle();
+            _builder_1.append(_title, "              ");
+            _builder_1.append("</h5>");
+            _builder_1.newLineIfNotEmpty();
+            _builder_1.append("             ");
+            _builder_1.append(" ");
+            _builder_1.append("<button type=\"button\" class=\"btn btn-info\">");
+            String _name_3 = tool.getName();
+            _builder_1.append(_name_3, "              ");
+            _builder_1.append("</button>");
+            _builder_1.newLineIfNotEmpty();
           }
         }
       }

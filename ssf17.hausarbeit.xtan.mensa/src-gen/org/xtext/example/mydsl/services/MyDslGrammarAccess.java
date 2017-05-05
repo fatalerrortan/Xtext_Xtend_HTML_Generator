@@ -6,7 +6,6 @@ package org.xtext.example.mydsl.services;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
 import java.util.List;
-import org.eclipse.xtext.Alternatives;
 import org.eclipse.xtext.Assignment;
 import org.eclipse.xtext.Grammar;
 import org.eclipse.xtext.GrammarUtil;
@@ -195,18 +194,24 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
-		private final Assignment cComponentsAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cComponentsComponentParserRuleCall_4_0 = (RuleCall)cComponentsAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cRadioAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cRadioRadioParserRuleCall_4_0 = (RuleCall)cRadioAssignment_4.eContents().get(0);
+		private final Assignment cButtonAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cButtonButtonParserRuleCall_5_0 = (RuleCall)cButtonAssignment_5.eContents().get(0);
+		private final Assignment cSelectorAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSelectorSelectorParserRuleCall_6_0 = (RuleCall)cSelectorAssignment_6.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Siderbar:
 		//	'siderbar' name=ID '{'
 		//	description=Description
-		//	components+=Component*
+		//	radio+=Radio*
+		//	button+=Button*
+		//	selector+=Selector*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'siderbar' name=ID '{' description=Description components+=Component* '}'
+		//'siderbar' name=ID '{' description=Description radio+=Radio* button+=Button* selector+=Selector* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'siderbar'
@@ -227,49 +232,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Description
 		public RuleCall getDescriptionDescriptionParserRuleCall_3_0() { return cDescriptionDescriptionParserRuleCall_3_0; }
 		
-		//components+=Component*
-		public Assignment getComponentsAssignment_4() { return cComponentsAssignment_4; }
-		
-		//Component
-		public RuleCall getComponentsComponentParserRuleCall_4_0() { return cComponentsComponentParserRuleCall_4_0; }
-		
-		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
-	}
-	public class ComponentElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Component");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final Assignment cSelectorAssignment_0 = (Assignment)cAlternatives.eContents().get(0);
-		private final RuleCall cSelectorSelectorParserRuleCall_0_0 = (RuleCall)cSelectorAssignment_0.eContents().get(0);
-		private final Assignment cButtonAssignment_1 = (Assignment)cAlternatives.eContents().get(1);
-		private final RuleCall cButtonButtonParserRuleCall_1_0 = (RuleCall)cButtonAssignment_1.eContents().get(0);
-		private final Assignment cRadioAssignment_2 = (Assignment)cAlternatives.eContents().get(2);
-		private final RuleCall cRadioRadioParserRuleCall_2_0 = (RuleCall)cRadioAssignment_2.eContents().get(0);
-		
-		//Component:
-		//	selector+=Selector* | button+=Button* | radio+=Radio*;
-		@Override public ParserRule getRule() { return rule; }
-		
-		//selector+=Selector* | button+=Button* | radio+=Radio*
-		public Alternatives getAlternatives() { return cAlternatives; }
-		
-		//selector+=Selector*
-		public Assignment getSelectorAssignment_0() { return cSelectorAssignment_0; }
-		
-		//Selector
-		public RuleCall getSelectorSelectorParserRuleCall_0_0() { return cSelectorSelectorParserRuleCall_0_0; }
-		
-		//button+=Button*
-		public Assignment getButtonAssignment_1() { return cButtonAssignment_1; }
-		
-		//Button
-		public RuleCall getButtonButtonParserRuleCall_1_0() { return cButtonButtonParserRuleCall_1_0; }
-		
 		//radio+=Radio*
-		public Assignment getRadioAssignment_2() { return cRadioAssignment_2; }
+		public Assignment getRadioAssignment_4() { return cRadioAssignment_4; }
 		
 		//Radio
-		public RuleCall getRadioRadioParserRuleCall_2_0() { return cRadioRadioParserRuleCall_2_0; }
+		public RuleCall getRadioRadioParserRuleCall_4_0() { return cRadioRadioParserRuleCall_4_0; }
+		
+		//button+=Button*
+		public Assignment getButtonAssignment_5() { return cButtonAssignment_5; }
+		
+		//Button
+		public RuleCall getButtonButtonParserRuleCall_5_0() { return cButtonButtonParserRuleCall_5_0; }
+		
+		//selector+=Selector*
+		public Assignment getSelectorAssignment_6() { return cSelectorAssignment_6; }
+		
+		//Selector
+		public RuleCall getSelectorSelectorParserRuleCall_6_0() { return cSelectorSelectorParserRuleCall_6_0; }
+		
+		//'}'
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 	public class RadioElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Radio");
@@ -278,22 +260,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cTitleKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTitleAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTitleDescriptionParserRuleCall_4_0 = (RuleCall)cTitleAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cOptionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cOptionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cOptionsAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleDescriptionParserRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cOptionsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cOptionsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Radio:
 		//	'radio' name=ID '{'
-		//	'title' title=Description ('option' options+=STRING)*
+		//	title=Description ('option' options+=STRING)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'radio' name=ID '{' 'title' title=Description ('option' options+=STRING)* '}'
+		//'radio' name=ID '{' title=Description ('option' options+=STRING)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'radio'
@@ -308,29 +289,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//'title'
-		public Keyword getTitleKeyword_3() { return cTitleKeyword_3; }
-		
 		//title=Description
-		public Assignment getTitleAssignment_4() { return cTitleAssignment_4; }
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
 		
 		//Description
-		public RuleCall getTitleDescriptionParserRuleCall_4_0() { return cTitleDescriptionParserRuleCall_4_0; }
+		public RuleCall getTitleDescriptionParserRuleCall_3_0() { return cTitleDescriptionParserRuleCall_3_0; }
 		
 		//('option' options+=STRING)*
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'option'
-		public Keyword getOptionKeyword_5_0() { return cOptionKeyword_5_0; }
+		public Keyword getOptionKeyword_4_0() { return cOptionKeyword_4_0; }
 		
 		//options+=STRING
-		public Assignment getOptionsAssignment_5_1() { return cOptionsAssignment_5_1; }
+		public Assignment getOptionsAssignment_4_1() { return cOptionsAssignment_4_1; }
 		
 		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_5_1_0() { return cOptionsSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getOptionsSTRINGTerminalRuleCall_4_1_0() { return cOptionsSTRINGTerminalRuleCall_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class ButtonElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Button");
@@ -393,22 +371,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cTitleKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTitleAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cTitleDescriptionParserRuleCall_4_0 = (RuleCall)cTitleAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cOptionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cOptionsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cOptionsSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cOptionsAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cTitleAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cTitleDescriptionParserRuleCall_3_0 = (RuleCall)cTitleAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cOptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cOptionsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cOptionsSTRINGTerminalRuleCall_4_1_0 = (RuleCall)cOptionsAssignment_4_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		
 		//Selector:
 		//	'selector' name=ID '{'
-		//	'title' title=Description ('option' options+=STRING)*
+		//	title=Description ('option' options+=STRING)*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'selector' name=ID '{' 'title' title=Description ('option' options+=STRING)* '}'
+		//'selector' name=ID '{' title=Description ('option' options+=STRING)* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'selector'
@@ -423,29 +400,26 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//'title'
-		public Keyword getTitleKeyword_3() { return cTitleKeyword_3; }
-		
 		//title=Description
-		public Assignment getTitleAssignment_4() { return cTitleAssignment_4; }
+		public Assignment getTitleAssignment_3() { return cTitleAssignment_3; }
 		
 		//Description
-		public RuleCall getTitleDescriptionParserRuleCall_4_0() { return cTitleDescriptionParserRuleCall_4_0; }
+		public RuleCall getTitleDescriptionParserRuleCall_3_0() { return cTitleDescriptionParserRuleCall_3_0; }
 		
 		//('option' options+=STRING)*
-		public Group getGroup_5() { return cGroup_5; }
+		public Group getGroup_4() { return cGroup_4; }
 		
 		//'option'
-		public Keyword getOptionKeyword_5_0() { return cOptionKeyword_5_0; }
+		public Keyword getOptionKeyword_4_0() { return cOptionKeyword_4_0; }
 		
 		//options+=STRING
-		public Assignment getOptionsAssignment_5_1() { return cOptionsAssignment_5_1; }
+		public Assignment getOptionsAssignment_4_1() { return cOptionsAssignment_4_1; }
 		
 		//STRING
-		public RuleCall getOptionsSTRINGTerminalRuleCall_5_1_0() { return cOptionsSTRINGTerminalRuleCall_5_1_0; }
+		public RuleCall getOptionsSTRINGTerminalRuleCall_4_1_0() { return cOptionsSTRINGTerminalRuleCall_4_1_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
 	public class FooterElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Footer");
@@ -603,7 +577,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	private final DescriptionElements pDescription;
 	private final NAVElements pNAV;
 	private final SiderbarElements pSiderbar;
-	private final ComponentElements pComponent;
 	private final RadioElements pRadio;
 	private final ButtonElements pButton;
 	private final SelectorElements pSelector;
@@ -625,7 +598,6 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.pDescription = new DescriptionElements();
 		this.pNAV = new NAVElements();
 		this.pSiderbar = new SiderbarElements();
-		this.pComponent = new ComponentElements();
 		this.pRadio = new RadioElements();
 		this.pButton = new ButtonElements();
 		this.pSelector = new SelectorElements();
@@ -712,7 +684,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//Siderbar:
 	//	'siderbar' name=ID '{'
 	//	description=Description
-	//	components+=Component*
+	//	radio+=Radio*
+	//	button+=Button*
+	//	selector+=Selector*
 	//	'}';
 	public SiderbarElements getSiderbarAccess() {
 		return pSiderbar;
@@ -722,19 +696,9 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getSiderbarAccess().getRule();
 	}
 	
-	//Component:
-	//	selector+=Selector* | button+=Button* | radio+=Radio*;
-	public ComponentElements getComponentAccess() {
-		return pComponent;
-	}
-	
-	public ParserRule getComponentRule() {
-		return getComponentAccess().getRule();
-	}
-	
 	//Radio:
 	//	'radio' name=ID '{'
-	//	'title' title=Description ('option' options+=STRING)*
+	//	title=Description ('option' options+=STRING)*
 	//	'}';
 	public RadioElements getRadioAccess() {
 		return pRadio;
@@ -759,7 +723,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Selector:
 	//	'selector' name=ID '{'
-	//	'title' title=Description ('option' options+=STRING)*
+	//	title=Description ('option' options+=STRING)*
 	//	'}';
 	public SelectorElements getSelectorAccess() {
 		return pSelector;

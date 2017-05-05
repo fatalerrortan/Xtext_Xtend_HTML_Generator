@@ -29,16 +29,12 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="components" upperBound="-1"
-        eType="#//Component" containment="true"/>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Component">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" upperBound="-1"
-        eType="#//Selector" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
-        eType="#//Button" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="radio" upperBound="-1"
         eType="#//Radio" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
+        eType="#//Button" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="selector" upperBound="-1"
+        eType="#//Selector" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Radio">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>

@@ -101,11 +101,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createSiderbarAdapter();
       }
       @Override
-      public Adapter caseComponent(Component object)
-      {
-        return createComponentAdapter();
-      }
-      @Override
       public Adapter caseRadio(Radio object)
       {
         return createRadioAdapter();
@@ -228,21 +223,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSiderbarAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Component <em>Component</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Component
-   * @generated
-   */
-  public Adapter createComponentAdapter()
   {
     return null;
   }
