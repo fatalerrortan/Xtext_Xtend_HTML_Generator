@@ -87,6 +87,20 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case MyDslPackage.SIDERBAR:
+      {
+        Siderbar siderbar = (Siderbar)theEObject;
+        T result = caseSiderbar(siderbar);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.FOOTER:
+      {
+        Footer footer = (Footer)theEObject;
+        T result = caseFooter(footer);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case MyDslPackage.DESCRIPTION:
       {
         Description description = (Description)theEObject;
@@ -101,17 +115,17 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.SIDERBAR:
-      {
-        Siderbar siderbar = (Siderbar)theEObject;
-        T result = caseSiderbar(siderbar);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
       case MyDslPackage.RADIO:
       {
         Radio radio = (Radio)theEObject;
         T result = caseRadio(radio);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case MyDslPackage.CHECKBOX:
+      {
+        Checkbox checkbox = (Checkbox)theEObject;
+        T result = caseCheckbox(checkbox);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -126,13 +140,6 @@ public class MyDslSwitch<T> extends Switch<T>
       {
         Selector selector = (Selector)theEObject;
         T result = caseSelector(selector);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case MyDslPackage.FOOTER:
-      {
-        Footer footer = (Footer)theEObject;
-        T result = caseFooter(footer);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -187,6 +194,38 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Siderbar</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Siderbar</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseSiderbar(Siderbar object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Footer</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Footer</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseFooter(Footer object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Description</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -219,22 +258,6 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Siderbar</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Siderbar</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseSiderbar(Siderbar object)
-  {
-    return null;
-  }
-
-  /**
    * Returns the result of interpreting the object as an instance of '<em>Radio</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -246,6 +269,22 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseRadio(Radio object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Checkbox</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Checkbox</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseCheckbox(Checkbox object)
   {
     return null;
   }
@@ -278,22 +317,6 @@ public class MyDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseSelector(Selector object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Footer</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Footer</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFooter(Footer object)
   {
     return null;
   }

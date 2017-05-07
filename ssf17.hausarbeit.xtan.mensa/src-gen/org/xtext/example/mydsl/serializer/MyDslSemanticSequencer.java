@@ -15,6 +15,7 @@ import org.eclipse.xtext.serializer.acceptor.SequenceFeeder;
 import org.eclipse.xtext.serializer.sequencer.AbstractDelegatingSemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.xtext.example.mydsl.myDsl.Button;
+import org.xtext.example.mydsl.myDsl.Checkbox;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Footer;
 import org.xtext.example.mydsl.myDsl.Header;
@@ -44,6 +45,9 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			switch (semanticObject.eClass().getClassifierID()) {
 			case MyDslPackage.BUTTON:
 				sequence_Button(context, (Button) semanticObject); 
+				return; 
+			case MyDslPackage.CHECKBOX:
+				sequence_Checkbox(context, (Checkbox) semanticObject); 
 				return; 
 			case MyDslPackage.DESCRIPTION:
 				sequence_Description(context, (Description) semanticObject); 
@@ -101,6 +105,18 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 		feeder.accept(grammarAccess.getButtonAccess().getTitleDescriptionParserRuleCall_3_0(), semanticObject.getTitle());
 		feeder.accept(grammarAccess.getButtonAccess().getHrefSTRINGTerminalRuleCall_5_0(), semanticObject.getHref());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Checkbox returns Checkbox
+	 *
+	 * Constraint:
+	 *     (name=ID title=Description options+=STRING*)
+	 */
+	protected void sequence_Checkbox(ISerializationContext context, Checkbox semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -172,7 +188,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Mensamodel returns Mensamodel
 	 *
 	 * Constraint:
-	 *     (header=Header footer=Footer siderbar=Siderbar menus+=Menu*)
+	 *     (header=Header siderbar=Siderbar footer=Footer menus+=Menu*)
 	 */
 	protected void sequence_Mensamodel(ISerializationContext context, Mensamodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -253,7 +269,14 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Siderbar returns Siderbar
 	 *
 	 * Constraint:
-	 *     (name=ID description=Description radio+=Radio* button+=Button* selector+=Selector*)
+	 *     (
+	 *         name=ID 
+	 *         description=Description 
+	 *         radio+=Radio* 
+	 *         checkbox+=Checkbox* 
+	 *         button+=Button* 
+	 *         selector+=Selector*
+	 *     )
 	 */
 	protected void sequence_Siderbar(ISerializationContext context, Siderbar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

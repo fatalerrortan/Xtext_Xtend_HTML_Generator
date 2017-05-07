@@ -13,6 +13,9 @@ import org.xtext.example.mydsl.myDsl.Siderbar
 import org.xtext.example.mydsl.myDsl.Footer
 import org.xtext.example.mydsl.myDsl.Link
 import org.xtext.example.mydsl.myDsl.Button
+import org.xtext.example.mydsl.myDsl.Selector
+import org.xtext.example.mydsl.myDsl.Radio
+import org.xtext.example.mydsl.myDsl.Checkbox
 
 /**
  * Generates code from your model files on save.
@@ -41,7 +44,7 @@ class MyDslGenerator extends AbstractGenerator {
    			                   					<h1>«header_html.description.name»</h1>
    			                   					«FOR NAV nav : header_html.nav»
    			                   						<li>
-   			                   						<a href="«nav.href»">«nav.name»</a>
+   			                   							<a href="«nav.href»">«nav.name»</a>
    			                   						</li>	
    			                   					«ENDFOR»
    			                   				«ENDFOR»
@@ -55,10 +58,46 @@ class MyDslGenerator extends AbstractGenerator {
 				                <div class="well">				                 
 				                    «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
 				                     	<h4>«siderbar_html.description.name»</h4>
+«««				                     	 Generator for Button
 				                     	 «FOR Button tool : siderbar_html.button»
-				                     	 	<h5>«tool.title»</h5>
-				                     	 	<button type="button" class="btn btn-info">«tool.name»</button>
+				                     	 	<div class='mensa_button'>
+				                     	 		<h5>«tool.title.name»</h5>
+				                     	 		<button type="button" class="btn btn-info">«tool.name»</button>
+				                     	 	</div>
 				                     	 «ENDFOR»
+«««				                     	 Generator for select
+				                     	 «FOR Selector tool : siderbar_html.selector»
+				                     	 	<div class="mensa_select">
+				                     	 		<h5>«tool.title.name»</h5>
+				                     	 		<select>
+				                     	 			«FOR option : tool.options»	
+				                     	 				<option value="«option»">«option»</option>
+				                     	 			«ENDFOR»			              	
+				                     	 		</select>
+				                     	 	</div>
+				           				  «ENDFOR»
+«««				           				  Generator for Radio
+										  «FOR Radio tool : siderbar_html.radio»
+											<div class="mensa_raido">
+												<h5>«tool.title.name»</h5>								
+														«FOR option : tool.options»	
+														  <label class="radio-inline"><input type="radio" name="optradio">
+														  	«option»
+														  </label>
+						                   	 			«ENDFOR»			              	
+												</div>
+				           				  «ENDFOR»
+«««				           				  Generator for Checkbox
+										  «FOR Checkbox tool : siderbar_html.checkbox»
+											<div class="mensa_checkbox">
+												<h5>«tool.title.name»</h5>								
+														«FOR option : tool.options»	
+															<label class="checkbox-inline"><input type="checkbox" value="">
+														  	  «option»
+														  	</label>
+						                   	 			«ENDFOR»			              	
+												</div>
+				           				  «ENDFOR»
 				                    «ENDFOR»
 				                </div>
 				            </div>
@@ -66,19 +105,24 @@ class MyDslGenerator extends AbstractGenerator {
  	val footer_html = '''
  			        <footer>
  			            <div class="row">
- 			                <div class="col-lg-12">
+ 			                <div class="col-md-12">
  			                    «FOR Footer footer_html : resource.allContents.toIterable.filter(Footer)»
  			                       	<h1>«footer_html.description.name»</h1>
  			                     	«FOR Link link : footer_html.links»
- 			                       	<p><a href="«link.url»">«link.name»</a></p>
+ 			                     	<p><a href="«link.url»">«link.name»</a></p>
  			                       «ENDFOR»
  			                    «ENDFOR»
  			                </div> 			        
  			            </div>
  			        </footer>
 		'''
-//	val menus_html = '''
-//		'''
+	val menus_html = '''
+			<div class="col-md-8">
+				<div class="well">
+					<h1>Placeholder for multiple menus</h1>
+				</div>
+			</div>
+		'''
 	val html = '''
 			<!DOCTYPE html>
 			<html>
@@ -94,8 +138,8 @@ class MyDslGenerator extends AbstractGenerator {
 				</head>
 				<body>
 					«header_html»
+					«menus_html»
 					«siderbar_html»
-«««					«menus_html»
 					«footer_html»		
 				</body>
 			</html>

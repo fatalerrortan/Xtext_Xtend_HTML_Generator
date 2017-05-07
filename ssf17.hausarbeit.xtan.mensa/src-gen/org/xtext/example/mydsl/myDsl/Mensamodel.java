@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getHeader <em>Header</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSiderbar <em>Siderbar</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getMenus <em>Menus</em>}</li>
  * </ul>
  *
@@ -55,32 +55,6 @@ public interface Mensamodel extends EObject
   void setHeader(Header value);
 
   /**
-   * Returns the value of the '<em><b>Footer</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Footer</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Footer</em>' containment reference.
-   * @see #setFooter(Footer)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Footer()
-   * @model containment="true"
-   * @generated
-   */
-  Footer getFooter();
-
-  /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Footer</em>' containment reference.
-   * @see #getFooter()
-   * @generated
-   */
-  void setFooter(Footer value);
-
-  /**
    * Returns the value of the '<em><b>Siderbar</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
@@ -105,6 +79,32 @@ public interface Mensamodel extends EObject
    * @generated
    */
   void setSiderbar(Siderbar value);
+
+  /**
+   * Returns the value of the '<em><b>Footer</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Footer</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Footer</em>' containment reference.
+   * @see #setFooter(Footer)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Footer()
+   * @model containment="true"
+   * @generated
+   */
+  Footer getFooter();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Footer</em>' containment reference.
+   * @see #getFooter()
+   * @generated
+   */
+  void setFooter(Footer value);
 
   /**
    * Returns the value of the '<em><b>Menus</b></em>' containment reference list.

@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.xtext.example.mydsl.myDsl.Button;
+import org.xtext.example.mydsl.myDsl.Checkbox;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Radio;
@@ -37,6 +38,7 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getRadio <em>Radio</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getCheckbox <em>Checkbox</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getButton <em>Button</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getSelector <em>Selector</em>}</li>
  * </ul>
@@ -84,6 +86,16 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
    * @ordered
    */
   protected EList<Radio> radio;
+
+  /**
+   * The cached value of the '{@link #getCheckbox() <em>Checkbox</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCheckbox()
+   * @generated
+   * @ordered
+   */
+  protected EList<Checkbox> checkbox;
 
   /**
    * The cached value of the '{@link #getButton() <em>Button</em>}' containment reference list.
@@ -216,6 +228,20 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Checkbox> getCheckbox()
+  {
+    if (checkbox == null)
+    {
+      checkbox = new EObjectContainmentEList<Checkbox>(Checkbox.class, this, MyDslPackage.SIDERBAR__CHECKBOX);
+    }
+    return checkbox;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Button> getButton()
   {
     if (button == null)
@@ -253,6 +279,8 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return basicSetDescription(null, msgs);
       case MyDslPackage.SIDERBAR__RADIO:
         return ((InternalEList<?>)getRadio()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.SIDERBAR__CHECKBOX:
+        return ((InternalEList<?>)getCheckbox()).basicRemove(otherEnd, msgs);
       case MyDslPackage.SIDERBAR__BUTTON:
         return ((InternalEList<?>)getButton()).basicRemove(otherEnd, msgs);
       case MyDslPackage.SIDERBAR__SELECTOR:
@@ -277,6 +305,8 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return getDescription();
       case MyDslPackage.SIDERBAR__RADIO:
         return getRadio();
+      case MyDslPackage.SIDERBAR__CHECKBOX:
+        return getCheckbox();
       case MyDslPackage.SIDERBAR__BUTTON:
         return getButton();
       case MyDslPackage.SIDERBAR__SELECTOR:
@@ -305,6 +335,10 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       case MyDslPackage.SIDERBAR__RADIO:
         getRadio().clear();
         getRadio().addAll((Collection<? extends Radio>)newValue);
+        return;
+      case MyDslPackage.SIDERBAR__CHECKBOX:
+        getCheckbox().clear();
+        getCheckbox().addAll((Collection<? extends Checkbox>)newValue);
         return;
       case MyDslPackage.SIDERBAR__BUTTON:
         getButton().clear();
@@ -337,6 +371,9 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       case MyDslPackage.SIDERBAR__RADIO:
         getRadio().clear();
         return;
+      case MyDslPackage.SIDERBAR__CHECKBOX:
+        getCheckbox().clear();
+        return;
       case MyDslPackage.SIDERBAR__BUTTON:
         getButton().clear();
         return;
@@ -363,6 +400,8 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return description != null;
       case MyDslPackage.SIDERBAR__RADIO:
         return radio != null && !radio.isEmpty();
+      case MyDslPackage.SIDERBAR__CHECKBOX:
+        return checkbox != null && !checkbox.isEmpty();
       case MyDslPackage.SIDERBAR__BUTTON:
         return button != null && !button.isEmpty();
       case MyDslPackage.SIDERBAR__SELECTOR:

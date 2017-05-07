@@ -35,8 +35,8 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getSiderbar <em>Siderbar</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getMenus <em>Menus</em>}</li>
  * </ul>
  *
@@ -55,16 +55,6 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
   protected Header header;
 
   /**
-   * The cached value of the '{@link #getFooter() <em>Footer</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFooter()
-   * @generated
-   * @ordered
-   */
-  protected Footer footer;
-
-  /**
    * The cached value of the '{@link #getSiderbar() <em>Siderbar</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -73,6 +63,16 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
    * @ordered
    */
   protected Siderbar siderbar;
+
+  /**
+   * The cached value of the '{@link #getFooter() <em>Footer</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFooter()
+   * @generated
+   * @ordered
+   */
+  protected Footer footer;
 
   /**
    * The cached value of the '{@link #getMenus() <em>Menus</em>}' containment reference list.
@@ -158,54 +158,6 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
    * <!-- end-user-doc -->
    * @generated
    */
-  public Footer getFooter()
-  {
-    return footer;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetFooter(Footer newFooter, NotificationChain msgs)
-  {
-    Footer oldFooter = footer;
-    footer = newFooter;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.MENSAMODEL__FOOTER, oldFooter, newFooter);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setFooter(Footer newFooter)
-  {
-    if (newFooter != footer)
-    {
-      NotificationChain msgs = null;
-      if (footer != null)
-        msgs = ((InternalEObject)footer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.MENSAMODEL__FOOTER, null, msgs);
-      if (newFooter != null)
-        msgs = ((InternalEObject)newFooter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.MENSAMODEL__FOOTER, null, msgs);
-      msgs = basicSetFooter(newFooter, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.MENSAMODEL__FOOTER, newFooter, newFooter));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public Siderbar getSiderbar()
   {
     return siderbar;
@@ -254,6 +206,54 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
    * <!-- end-user-doc -->
    * @generated
    */
+  public Footer getFooter()
+  {
+    return footer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetFooter(Footer newFooter, NotificationChain msgs)
+  {
+    Footer oldFooter = footer;
+    footer = newFooter;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.MENSAMODEL__FOOTER, oldFooter, newFooter);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setFooter(Footer newFooter)
+  {
+    if (newFooter != footer)
+    {
+      NotificationChain msgs = null;
+      if (footer != null)
+        msgs = ((InternalEObject)footer).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.MENSAMODEL__FOOTER, null, msgs);
+      if (newFooter != null)
+        msgs = ((InternalEObject)newFooter).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.MENSAMODEL__FOOTER, null, msgs);
+      msgs = basicSetFooter(newFooter, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.MENSAMODEL__FOOTER, newFooter, newFooter));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Menu> getMenus()
   {
     if (menus == null)
@@ -275,10 +275,10 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return basicSetHeader(null, msgs);
-      case MyDslPackage.MENSAMODEL__FOOTER:
-        return basicSetFooter(null, msgs);
       case MyDslPackage.MENSAMODEL__SIDERBAR:
         return basicSetSiderbar(null, msgs);
+      case MyDslPackage.MENSAMODEL__FOOTER:
+        return basicSetFooter(null, msgs);
       case MyDslPackage.MENSAMODEL__MENUS:
         return ((InternalEList<?>)getMenus()).basicRemove(otherEnd, msgs);
     }
@@ -297,10 +297,10 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return getHeader();
-      case MyDslPackage.MENSAMODEL__FOOTER:
-        return getFooter();
       case MyDslPackage.MENSAMODEL__SIDERBAR:
         return getSiderbar();
+      case MyDslPackage.MENSAMODEL__FOOTER:
+        return getFooter();
       case MyDslPackage.MENSAMODEL__MENUS:
         return getMenus();
     }
@@ -321,11 +321,11 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
       case MyDslPackage.MENSAMODEL__HEADER:
         setHeader((Header)newValue);
         return;
-      case MyDslPackage.MENSAMODEL__FOOTER:
-        setFooter((Footer)newValue);
-        return;
       case MyDslPackage.MENSAMODEL__SIDERBAR:
         setSiderbar((Siderbar)newValue);
+        return;
+      case MyDslPackage.MENSAMODEL__FOOTER:
+        setFooter((Footer)newValue);
         return;
       case MyDslPackage.MENSAMODEL__MENUS:
         getMenus().clear();
@@ -348,11 +348,11 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
       case MyDslPackage.MENSAMODEL__HEADER:
         setHeader((Header)null);
         return;
-      case MyDslPackage.MENSAMODEL__FOOTER:
-        setFooter((Footer)null);
-        return;
       case MyDslPackage.MENSAMODEL__SIDERBAR:
         setSiderbar((Siderbar)null);
+        return;
+      case MyDslPackage.MENSAMODEL__FOOTER:
+        setFooter((Footer)null);
         return;
       case MyDslPackage.MENSAMODEL__MENUS:
         getMenus().clear();
@@ -373,10 +373,10 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return header != null;
-      case MyDslPackage.MENSAMODEL__FOOTER:
-        return footer != null;
       case MyDslPackage.MENSAMODEL__SIDERBAR:
         return siderbar != null;
+      case MyDslPackage.MENSAMODEL__FOOTER:
+        return footer != null;
       case MyDslPackage.MENSAMODEL__MENUS:
         return menus != null && !menus.isEmpty();
     }

@@ -42,6 +42,24 @@ public interface MyDslFactory extends EFactory
   Header createHeader();
 
   /**
+   * Returns a new object of class '<em>Siderbar</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Siderbar</em>'.
+   * @generated
+   */
+  Siderbar createSiderbar();
+
+  /**
+   * Returns a new object of class '<em>Footer</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Footer</em>'.
+   * @generated
+   */
+  Footer createFooter();
+
+  /**
    * Returns a new object of class '<em>Description</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -60,15 +78,6 @@ public interface MyDslFactory extends EFactory
   NAV createNAV();
 
   /**
-   * Returns a new object of class '<em>Siderbar</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Siderbar</em>'.
-   * @generated
-   */
-  Siderbar createSiderbar();
-
-  /**
    * Returns a new object of class '<em>Radio</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -76,6 +85,15 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Radio createRadio();
+
+  /**
+   * Returns a new object of class '<em>Checkbox</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Checkbox</em>'.
+   * @generated
+   */
+  Checkbox createCheckbox();
 
   /**
    * Returns a new object of class '<em>Button</em>'.
@@ -94,15 +112,6 @@ public interface MyDslFactory extends EFactory
    * @generated
    */
   Selector createSelector();
-
-  /**
-   * Returns a new object of class '<em>Footer</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Footer</em>'.
-   * @generated
-   */
-  Footer createFooter();
 
   /**
    * Returns a new object of class '<em>Link</em>'.

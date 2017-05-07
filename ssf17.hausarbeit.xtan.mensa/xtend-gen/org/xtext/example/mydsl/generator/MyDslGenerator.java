@@ -14,11 +14,14 @@ import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import org.xtext.example.mydsl.myDsl.Button;
+import org.xtext.example.mydsl.myDsl.Checkbox;
 import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Footer;
 import org.xtext.example.mydsl.myDsl.Header;
 import org.xtext.example.mydsl.myDsl.Link;
 import org.xtext.example.mydsl.myDsl.NAV;
+import org.xtext.example.mydsl.myDsl.Radio;
+import org.xtext.example.mydsl.myDsl.Selector;
 import org.xtext.example.mydsl.myDsl.Siderbar;
 
 /**
@@ -88,12 +91,13 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.append("<li>");
             _builder.newLine();
             _builder.append("               \t\t\t\t");
+            _builder.append("\t");
             _builder.append("<a href=\"");
             String _href = nav.getHref();
-            _builder.append(_href, "               \t\t\t\t");
+            _builder.append(_href, "               \t\t\t\t\t");
             _builder.append("\">");
             String _name_1 = nav.getName();
-            _builder.append(_name_1, "               \t\t\t\t");
+            _builder.append(_name_1, "               \t\t\t\t\t");
             _builder.append("</a>");
             _builder.newLineIfNotEmpty();
             _builder.append("               \t\t\t\t");
@@ -126,30 +130,140 @@ public class MyDslGenerator extends AbstractGenerator {
       Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
       Iterable<Siderbar> _filter_1 = Iterables.<Siderbar>filter(_iterable_1, Siderbar.class);
       for(final Siderbar siderbar_html : _filter_1) {
-        _builder_1.append("             ");
+        _builder_1.append("\t\t\t\t                     \t");
         _builder_1.append("<h4>");
         Description _description_1 = siderbar_html.getDescription();
         String _name_2 = _description_1.getName();
-        _builder_1.append(_name_2, "             ");
+        _builder_1.append(_name_2, "\t\t\t\t                     \t");
         _builder_1.append("</h4>");
         _builder_1.newLineIfNotEmpty();
         {
           EList<Button> _button = siderbar_html.getButton();
           for(final Button tool : _button) {
-            _builder_1.append("             ");
-            _builder_1.append(" ");
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("<div class=\'mensa_button\'>");
+            _builder_1.newLine();
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("\t");
             _builder_1.append("<h5>");
             Description _title = tool.getTitle();
-            _builder_1.append(_title, "              ");
+            String _name_3 = _title.getName();
+            _builder_1.append(_name_3, "\t\t\t\t                     \t \t");
             _builder_1.append("</h5>");
             _builder_1.newLineIfNotEmpty();
-            _builder_1.append("             ");
-            _builder_1.append(" ");
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("\t");
             _builder_1.append("<button type=\"button\" class=\"btn btn-info\">");
-            String _name_3 = tool.getName();
-            _builder_1.append(_name_3, "              ");
+            String _name_4 = tool.getName();
+            _builder_1.append(_name_4, "\t\t\t\t                     \t \t");
             _builder_1.append("</button>");
             _builder_1.newLineIfNotEmpty();
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("</div>");
+            _builder_1.newLine();
+          }
+        }
+        {
+          EList<Selector> _selector = siderbar_html.getSelector();
+          for(final Selector tool_1 : _selector) {
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("<div class=\"mensa_select\">");
+            _builder_1.newLine();
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("\t");
+            _builder_1.append("<h5>");
+            Description _title_1 = tool_1.getTitle();
+            String _name_5 = _title_1.getName();
+            _builder_1.append(_name_5, "\t\t\t\t                     \t \t");
+            _builder_1.append("</h5>");
+            _builder_1.newLineIfNotEmpty();
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("\t");
+            _builder_1.append("<select>");
+            _builder_1.newLine();
+            {
+              EList<String> _options = tool_1.getOptions();
+              for(final String option : _options) {
+                _builder_1.append("\t\t\t\t                     \t ");
+                _builder_1.append("\t\t");
+                _builder_1.append("<option value=\"");
+                _builder_1.append(option, "\t\t\t\t                     \t \t\t");
+                _builder_1.append("\">");
+                _builder_1.append(option, "\t\t\t\t                     \t \t\t");
+                _builder_1.append("</option>");
+                _builder_1.newLineIfNotEmpty();
+              }
+            }
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("\t");
+            _builder_1.append("</select>");
+            _builder_1.newLine();
+            _builder_1.append("\t\t\t\t                     \t ");
+            _builder_1.append("</div>");
+            _builder_1.newLine();
+          }
+        }
+        {
+          EList<Radio> _radio = siderbar_html.getRadio();
+          for(final Radio tool_2 : _radio) {
+            _builder_1.append("<div class=\"mensa_raido\">");
+            _builder_1.newLine();
+            _builder_1.append("\t");
+            _builder_1.append("<h5>");
+            Description _title_2 = tool_2.getTitle();
+            String _name_6 = _title_2.getName();
+            _builder_1.append(_name_6, "\t");
+            _builder_1.append("</h5>\t\t\t\t\t\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+            {
+              EList<String> _options_1 = tool_2.getOptions();
+              for(final String option_1 : _options_1) {
+                _builder_1.append("\t\t\t");
+                _builder_1.append("<label class=\"radio-inline\"><input type=\"radio\" name=\"optradio\">");
+                _builder_1.newLine();
+                _builder_1.append("\t\t\t");
+                _builder_1.append("\t");
+                _builder_1.append(option_1, "\t\t\t\t");
+                _builder_1.newLineIfNotEmpty();
+                _builder_1.append("\t\t\t");
+                _builder_1.append("</label>");
+                _builder_1.newLine();
+              }
+            }
+            _builder_1.append("\t");
+            _builder_1.append("</div>");
+            _builder_1.newLine();
+          }
+        }
+        {
+          EList<Checkbox> _checkbox = siderbar_html.getCheckbox();
+          for(final Checkbox tool_3 : _checkbox) {
+            _builder_1.append("<div class=\"mensa_checkbox\">");
+            _builder_1.newLine();
+            _builder_1.append("\t");
+            _builder_1.append("<h5>");
+            Description _title_3 = tool_3.getTitle();
+            String _name_7 = _title_3.getName();
+            _builder_1.append(_name_7, "\t");
+            _builder_1.append("</h5>\t\t\t\t\t\t\t\t");
+            _builder_1.newLineIfNotEmpty();
+            {
+              EList<String> _options_2 = tool_3.getOptions();
+              for(final String option_2 : _options_2) {
+                _builder_1.append("\t\t\t");
+                _builder_1.append("<label class=\"checkbox-inline\"><input type=\"checkbox\" value=\"\">");
+                _builder_1.newLine();
+                _builder_1.append("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \t  ");
+                _builder_1.append(option_2, "\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \t  ");
+                _builder_1.newLineIfNotEmpty();
+                _builder_1.append("\t\t\t\t\t\t\t\t\t\t\t\t\t\t  \t");
+                _builder_1.append("</label>");
+                _builder_1.newLine();
+              }
+            }
+            _builder_1.append("\t");
+            _builder_1.append("</div>");
+            _builder_1.newLine();
           }
         }
       }
@@ -168,7 +282,7 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder_2.append("<div class=\"row\">");
     _builder_2.newLine();
     _builder_2.append("        ");
-    _builder_2.append("<div class=\"col-lg-12\">");
+    _builder_2.append("<div class=\"col-md-12\">");
     _builder_2.newLine();
     {
       TreeIterator<EObject> _allContents_2 = resource.getAllContents();
@@ -178,19 +292,20 @@ public class MyDslGenerator extends AbstractGenerator {
         _builder_2.append("            ");
         _builder_2.append("<h1>");
         Description _description_2 = footer_html.getDescription();
-        String _name_4 = _description_2.getName();
-        _builder_2.append(_name_4, "            ");
+        String _name_8 = _description_2.getName();
+        _builder_2.append(_name_8, "            ");
         _builder_2.append("</h1>");
         _builder_2.newLineIfNotEmpty();
         {
           EList<Link> _links = footer_html.getLinks();
           for(final Link link : _links) {
+            _builder_2.append(" \t\t\t                     \t");
             _builder_2.append("<p><a href=\"");
             String _url = link.getUrl();
-            _builder_2.append(_url, "");
+            _builder_2.append(_url, " \t\t\t                     \t");
             _builder_2.append("\">");
-            String _name_5 = link.getName();
-            _builder_2.append(_name_5, "");
+            String _name_9 = link.getName();
+            _builder_2.append(_name_9, " \t\t\t                     \t");
             _builder_2.append("</a></p>");
             _builder_2.newLineIfNotEmpty();
           }
@@ -207,59 +322,77 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder_2.newLine();
     final String footer_html_1 = _builder_2.toString();
     StringConcatenation _builder_3 = new StringConcatenation();
-    _builder_3.append("<!DOCTYPE html>");
-    _builder_3.newLine();
-    _builder_3.append("<html>");
+    _builder_3.append("<div class=\"col-md-8\">");
     _builder_3.newLine();
     _builder_3.append("\t");
-    _builder_3.append("<head>");
+    _builder_3.append("<div class=\"well\">");
     _builder_3.newLine();
     _builder_3.append("\t\t");
-    _builder_3.append("<head>");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<meta charset=\"utf-8\">");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<title>Blog Home - Start Bootstrap Template</title>");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");
-    _builder_3.newLine();
-    _builder_3.append("\t\t    ");
-    _builder_3.append("<link href=\"css/blog-home.css\" rel=\"stylesheet\">");
-    _builder_3.newLine();
-    _builder_3.append("\t\t");
-    _builder_3.append("</head>");
+    _builder_3.append("<h1>Placeholder for multiple menus</h1>");
     _builder_3.newLine();
     _builder_3.append("\t");
-    _builder_3.append("</head>");
+    _builder_3.append("</div>");
     _builder_3.newLine();
-    _builder_3.append("\t");
-    _builder_3.append("<body>");
+    _builder_3.append("</div>");
     _builder_3.newLine();
-    _builder_3.append("\t\t");
-    _builder_3.append(header_html_1, "\t\t");
-    _builder_3.newLineIfNotEmpty();
-    _builder_3.append("\t\t");
-    _builder_3.append(siderbar_html_1, "\t\t");
-    _builder_3.newLineIfNotEmpty();
-    _builder_3.append("\t\t");
-    _builder_3.append(footer_html_1, "\t\t");
-    _builder_3.append("\t\t");
-    _builder_3.newLineIfNotEmpty();
-    _builder_3.append("\t");
-    _builder_3.append("</body>");
-    _builder_3.newLine();
-    _builder_3.append("</html>");
-    _builder_3.newLine();
-    final String html = _builder_3.toString();
+    final String menus_html = _builder_3.toString();
+    StringConcatenation _builder_4 = new StringConcatenation();
+    _builder_4.append("<!DOCTYPE html>");
+    _builder_4.newLine();
+    _builder_4.append("<html>");
+    _builder_4.newLine();
+    _builder_4.append("\t");
+    _builder_4.append("<head>");
+    _builder_4.newLine();
+    _builder_4.append("\t\t");
+    _builder_4.append("<head>");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<meta charset=\"utf-8\">");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<title>Blog Home - Start Bootstrap Template</title>");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<link href=\"css/bootstrap.min.css\" rel=\"stylesheet\">");
+    _builder_4.newLine();
+    _builder_4.append("\t\t    ");
+    _builder_4.append("<link href=\"css/blog-home.css\" rel=\"stylesheet\">");
+    _builder_4.newLine();
+    _builder_4.append("\t\t");
+    _builder_4.append("</head>");
+    _builder_4.newLine();
+    _builder_4.append("\t");
+    _builder_4.append("</head>");
+    _builder_4.newLine();
+    _builder_4.append("\t");
+    _builder_4.append("<body>");
+    _builder_4.newLine();
+    _builder_4.append("\t\t");
+    _builder_4.append(header_html_1, "\t\t");
+    _builder_4.newLineIfNotEmpty();
+    _builder_4.append("\t\t");
+    _builder_4.append(menus_html, "\t\t");
+    _builder_4.newLineIfNotEmpty();
+    _builder_4.append("\t\t");
+    _builder_4.append(siderbar_html_1, "\t\t");
+    _builder_4.newLineIfNotEmpty();
+    _builder_4.append("\t\t");
+    _builder_4.append(footer_html_1, "\t\t");
+    _builder_4.append("\t\t");
+    _builder_4.newLineIfNotEmpty();
+    _builder_4.append("\t");
+    _builder_4.append("</body>");
+    _builder_4.newLine();
+    _builder_4.append("</html>");
+    _builder_4.newLine();
+    final String html = _builder_4.toString();
     String _string = html.toString();
     fsa.generateFile("mensa_speiseplan.html", _string);
   }

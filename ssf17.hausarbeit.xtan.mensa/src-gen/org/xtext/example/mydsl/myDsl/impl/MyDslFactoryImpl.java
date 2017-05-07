@@ -67,13 +67,14 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     {
       case MyDslPackage.MENSAMODEL: return createMensamodel();
       case MyDslPackage.HEADER: return createHeader();
+      case MyDslPackage.SIDERBAR: return createSiderbar();
+      case MyDslPackage.FOOTER: return createFooter();
       case MyDslPackage.DESCRIPTION: return createDescription();
       case MyDslPackage.NAV: return createNAV();
-      case MyDslPackage.SIDERBAR: return createSiderbar();
       case MyDslPackage.RADIO: return createRadio();
+      case MyDslPackage.CHECKBOX: return createCheckbox();
       case MyDslPackage.BUTTON: return createButton();
       case MyDslPackage.SELECTOR: return createSelector();
-      case MyDslPackage.FOOTER: return createFooter();
       case MyDslPackage.LINK: return createLink();
       case MyDslPackage.MENU: return createMenu();
       default:
@@ -108,6 +109,28 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
+  public Siderbar createSiderbar()
+  {
+    SiderbarImpl siderbar = new SiderbarImpl();
+    return siderbar;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Footer createFooter()
+  {
+    FooterImpl footer = new FooterImpl();
+    return footer;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Description createDescription()
   {
     DescriptionImpl description = new DescriptionImpl();
@@ -130,10 +153,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Siderbar createSiderbar()
+  public Radio createRadio()
   {
-    SiderbarImpl siderbar = new SiderbarImpl();
-    return siderbar;
+    RadioImpl radio = new RadioImpl();
+    return radio;
   }
 
   /**
@@ -141,10 +164,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Radio createRadio()
+  public Checkbox createCheckbox()
   {
-    RadioImpl radio = new RadioImpl();
-    return radio;
+    CheckboxImpl checkbox = new CheckboxImpl();
+    return checkbox;
   }
 
   /**
@@ -167,17 +190,6 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
   {
     SelectorImpl selector = new SelectorImpl();
     return selector;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Footer createFooter()
-  {
-    FooterImpl footer = new FooterImpl();
-    return footer;
   }
 
   /**

@@ -77,22 +77,22 @@ public interface MyDslPackage extends EPackage
   int MENSAMODEL__HEADER = 0;
 
   /**
-   * The feature id for the '<em><b>Footer</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MENSAMODEL__FOOTER = 1;
-
-  /**
    * The feature id for the '<em><b>Siderbar</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MENSAMODEL__SIDERBAR = 2;
+  int MENSAMODEL__SIDERBAR = 1;
+
+  /**
+   * The feature id for the '<em><b>Footer</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENSAMODEL__FOOTER = 2;
 
   /**
    * The feature id for the '<em><b>Menus</b></em>' containment reference list.
@@ -159,71 +159,6 @@ public interface MyDslPackage extends EPackage
   int HEADER_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DescriptionImpl <em>Description</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.DescriptionImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDescription()
-   * @generated
-   */
-  int DESCRIPTION = 2;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESCRIPTION__NAME = 0;
-
-  /**
-   * The number of structural features of the '<em>Description</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int DESCRIPTION_FEATURE_COUNT = 1;
-
-  /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NAVImpl <em>NAV</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.NAVImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNAV()
-   * @generated
-   */
-  int NAV = 3;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAV__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Href</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAV__HREF = 1;
-
-  /**
-   * The number of structural features of the '<em>NAV</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int NAV_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl <em>Siderbar</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -231,7 +166,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSiderbar()
    * @generated
    */
-  int SIDERBAR = 4;
+  int SIDERBAR = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -261,13 +196,22 @@ public interface MyDslPackage extends EPackage
   int SIDERBAR__RADIO = 2;
 
   /**
+   * The feature id for the '<em><b>Checkbox</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SIDERBAR__CHECKBOX = 3;
+
+  /**
    * The feature id for the '<em><b>Button</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SIDERBAR__BUTTON = 3;
+  int SIDERBAR__BUTTON = 4;
 
   /**
    * The feature id for the '<em><b>Selector</b></em>' containment reference list.
@@ -276,7 +220,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIDERBAR__SELECTOR = 4;
+  int SIDERBAR__SELECTOR = 5;
 
   /**
    * The number of structural features of the '<em>Siderbar</em>' class.
@@ -285,7 +229,118 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SIDERBAR_FEATURE_COUNT = 5;
+  int SIDERBAR_FEATURE_COUNT = 6;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FooterImpl <em>Footer</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.FooterImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFooter()
+   * @generated
+   */
+  int FOOTER = 3;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOOTER__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Description</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOOTER__DESCRIPTION = 1;
+
+  /**
+   * The feature id for the '<em><b>Links</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOOTER__LINKS = 2;
+
+  /**
+   * The number of structural features of the '<em>Footer</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int FOOTER_FEATURE_COUNT = 3;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.DescriptionImpl <em>Description</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.DescriptionImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getDescription()
+   * @generated
+   */
+  int DESCRIPTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION__NAME = 0;
+
+  /**
+   * The number of structural features of the '<em>Description</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int DESCRIPTION_FEATURE_COUNT = 1;
+
+  /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.NAVImpl <em>NAV</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.NAVImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getNAV()
+   * @generated
+   */
+  int NAV = 5;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAV__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Href</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAV__HREF = 1;
+
+  /**
+   * The number of structural features of the '<em>NAV</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int NAV_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.RadioImpl <em>Radio</em>}' class.
@@ -295,7 +350,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getRadio()
    * @generated
    */
-  int RADIO = 5;
+  int RADIO = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -334,6 +389,52 @@ public interface MyDslPackage extends EPackage
   int RADIO_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.CheckboxImpl <em>Checkbox</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.xtext.example.mydsl.myDsl.impl.CheckboxImpl
+   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getCheckbox()
+   * @generated
+   */
+  int CHECKBOX = 7;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKBOX__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Title</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKBOX__TITLE = 1;
+
+  /**
+   * The feature id for the '<em><b>Options</b></em>' attribute list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKBOX__OPTIONS = 2;
+
+  /**
+   * The number of structural features of the '<em>Checkbox</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CHECKBOX_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.ButtonImpl <em>Button</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -341,7 +442,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getButton()
    * @generated
    */
-  int BUTTON = 6;
+  int BUTTON = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -387,7 +488,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSelector()
    * @generated
    */
-  int SELECTOR = 7;
+  int SELECTOR = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -426,52 +527,6 @@ public interface MyDslPackage extends EPackage
   int SELECTOR_FEATURE_COUNT = 3;
 
   /**
-   * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.FooterImpl <em>Footer</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.xtext.example.mydsl.myDsl.impl.FooterImpl
-   * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFooter()
-   * @generated
-   */
-  int FOOTER = 8;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOOTER__NAME = 0;
-
-  /**
-   * The feature id for the '<em><b>Description</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOOTER__DESCRIPTION = 1;
-
-  /**
-   * The feature id for the '<em><b>Links</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOOTER__LINKS = 2;
-
-  /**
-   * The number of structural features of the '<em>Footer</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int FOOTER_FEATURE_COUNT = 3;
-
-  /**
    * The meta object id for the '{@link org.xtext.example.mydsl.myDsl.impl.LinkImpl <em>Link</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -479,7 +534,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getLink()
    * @generated
    */
-  int LINK = 9;
+  int LINK = 10;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -516,7 +571,7 @@ public interface MyDslPackage extends EPackage
    * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getMenu()
    * @generated
    */
-  int MENU = 10;
+  int MENU = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -577,17 +632,6 @@ public interface MyDslPackage extends EPackage
   EReference getMensamodel_Header();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Footer</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Mensamodel#getFooter()
-   * @see #getMensamodel()
-   * @generated
-   */
-  EReference getMensamodel_Footer();
-
-  /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSiderbar <em>Siderbar</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -597,6 +641,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EReference getMensamodel_Siderbar();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Footer</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Mensamodel#getFooter()
+   * @see #getMensamodel()
+   * @generated
+   */
+  EReference getMensamodel_Footer();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Mensamodel#getMenus <em>Menus</em>}'.
@@ -653,6 +708,125 @@ public interface MyDslPackage extends EPackage
   EReference getHeader_Nav();
 
   /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Siderbar <em>Siderbar</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Siderbar</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar
+   * @generated
+   */
+  EClass getSiderbar();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getName()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EAttribute getSiderbar_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Description</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getDescription()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Description();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Radio</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getRadio()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Radio();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getCheckbox <em>Checkbox</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Checkbox</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getCheckbox()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Checkbox();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Button</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getButton()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Button();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Selector</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar#getSelector()
+   * @see #getSiderbar()
+   * @generated
+   */
+  EReference getSiderbar_Selector();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Footer <em>Footer</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Footer</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Footer
+   * @generated
+   */
+  EClass getFooter();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Footer#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Footer#getName()
+   * @see #getFooter()
+   * @generated
+   */
+  EAttribute getFooter_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Footer#getDescription <em>Description</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Description</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Footer#getDescription()
+   * @see #getFooter()
+   * @generated
+   */
+  EReference getFooter_Description();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Footer#getLinks <em>Links</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Links</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Footer#getLinks()
+   * @see #getFooter()
+   * @generated
+   */
+  EReference getFooter_Links();
+
+  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Description <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -706,71 +880,6 @@ public interface MyDslPackage extends EPackage
   EAttribute getNAV_Href();
 
   /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Siderbar <em>Siderbar</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Siderbar</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar
-   * @generated
-   */
-  EClass getSiderbar();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getName()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EAttribute getSiderbar_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Description</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getDescription()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EReference getSiderbar_Description();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Radio</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getRadio()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EReference getSiderbar_Radio();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Button</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getButton()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EReference getSiderbar_Button();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Selector</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar#getSelector()
-   * @see #getSiderbar()
-   * @generated
-   */
-  EReference getSiderbar_Selector();
-
-  /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Radio <em>Radio</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -812,6 +921,49 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getRadio_Options();
+
+  /**
+   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Checkbox <em>Checkbox</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Checkbox</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Checkbox
+   * @generated
+   */
+  EClass getCheckbox();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Checkbox#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Checkbox#getName()
+   * @see #getCheckbox()
+   * @generated
+   */
+  EAttribute getCheckbox_Name();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Checkbox#getTitle <em>Title</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Title</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Checkbox#getTitle()
+   * @see #getCheckbox()
+   * @generated
+   */
+  EReference getCheckbox_Title();
+
+  /**
+   * Returns the meta object for the attribute list '{@link org.xtext.example.mydsl.myDsl.Checkbox#getOptions <em>Options</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute list '<em>Options</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Checkbox#getOptions()
+   * @see #getCheckbox()
+   * @generated
+   */
+  EAttribute getCheckbox_Options();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Button <em>Button</em>}'.
@@ -898,49 +1050,6 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getSelector_Options();
-
-  /**
-   * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Footer <em>Footer</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Footer</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Footer
-   * @generated
-   */
-  EClass getFooter();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Footer#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Footer#getName()
-   * @see #getFooter()
-   * @generated
-   */
-  EAttribute getFooter_Name();
-
-  /**
-   * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Footer#getDescription <em>Description</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Description</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Footer#getDescription()
-   * @see #getFooter()
-   * @generated
-   */
-  EReference getFooter_Description();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.xtext.example.mydsl.myDsl.Footer#getLinks <em>Links</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Links</em>'.
-   * @see org.xtext.example.mydsl.myDsl.Footer#getLinks()
-   * @see #getFooter()
-   * @generated
-   */
-  EReference getFooter_Links();
 
   /**
    * Returns the meta object for class '{@link org.xtext.example.mydsl.myDsl.Link <em>Link</em>}'.
@@ -1059,20 +1168,20 @@ public interface MyDslPackage extends EPackage
     EReference MENSAMODEL__HEADER = eINSTANCE.getMensamodel_Header();
 
     /**
-     * The meta object literal for the '<em><b>Footer</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MENSAMODEL__FOOTER = eINSTANCE.getMensamodel_Footer();
-
-    /**
      * The meta object literal for the '<em><b>Siderbar</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
     EReference MENSAMODEL__SIDERBAR = eINSTANCE.getMensamodel_Siderbar();
+
+    /**
+     * The meta object literal for the '<em><b>Footer</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference MENSAMODEL__FOOTER = eINSTANCE.getMensamodel_Footer();
 
     /**
      * The meta object literal for the '<em><b>Menus</b></em>' containment reference list feature.
@@ -1115,6 +1224,98 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EReference HEADER__NAV = eINSTANCE.getHeader_Nav();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl <em>Siderbar</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.SiderbarImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSiderbar()
+     * @generated
+     */
+    EClass SIDERBAR = eINSTANCE.getSiderbar();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute SIDERBAR__NAME = eINSTANCE.getSiderbar_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIDERBAR__DESCRIPTION = eINSTANCE.getSiderbar_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Radio</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIDERBAR__RADIO = eINSTANCE.getSiderbar_Radio();
+
+    /**
+     * The meta object literal for the '<em><b>Checkbox</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIDERBAR__CHECKBOX = eINSTANCE.getSiderbar_Checkbox();
+
+    /**
+     * The meta object literal for the '<em><b>Button</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIDERBAR__BUTTON = eINSTANCE.getSiderbar_Button();
+
+    /**
+     * The meta object literal for the '<em><b>Selector</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference SIDERBAR__SELECTOR = eINSTANCE.getSiderbar_Selector();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FooterImpl <em>Footer</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.FooterImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFooter()
+     * @generated
+     */
+    EClass FOOTER = eINSTANCE.getFooter();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute FOOTER__NAME = eINSTANCE.getFooter_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOOTER__DESCRIPTION = eINSTANCE.getFooter_Description();
+
+    /**
+     * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference FOOTER__LINKS = eINSTANCE.getFooter_Links();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.DescriptionImpl <em>Description</em>}' class.
@@ -1161,56 +1362,6 @@ public interface MyDslPackage extends EPackage
     EAttribute NAV__HREF = eINSTANCE.getNAV_Href();
 
     /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl <em>Siderbar</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.SiderbarImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getSiderbar()
-     * @generated
-     */
-    EClass SIDERBAR = eINSTANCE.getSiderbar();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SIDERBAR__NAME = eINSTANCE.getSiderbar_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIDERBAR__DESCRIPTION = eINSTANCE.getSiderbar_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Radio</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIDERBAR__RADIO = eINSTANCE.getSiderbar_Radio();
-
-    /**
-     * The meta object literal for the '<em><b>Button</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIDERBAR__BUTTON = eINSTANCE.getSiderbar_Button();
-
-    /**
-     * The meta object literal for the '<em><b>Selector</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference SIDERBAR__SELECTOR = eINSTANCE.getSiderbar_Selector();
-
-    /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.RadioImpl <em>Radio</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1243,6 +1394,40 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute RADIO__OPTIONS = eINSTANCE.getRadio_Options();
+
+    /**
+     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.CheckboxImpl <em>Checkbox</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.xtext.example.mydsl.myDsl.impl.CheckboxImpl
+     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getCheckbox()
+     * @generated
+     */
+    EClass CHECKBOX = eINSTANCE.getCheckbox();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHECKBOX__NAME = eINSTANCE.getCheckbox_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Title</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CHECKBOX__TITLE = eINSTANCE.getCheckbox_Title();
+
+    /**
+     * The meta object literal for the '<em><b>Options</b></em>' attribute list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CHECKBOX__OPTIONS = eINSTANCE.getCheckbox_Options();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.ButtonImpl <em>Button</em>}' class.
@@ -1311,40 +1496,6 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute SELECTOR__OPTIONS = eINSTANCE.getSelector_Options();
-
-    /**
-     * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.FooterImpl <em>Footer</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.xtext.example.mydsl.myDsl.impl.FooterImpl
-     * @see org.xtext.example.mydsl.myDsl.impl.MyDslPackageImpl#getFooter()
-     * @generated
-     */
-    EClass FOOTER = eINSTANCE.getFooter();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute FOOTER__NAME = eINSTANCE.getFooter_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOOTER__DESCRIPTION = eINSTANCE.getFooter_Description();
-
-    /**
-     * The meta object literal for the '<em><b>Links</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference FOOTER__LINKS = eINSTANCE.getFooter_Links();
 
     /**
      * The meta object literal for the '{@link org.xtext.example.mydsl.myDsl.impl.LinkImpl <em>Link</em>}' class.

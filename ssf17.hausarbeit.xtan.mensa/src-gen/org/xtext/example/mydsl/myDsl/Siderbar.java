@@ -19,6 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getCheckbox <em>Checkbox</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}</li>
  * </ul>
@@ -96,6 +97,22 @@ public interface Siderbar extends EObject
    * @generated
    */
   EList<Radio> getRadio();
+
+  /**
+   * Returns the value of the '<em><b>Checkbox</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Checkbox}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Checkbox</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Checkbox</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Checkbox()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Checkbox> getCheckbox();
 
   /**
    * Returns the value of the '<em><b>Button</b></em>' containment reference list.

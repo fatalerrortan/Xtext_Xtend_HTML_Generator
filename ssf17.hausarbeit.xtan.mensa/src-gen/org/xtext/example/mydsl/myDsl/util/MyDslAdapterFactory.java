@@ -86,6 +86,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createHeaderAdapter();
       }
       @Override
+      public Adapter caseSiderbar(Siderbar object)
+      {
+        return createSiderbarAdapter();
+      }
+      @Override
+      public Adapter caseFooter(Footer object)
+      {
+        return createFooterAdapter();
+      }
+      @Override
       public Adapter caseDescription(Description object)
       {
         return createDescriptionAdapter();
@@ -96,14 +106,14 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createNAVAdapter();
       }
       @Override
-      public Adapter caseSiderbar(Siderbar object)
-      {
-        return createSiderbarAdapter();
-      }
-      @Override
       public Adapter caseRadio(Radio object)
       {
         return createRadioAdapter();
+      }
+      @Override
+      public Adapter caseCheckbox(Checkbox object)
+      {
+        return createCheckboxAdapter();
       }
       @Override
       public Adapter caseButton(Button object)
@@ -114,11 +124,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseSelector(Selector object)
       {
         return createSelectorAdapter();
-      }
-      @Override
-      public Adapter caseFooter(Footer object)
-      {
-        return createFooterAdapter();
       }
       @Override
       public Adapter caseLink(Link object)
@@ -183,6 +188,36 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Siderbar <em>Siderbar</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Siderbar
+   * @generated
+   */
+  public Adapter createSiderbarAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Footer <em>Footer</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Footer
+   * @generated
+   */
+  public Adapter createFooterAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Description <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -213,21 +248,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Siderbar <em>Siderbar</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar
-   * @generated
-   */
-  public Adapter createSiderbarAdapter()
-  {
-    return null;
-  }
-
-  /**
    * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Radio <em>Radio</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -238,6 +258,21 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createRadioAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Checkbox <em>Checkbox</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.xtext.example.mydsl.myDsl.Checkbox
+   * @generated
+   */
+  public Adapter createCheckboxAdapter()
   {
     return null;
   }
@@ -268,21 +303,6 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createSelectorAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Footer <em>Footer</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Footer
-   * @generated
-   */
-  public Adapter createFooterAdapter()
   {
     return null;
   }

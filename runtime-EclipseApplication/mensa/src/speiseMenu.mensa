@@ -1,0 +1,47 @@
+header mensaHeader {
+	description 'this is a Header'
+	nav home {
+		href 'www.xulin-tan.de'
+	}
+	nav admin {
+		href 'www.admin.com'
+	}
+	nav test2 {
+		href 'www.test.com'
+	}
+}
+siderbar mensaSiderbar {
+	description 'this is a siderbar'
+	radio testR {
+		description 'this is a test radio'
+		option 'radio1'
+		option 'radio2'
+	}
+	checkbox testC {
+		description 'this is a test checkbox'
+		option 'check1'
+		option 'check2'
+	}
+	button uni {
+		description 'this is a button'
+		href 'www.button.com'
+	}
+	selector testS {
+		description 'this is a test selector'
+		option 'option1'
+		option 'option2'
+		option 'option3'
+	}
+}
+footer mensaFooter {
+	description 'this is a footer'
+	link home {
+		url 'www.hom1e.de'
+	}
+	link htwk {
+		url 'www.htwk.com'
+	}
+}
+
+
+

@@ -4,14 +4,29 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Mensamodel:
 	header=Header
-	footer=Footer
 	siderbar=Siderbar
+	footer=Footer
 	(menus+=Menu)*
 ;	
 Header:
 	'header' name=ID '{'
 		description=Description
 		(nav+=NAV)*
+	'}' 
+;
+Siderbar:
+	'siderbar' name=ID '{'
+		description=Description
+		(radio+=Radio)*
+		(checkbox+=Checkbox)*
+		(button+=Button)*
+		(selector+=Selector)*
+	'}' 
+;
+Footer:
+	'footer' name=ID '{'
+		description=Description
+		(links+=Link)*
 	'}' 
 ;
 Description:
@@ -22,16 +37,14 @@ NAV:
 		'href' href=STRING
 	'}'
 ;
-Siderbar:
-	'siderbar' name=ID '{'
-		description=Description
-		(radio+=Radio)*
-		(button+=Button)*
-		(selector+=Selector)*
-	'}' 
-;
 Radio:
 	'radio' name=ID '{'
+		title=Description
+		('option' options+=STRING)*
+	'}'
+;
+Checkbox:
+	'checkbox' name=ID '{'
 		title=Description
 		('option' options+=STRING)*
 	'}'
@@ -47,12 +60,6 @@ Selector:
 		title=Description
 		('option' options+=STRING)*
 	'}'
-;
-Footer:
-	'footer' name=ID '{'
-		description=Description
-		(links+=Link)*
-	'}' 
 ;
 Link:
 	'link' name=ID '{'
