@@ -583,13 +583,22 @@ public interface MyDslPackage extends EPackage
   int MENU__NAME = 0;
 
   /**
+   * The feature id for the '<em><b>Meal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU__MEAL = 1;
+
+  /**
    * The feature id for the '<em><b>Description</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int MENU__DESCRIPTION = 1;
+  int MENU__DESCRIPTION = 2;
 
   /**
    * The feature id for the '<em><b>Price</b></em>' attribute.
@@ -598,7 +607,16 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MENU__PRICE = 2;
+  int MENU__PRICE = 3;
+
+  /**
+   * The feature id for the '<em><b>Image</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int MENU__IMAGE = 4;
 
   /**
    * The number of structural features of the '<em>Menu</em>' class.
@@ -607,7 +625,7 @@ public interface MyDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int MENU_FEATURE_COUNT = 3;
+  int MENU_FEATURE_COUNT = 5;
 
 
   /**
@@ -1105,6 +1123,17 @@ public interface MyDslPackage extends EPackage
   EAttribute getMenu_Name();
 
   /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Menu#getMeal <em>Meal</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Meal</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Menu#getMeal()
+   * @see #getMenu()
+   * @generated
+   */
+  EAttribute getMenu_Meal();
+
+  /**
    * Returns the meta object for the containment reference '{@link org.xtext.example.mydsl.myDsl.Menu#getDescription <em>Description</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1125,6 +1154,17 @@ public interface MyDslPackage extends EPackage
    * @generated
    */
   EAttribute getMenu_Price();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.xtext.example.mydsl.myDsl.Menu#getImage <em>Image</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Image</em>'.
+   * @see org.xtext.example.mydsl.myDsl.Menu#getImage()
+   * @see #getMenu()
+   * @generated
+   */
+  EAttribute getMenu_Image();
 
   /**
    * Returns the factory that creates the instances of the model.
@@ -1542,6 +1582,14 @@ public interface MyDslPackage extends EPackage
     EAttribute MENU__NAME = eINSTANCE.getMenu_Name();
 
     /**
+     * The meta object literal for the '<em><b>Meal</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MENU__MEAL = eINSTANCE.getMenu_Meal();
+
+    /**
      * The meta object literal for the '<em><b>Description</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -1556,6 +1604,14 @@ public interface MyDslPackage extends EPackage
      * @generated
      */
     EAttribute MENU__PRICE = eINSTANCE.getMenu_Price();
+
+    /**
+     * The meta object literal for the '<em><b>Image</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute MENU__IMAGE = eINSTANCE.getMenu_Image();
 
   }
 

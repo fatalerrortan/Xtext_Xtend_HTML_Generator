@@ -644,9 +644,19 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getMenu_Meal()
+  {
+    return (EAttribute)menuEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getMenu_Description()
   {
-    return (EReference)menuEClass.getEStructuralFeatures().get(1);
+    return (EReference)menuEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -656,7 +666,17 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    */
   public EAttribute getMenu_Price()
   {
-    return (EAttribute)menuEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)menuEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getMenu_Image()
+  {
+    return (EAttribute)menuEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -746,8 +766,10 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     menuEClass = createEClass(MENU);
     createEAttribute(menuEClass, MENU__NAME);
+    createEAttribute(menuEClass, MENU__MEAL);
     createEReference(menuEClass, MENU__DESCRIPTION);
     createEAttribute(menuEClass, MENU__PRICE);
+    createEAttribute(menuEClass, MENU__IMAGE);
   }
 
   /**
@@ -838,8 +860,10 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
 
     initEClass(menuEClass, Menu.class, "Menu", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getMenu_Name(), ecorePackage.getEString(), "name", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMenu_Meal(), ecorePackage.getEString(), "meal", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMenu_Description(), this.getDescription(), null, "description", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getMenu_Price(), ecorePackage.getEString(), "price", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getMenu_Image(), ecorePackage.getEString(), "image", null, 0, 1, Menu.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     // Create resource
     createResource(eNS_URI);

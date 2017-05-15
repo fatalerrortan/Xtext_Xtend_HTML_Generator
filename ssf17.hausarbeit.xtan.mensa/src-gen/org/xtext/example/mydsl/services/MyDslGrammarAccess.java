@@ -35,12 +35,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		
 		//Mensamodel:
 		//	header=Header
-		//	siderbar=Siderbar
+		//	siderbar=Siderbar?
 		//	footer=Footer
 		//	menus+=Menu*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//header=Header siderbar=Siderbar footer=Footer menus+=Menu*
+		//header=Header siderbar=Siderbar? footer=Footer menus+=Menu*
 		public Group getGroup() { return cGroup; }
 		
 		//header=Header
@@ -49,7 +49,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Header
 		public RuleCall getHeaderHeaderParserRuleCall_0_0() { return cHeaderHeaderParserRuleCall_0_0; }
 		
-		//siderbar=Siderbar
+		//siderbar=Siderbar?
 		public Assignment getSiderbarAssignment_1() { return cSiderbarAssignment_1; }
 		
 		//Siderbar
@@ -589,21 +589,29 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
-		private final Keyword cPriceKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cPriceAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cPriceSTRINGTerminalRuleCall_5_0 = (RuleCall)cPriceAssignment_5.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cMealAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cMealSTRINGTerminalRuleCall_4_0 = (RuleCall)cMealAssignment_4.eContents().get(0);
+		private final Assignment cDescriptionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDescriptionDescriptionParserRuleCall_5_0 = (RuleCall)cDescriptionAssignment_5.eContents().get(0);
+		private final Keyword cPriceKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cPriceAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cPriceSTRINGTerminalRuleCall_7_0 = (RuleCall)cPriceAssignment_7.eContents().get(0);
+		private final Keyword cImageKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cImageAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cImageSTRINGTerminalRuleCall_9_0 = (RuleCall)cImageAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Menu:
 		//	'menu' name=ID '{'
+		//	'name' meal=STRING
 		//	description=Description
 		//	'price' price=STRING
+		//	'image' image=STRING
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'menu' name=ID '{' description=Description 'price' price=STRING '}'
+		//'menu' name=ID '{' 'name' meal=STRING description=Description 'price' price=STRING 'image' image=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'menu'
@@ -618,23 +626,41 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
-		//description=Description
-		public Assignment getDescriptionAssignment_3() { return cDescriptionAssignment_3; }
+		//'name'
+		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
 		
-		//Description
-		public RuleCall getDescriptionDescriptionParserRuleCall_3_0() { return cDescriptionDescriptionParserRuleCall_3_0; }
-		
-		//'price'
-		public Keyword getPriceKeyword_4() { return cPriceKeyword_4; }
-		
-		//price=STRING
-		public Assignment getPriceAssignment_5() { return cPriceAssignment_5; }
+		//meal=STRING
+		public Assignment getMealAssignment_4() { return cMealAssignment_4; }
 		
 		//STRING
-		public RuleCall getPriceSTRINGTerminalRuleCall_5_0() { return cPriceSTRINGTerminalRuleCall_5_0; }
+		public RuleCall getMealSTRINGTerminalRuleCall_4_0() { return cMealSTRINGTerminalRuleCall_4_0; }
+		
+		//description=Description
+		public Assignment getDescriptionAssignment_5() { return cDescriptionAssignment_5; }
+		
+		//Description
+		public RuleCall getDescriptionDescriptionParserRuleCall_5_0() { return cDescriptionDescriptionParserRuleCall_5_0; }
+		
+		//'price'
+		public Keyword getPriceKeyword_6() { return cPriceKeyword_6; }
+		
+		//price=STRING
+		public Assignment getPriceAssignment_7() { return cPriceAssignment_7; }
+		
+		//STRING
+		public RuleCall getPriceSTRINGTerminalRuleCall_7_0() { return cPriceSTRINGTerminalRuleCall_7_0; }
+		
+		//'image'
+		public Keyword getImageKeyword_8() { return cImageKeyword_8; }
+		
+		//image=STRING
+		public Assignment getImageAssignment_9() { return cImageAssignment_9; }
+		
+		//STRING
+		public RuleCall getImageSTRINGTerminalRuleCall_9_0() { return cImageSTRINGTerminalRuleCall_9_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 	
 	
@@ -703,7 +729,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Mensamodel:
 	//	header=Header
-	//	siderbar=Siderbar
+	//	siderbar=Siderbar?
 	//	footer=Footer
 	//	menus+=Menu*;
 	public MensamodelElements getMensamodelAccess() {
@@ -841,8 +867,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Menu:
 	//	'menu' name=ID '{'
+	//	'name' meal=STRING
 	//	description=Description
 	//	'price' price=STRING
+	//	'image' image=STRING
 	//	'}';
 	public MenuElements getMenuAccess() {
 		return pMenu;

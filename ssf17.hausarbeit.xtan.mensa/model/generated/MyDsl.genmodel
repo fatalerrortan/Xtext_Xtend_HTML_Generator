@@ -63,8 +63,10 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Menu">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Menu/name"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Menu/meal"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Menu/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Menu/price"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Menu/image"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

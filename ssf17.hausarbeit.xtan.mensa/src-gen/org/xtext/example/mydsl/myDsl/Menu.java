@@ -15,8 +15,10 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Menu#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Menu#getMeal <em>Meal</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Menu#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Menu#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Menu#getImage <em>Image</em>}</li>
  * </ul>
  *
  * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMenu()
@@ -50,6 +52,32 @@ public interface Menu extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Meal</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Meal</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Meal</em>' attribute.
+   * @see #setMeal(String)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMenu_Meal()
+   * @model
+   * @generated
+   */
+  String getMeal();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Menu#getMeal <em>Meal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Meal</em>' attribute.
+   * @see #getMeal()
+   * @generated
+   */
+  void setMeal(String value);
 
   /**
    * Returns the value of the '<em><b>Description</b></em>' containment reference.
@@ -102,5 +130,31 @@ public interface Menu extends EObject
    * @generated
    */
   void setPrice(String value);
+
+  /**
+   * Returns the value of the '<em><b>Image</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Image</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Image</em>' attribute.
+   * @see #setImage(String)
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMenu_Image()
+   * @model
+   * @generated
+   */
+  String getImage();
+
+  /**
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Menu#getImage <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Image</em>' attribute.
+   * @see #getImage()
+   * @generated
+   */
+  void setImage(String value);
 
 } // Menu

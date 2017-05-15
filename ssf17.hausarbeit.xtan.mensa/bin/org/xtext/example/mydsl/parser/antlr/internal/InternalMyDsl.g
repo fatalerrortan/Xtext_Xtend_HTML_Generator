@@ -113,7 +113,7 @@ ruleMensamodel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			(
 				{
@@ -1064,12 +1064,34 @@ ruleMenu returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getMenuAccess().getLeftCurlyBracketKeyword_2());
 		}
+		otherlv_3='name'
+		{
+			newLeafNode(otherlv_3, grammarAccess.getMenuAccess().getNameKeyword_3());
+		}
+		(
+			(
+				lv_meal_4_0=RULE_STRING
+				{
+					newLeafNode(lv_meal_4_0, grammarAccess.getMenuAccess().getMealSTRINGTerminalRuleCall_4_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMenuRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"meal",
+						lv_meal_4_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMenuAccess().getDescriptionDescriptionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getMenuAccess().getDescriptionDescriptionParserRuleCall_5_0());
 				}
-				lv_description_3_0=ruleDescription
+				lv_description_5_0=ruleDescription
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMenuRule());
@@ -1077,21 +1099,21 @@ ruleMenu returns [EObject current=null]
 					set(
 						$current,
 						"description",
-						lv_description_3_0,
+						lv_description_5_0,
 						"org.xtext.example.mydsl.MyDsl.Description");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_4='price'
+		otherlv_6='price'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getMenuAccess().getPriceKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getMenuAccess().getPriceKeyword_6());
 		}
 		(
 			(
-				lv_price_5_0=RULE_STRING
+				lv_price_7_0=RULE_STRING
 				{
-					newLeafNode(lv_price_5_0, grammarAccess.getMenuAccess().getPriceSTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_price_7_0, grammarAccess.getMenuAccess().getPriceSTRINGTerminalRuleCall_7_0());
 				}
 				{
 					if ($current==null) {
@@ -1100,14 +1122,36 @@ ruleMenu returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"price",
-						lv_price_5_0,
+						lv_price_7_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6='}'
+		otherlv_8='image'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getMenuAccess().getRightCurlyBracketKeyword_6());
+			newLeafNode(otherlv_8, grammarAccess.getMenuAccess().getImageKeyword_8());
+		}
+		(
+			(
+				lv_image_9_0=RULE_STRING
+				{
+					newLeafNode(lv_image_9_0, grammarAccess.getMenuAccess().getImageSTRINGTerminalRuleCall_9_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getMenuRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"image",
+						lv_image_9_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_10='}'
+		{
+			newLeafNode(otherlv_10, grammarAccess.getMenuAccess().getRightCurlyBracketKeyword_10());
 		}
 	)
 ;

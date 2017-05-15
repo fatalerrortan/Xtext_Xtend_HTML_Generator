@@ -84,8 +84,10 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getLinkAccess().getNameAssignment_1(), "rule__Link__NameAssignment_1");
 					put(grammarAccess.getLinkAccess().getUrlAssignment_4(), "rule__Link__UrlAssignment_4");
 					put(grammarAccess.getMenuAccess().getNameAssignment_1(), "rule__Menu__NameAssignment_1");
-					put(grammarAccess.getMenuAccess().getDescriptionAssignment_3(), "rule__Menu__DescriptionAssignment_3");
-					put(grammarAccess.getMenuAccess().getPriceAssignment_5(), "rule__Menu__PriceAssignment_5");
+					put(grammarAccess.getMenuAccess().getMealAssignment_4(), "rule__Menu__MealAssignment_4");
+					put(grammarAccess.getMenuAccess().getDescriptionAssignment_5(), "rule__Menu__DescriptionAssignment_5");
+					put(grammarAccess.getMenuAccess().getPriceAssignment_7(), "rule__Menu__PriceAssignment_7");
+					put(grammarAccess.getMenuAccess().getImageAssignment_9(), "rule__Menu__ImageAssignment_9");
 				}
 			};
 		}

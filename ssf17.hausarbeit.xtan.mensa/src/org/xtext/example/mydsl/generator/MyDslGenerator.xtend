@@ -16,6 +16,7 @@ import org.xtext.example.mydsl.myDsl.Button
 import org.xtext.example.mydsl.myDsl.Selector
 import org.xtext.example.mydsl.myDsl.Radio
 import org.xtext.example.mydsl.myDsl.Checkbox
+import org.xtext.example.mydsl.myDsl.Menu
 
 /**
  * Generates code from your model files on save.
@@ -51,7 +52,7 @@ class MyDslGenerator extends AbstractGenerator {
    			                </ul>
    			            </div>
    			        </div>
-   			    </nav>
+   			    </nav>  
 		'''
 	val siderbar_html = '''
 				       <div class="col-md-4">
@@ -104,7 +105,6 @@ class MyDslGenerator extends AbstractGenerator {
 		'''
  	val footer_html = '''
  			        <footer>
- 			            <div class="row">
  			                <div class="col-md-12">
  			                    «FOR Footer footer_html : resource.allContents.toIterable.filter(Footer)»
  			                       	<h1>«footer_html.description.name»</h1>
@@ -112,14 +112,29 @@ class MyDslGenerator extends AbstractGenerator {
  			                     	<p><a href="«link.url»">«link.name»</a></p>
  			                       «ENDFOR»
  			                    «ENDFOR»
- 			                </div> 			        
- 			            </div>
+ 			                </div> 			        			          
  			        </footer>
 		'''
 	val menus_html = '''
 			<div class="col-md-8">
 				<div class="well">
-					<h1>Placeholder for multiple menus</h1>
+					<h1>Speiseplan</h1>
+					<ul>
+					«FOR Menu menu_html : resource.allContents.toIterable.filter(Menu)»
+«««					 	<h1>«footer_html.description.name»</h1>
+«««					 		«FOR Link link : footer_html.links»
+«««					 			<p><a href="«link.url»">«link.name»</a></p>
+«««					 		«ENDFOR»
+						<li>
+							<h3>«menu_html.meal»</h3>
+							<div>
+								<img src="./imgs/«menu_html.image»" alt="«menu_html.meal»" />
+								<span>«menu_html.description.name»</span>
+							</div>	
+							<h5>«menu_html.price» €</h5>
+						</li>
+					  «ENDFOR»
+					  </ul>
 				</div>
 			</div>
 		'''
@@ -131,16 +146,23 @@ class MyDslGenerator extends AbstractGenerator {
 					    <meta charset="utf-8">
 					    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 					    <meta name="viewport" content="width=device-width, initial-scale=1">
-					    <title>Blog Home - Start Bootstrap Template</title>
+					    <title>Mensa Speiseplan</title>
 					    <link href="css/bootstrap.min.css" rel="stylesheet">
 					    <link href="css/blog-home.css" rel="stylesheet">
 					</head>
 				</head>
 				<body>
-					«header_html»
-					«menus_html»
-					«siderbar_html»
-					«footer_html»		
+					<div class="row">
+						«header_html»
+					</div>	
+					<br /><br /><br />
+					<div class="row">
+						«menus_html»
+						«siderbar_html»
+					</div>
+					<div class="row">
+						«footer_html»	
+					</div>	
 				</body>
 			</html>
 		'''

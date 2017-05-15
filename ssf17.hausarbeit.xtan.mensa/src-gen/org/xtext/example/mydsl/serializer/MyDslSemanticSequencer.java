@@ -188,7 +188,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Mensamodel returns Mensamodel
 	 *
 	 * Constraint:
-	 *     (header=Header siderbar=Siderbar footer=Footer menus+=Menu*)
+	 *     (header=Header siderbar=Siderbar? footer=Footer menus+=Menu*)
 	 */
 	protected void sequence_Mensamodel(ISerializationContext context, Mensamodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -200,21 +200,27 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Menu returns Menu
 	 *
 	 * Constraint:
-	 *     (name=ID description=Description price=STRING)
+	 *     (name=ID meal=STRING description=Description price=STRING image=STRING)
 	 */
 	protected void sequence_Menu(ISerializationContext context, Menu semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__MEAL) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__MEAL));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__DESCRIPTION) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__DESCRIPTION));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__PRICE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__PRICE));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.MENU__IMAGE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.MENU__IMAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMenuAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getMenuAccess().getDescriptionDescriptionParserRuleCall_3_0(), semanticObject.getDescription());
-		feeder.accept(grammarAccess.getMenuAccess().getPriceSTRINGTerminalRuleCall_5_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getMenuAccess().getMealSTRINGTerminalRuleCall_4_0(), semanticObject.getMeal());
+		feeder.accept(grammarAccess.getMenuAccess().getDescriptionDescriptionParserRuleCall_5_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getMenuAccess().getPriceSTRINGTerminalRuleCall_7_0(), semanticObject.getPrice());
+		feeder.accept(grammarAccess.getMenuAccess().getImageSTRINGTerminalRuleCall_9_0(), semanticObject.getImage());
 		feeder.finish();
 	}
 	

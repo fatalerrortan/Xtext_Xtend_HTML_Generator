@@ -25,8 +25,10 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MenuImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MenuImpl#getMeal <em>Meal</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MenuImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MenuImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MenuImpl#getImage <em>Image</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,6 +54,26 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getMeal() <em>Meal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMeal()
+   * @generated
+   * @ordered
+   */
+  protected static final String MEAL_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMeal() <em>Meal</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMeal()
+   * @generated
+   * @ordered
+   */
+  protected String meal = MEAL_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
@@ -82,6 +104,26 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
    * @ordered
    */
   protected String price = PRICE_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getImage() <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImage()
+   * @generated
+   * @ordered
+   */
+  protected static final String IMAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getImage() <em>Image</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getImage()
+   * @generated
+   * @ordered
+   */
+  protected String image = IMAGE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -125,6 +167,29 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.MENU__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String getMeal()
+  {
+    return meal;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMeal(String newMeal)
+  {
+    String oldMeal = meal;
+    meal = newMeal;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.MENU__MEAL, oldMeal, meal));
   }
 
   /**
@@ -203,6 +268,29 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getImage()
+  {
+    return image;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setImage(String newImage)
+  {
+    String oldImage = image;
+    image = newImage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.MENU__IMAGE, oldImage, image));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -226,10 +314,14 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
     {
       case MyDslPackage.MENU__NAME:
         return getName();
+      case MyDslPackage.MENU__MEAL:
+        return getMeal();
       case MyDslPackage.MENU__DESCRIPTION:
         return getDescription();
       case MyDslPackage.MENU__PRICE:
         return getPrice();
+      case MyDslPackage.MENU__IMAGE:
+        return getImage();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -247,11 +339,17 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
       case MyDslPackage.MENU__NAME:
         setName((String)newValue);
         return;
+      case MyDslPackage.MENU__MEAL:
+        setMeal((String)newValue);
+        return;
       case MyDslPackage.MENU__DESCRIPTION:
         setDescription((Description)newValue);
         return;
       case MyDslPackage.MENU__PRICE:
         setPrice((String)newValue);
+        return;
+      case MyDslPackage.MENU__IMAGE:
+        setImage((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -270,11 +368,17 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
       case MyDslPackage.MENU__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.MENU__MEAL:
+        setMeal(MEAL_EDEFAULT);
+        return;
       case MyDslPackage.MENU__DESCRIPTION:
         setDescription((Description)null);
         return;
       case MyDslPackage.MENU__PRICE:
         setPrice(PRICE_EDEFAULT);
+        return;
+      case MyDslPackage.MENU__IMAGE:
+        setImage(IMAGE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -292,10 +396,14 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
     {
       case MyDslPackage.MENU__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.MENU__MEAL:
+        return MEAL_EDEFAULT == null ? meal != null : !MEAL_EDEFAULT.equals(meal);
       case MyDslPackage.MENU__DESCRIPTION:
         return description != null;
       case MyDslPackage.MENU__PRICE:
         return PRICE_EDEFAULT == null ? price != null : !PRICE_EDEFAULT.equals(price);
+      case MyDslPackage.MENU__IMAGE:
+        return IMAGE_EDEFAULT == null ? image != null : !IMAGE_EDEFAULT.equals(image);
     }
     return super.eIsSet(featureID);
   }
@@ -313,8 +421,12 @@ public class MenuImpl extends MinimalEObjectImpl.Container implements Menu
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (name: ");
     result.append(name);
+    result.append(", meal: ");
+    result.append(meal);
     result.append(", price: ");
     result.append(price);
+    result.append(", image: ");
+    result.append(image);
     result.append(')');
     return result.toString();
   }

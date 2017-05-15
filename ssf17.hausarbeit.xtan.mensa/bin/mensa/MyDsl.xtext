@@ -4,7 +4,7 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Mensamodel:
 	header=Header
-	siderbar=Siderbar
+	(siderbar=Siderbar)?
 	footer=Footer
 	(menus+=Menu)*
 ;	
@@ -68,7 +68,9 @@ Link:
 ;
 Menu:
 	'menu' name=ID '{'
+		'name' meal=STRING
 		description=Description
 		'price' price=STRING
+		'image' image=STRING
 	'}' 
 ;
