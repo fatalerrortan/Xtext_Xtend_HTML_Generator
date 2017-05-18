@@ -17,6 +17,8 @@ import org.xtext.example.mydsl.myDsl.Selector
 import org.xtext.example.mydsl.myDsl.Radio
 import org.xtext.example.mydsl.myDsl.Checkbox
 import org.xtext.example.mydsl.myDsl.Menu
+//import java.io.FileReader
+//import java.io.BufferedReader
 
 /**
  * Generates code from your model files on save.
@@ -24,8 +26,11 @@ import org.xtext.example.mydsl.myDsl.Menu
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyDslGenerator extends AbstractGenerator {
-	
 //	@Inject extension IQualifiedNameProvider	
+//	String fileName = "/ssf17.hausarbeit.xtan.mensa/styles/css/bootstrap.css";
+//	FileReader fileReader = new FileReader(fileName);
+//	BufferedReader bufferedReader = new BufferedReader(fileReader);
+//	public String css_file = bufferedReader.toString();
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
    	val header_html = '''
    			    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -56,8 +61,8 @@ class MyDslGenerator extends AbstractGenerator {
 		'''
 	val siderbar_html = '''
 				       <div class="col-md-4">
+				                «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
 				                <div class="well">				                 
-				                    «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
 				                     	<h4>«siderbar_html.description.name»</h4>
 «««				                     	 Generator for Button
 				                     	 «FOR Button tool : siderbar_html.button»
@@ -99,20 +104,22 @@ class MyDslGenerator extends AbstractGenerator {
 						                   	 			«ENDFOR»			              	
 												</div>
 				           				  «ENDFOR»
+				                  		</div>
+				                  		<br />
 				                    «ENDFOR»
-				                </div>
 				            </div>
 		'''
  	val footer_html = '''
  			        <footer>
- 			                <div class="col-md-12">
+ 			        			<div class="col-md-2 placeholder"></div>
  			                    «FOR Footer footer_html : resource.allContents.toIterable.filter(Footer)»
- 			                       	<h1>«footer_html.description.name»</h1>
+ 			                    <div class="col-md-2">
+ 			                       	<h4>«footer_html.description.name»</h4>
  			                     	«FOR Link link : footer_html.links»
  			                     	<p><a href="«link.url»">«link.name»</a></p>
  			                       «ENDFOR»
- 			                    «ENDFOR»
- 			                </div> 			        			          
+ 			                     </div> 	
+ 			                    «ENDFOR»			          	      		          
  			        </footer>
 		'''
 	val menus_html = '''
@@ -127,16 +134,21 @@ class MyDslGenerator extends AbstractGenerator {
 «««					 		«ENDFOR»
 						<li>
 							<h3>«menu_html.meal»</h3>
-							<div>
-								<img src="./imgs/«menu_html.image»" alt="«menu_html.meal»" />
-								<span>«menu_html.description.name»</span>
+							<div class="row">
+								<div class="col-md-3">
+									<img src="./imgs/«menu_html.image»" alt="«menu_html.meal»" width="180px" height="180px" />
+									<h5>«menu_html.price» €</h5>
+								</div>
+								<div class="col-md-9">
+									<span style="border: 1px solid #4285F4;">«menu_html.description.name»</span>
+								</div>	
 							</div>	
-							<h5>«menu_html.price» €</h5>
 						</li>
 					  «ENDFOR»
 					  </ul>
 				</div>
 			</div>
+			<hr />
 		'''
 	val html = '''
 			<!DOCTYPE html>
@@ -147,27 +159,29 @@ class MyDslGenerator extends AbstractGenerator {
 					    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 					    <meta name="viewport" content="width=device-width, initial-scale=1">
 					    <title>Mensa Speiseplan</title>
-					    <link href="css/bootstrap.min.css" rel="stylesheet">
-					    <link href="css/blog-home.css" rel="stylesheet">
+					    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+«««					    <link href="css/blog-home.css" rel="stylesheet">
 					</head>
 				</head>
 				<body>
 					<div class="row">
 						«header_html»
 					</div>	
-					<br /><br /><br />
+					<br /><br /><br /><br /><br /><br /><br />
 					<div class="row">
 						«menus_html»
 						«siderbar_html»
 					</div>
 					<div class="row">
 						«footer_html»	
-					</div>	
+					</div>
+					<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 				</body>
 			</html>
 		'''
-   	
+//   	generate food menu html structure
    	fsa.generateFile('mensa_speiseplan.html', html.toString());
-
+//   	generate image folder
+//	fsa.generateFile('imgs/readme.txt', 'Please place mensa related images in this folder');	
 	}
 }

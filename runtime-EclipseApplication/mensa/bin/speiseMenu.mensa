@@ -11,14 +11,14 @@ header mensaHeader {
 	}
 }
 siderbar mensaSiderbar {
-	description 'this is a siderbar'
+	description 'this is a siderbar!'
 	radio testR {
-		description 'this is a test radio'
+		description 'this! is a test radio'
 		option 'radio1'
 		option 'radio2'
 	}
 	checkbox testC {
-		description 'this is a test checkbox'
+		description 'this i!!s a test checkbox!'
 		option 'check1'
 		option 'check2'
 	}
@@ -33,8 +33,61 @@ siderbar mensaSiderbar {
 		option 'option3'
 	}
 }
-footer mensaFooter {
-	description 'this is a footer'
+siderbar mensaSiderbar2 {
+	description 'this is a siderbar!!'
+	radio testR {
+		description 'this! is a test radio'
+		option 'radio1'
+		option 'radio2'
+	}
+	checkbox testC {
+		description 'this i!!s a test checkbox!'
+		option 'check1'
+		option 'check2'
+	}
+	button uni {
+		description 'this is a button'
+		href 'www.button.com'
+	}
+	selector testS {
+		description 'this is a test selector'
+		option 'option1'
+		option 'option2'
+		option 'option3'
+	}
+}
+footer mensaFooter1 {
+	description 'this is a X'
+	link home {
+		url 'www.hom1e.de'
+	}
+	link htwk {
+		url 'www.htw2k.com'
+	}
+	link ham {
+		url 'www.htw2k.com'
+	}
+}
+footer mensaFooter2 {
+	description 'this is a y'
+	link home {
+		url 'www.hom1e.de'
+	}
+	link htwk {
+		url 'www.htw2k.com'
+	}
+}
+footer mensaFooter3 {
+	description 'this is a z'
+	link home {
+		url 'www.hom1e.de'
+	}
+	link htwk {
+		url 'www.htw2k.com'
+	}
+}
+footer mensaFooter4 {
+	description 'this is a ty'
 	link home {
 		url 'www.hom1e.de'
 	}
@@ -55,7 +108,7 @@ menu speise2 {
 	image 'rice.png'
 }
 menu speise3 {
-	name "Speise 3"
+	name "Speise  3"
 	description "Komponent 1, Komponent 2, Komponent 3 Zusatz: Komponent 1, Komponent 2, Komponent 3"
 	price '1,7'
 	image 'spaghetti.png'

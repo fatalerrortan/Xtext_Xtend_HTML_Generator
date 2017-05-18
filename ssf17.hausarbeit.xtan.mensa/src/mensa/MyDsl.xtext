@@ -4,8 +4,8 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
 
 Mensamodel:
 	header=Header
-	(siderbar=Siderbar)?
-	footer=Footer
+	(siderbar+=Siderbar)*
+	(footer+=Footer)*
 	(menus+=Menu)*
 ;	
 Header:
