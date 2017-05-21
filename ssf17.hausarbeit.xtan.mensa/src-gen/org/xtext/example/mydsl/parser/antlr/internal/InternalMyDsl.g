@@ -105,7 +105,7 @@ ruleMensamodel returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMensamodelRule());
 					}
-					set(
+					add(
 						$current,
 						"siderbar",
 						lv_siderbar_1_0,
@@ -113,7 +113,7 @@ ruleMensamodel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)?
+		)*
 		(
 			(
 				{
@@ -124,7 +124,7 @@ ruleMensamodel returns [EObject current=null]
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMensamodelRule());
 					}
-					set(
+					add(
 						$current,
 						"footer",
 						lv_footer_2_0,
@@ -132,7 +132,7 @@ ruleMensamodel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)*
 		(
 			(
 				{
@@ -344,28 +344,9 @@ ruleSiderbar returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getButtonButtonParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getSiderbarAccess().getSelectorSelectorParserRuleCall_6_0());
 				}
-				lv_button_6_0=ruleButton
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
-					}
-					add(
-						$current,
-						"button",
-						lv_button_6_0,
-						"org.xtext.example.mydsl.MyDsl.Button");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)*
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getSelectorSelectorParserRuleCall_7_0());
-				}
-				lv_selector_7_0=ruleSelector
+				lv_selector_6_0=ruleSelector
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
@@ -373,8 +354,27 @@ ruleSiderbar returns [EObject current=null]
 					add(
 						$current,
 						"selector",
-						lv_selector_7_0,
+						lv_selector_6_0,
 						"org.xtext.example.mydsl.MyDsl.Selector");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)*
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getSiderbarAccess().getButtonButtonParserRuleCall_7_0());
+				}
+				lv_button_7_0=ruleButton
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+					}
+					add(
+						$current,
+						"button",
+						lv_button_7_0,
+						"org.xtext.example.mydsl.MyDsl.Button");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -556,15 +556,34 @@ ruleNAV returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getNAVAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_3='href'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getNAVAccess().getDescriptionDescriptionParserRuleCall_3_0());
+				}
+				lv_description_3_0=ruleDescription
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getNAVRule());
+					}
+					set(
+						$current,
+						"description",
+						lv_description_3_0,
+						"org.xtext.example.mydsl.MyDsl.Description");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='href'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getNAVAccess().getHrefKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getNAVAccess().getHrefKeyword_4());
 		}
 		(
 			(
-				lv_href_4_0=RULE_STRING
+				lv_href_5_0=RULE_STRING
 				{
-					newLeafNode(lv_href_4_0, grammarAccess.getNAVAccess().getHrefSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_href_5_0, grammarAccess.getNAVAccess().getHrefSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -573,14 +592,14 @@ ruleNAV returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"href",
-						lv_href_4_0,
+						lv_href_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_5='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getNAVAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getNAVAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;
@@ -993,15 +1012,34 @@ ruleLink returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getLinkAccess().getLeftCurlyBracketKeyword_2());
 		}
-		otherlv_3='url'
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getLinkAccess().getDescriptionDescriptionParserRuleCall_3_0());
+				}
+				lv_description_3_0=ruleDescription
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getLinkRule());
+					}
+					set(
+						$current,
+						"description",
+						lv_description_3_0,
+						"org.xtext.example.mydsl.MyDsl.Description");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_4='url'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getLinkAccess().getUrlKeyword_3());
+			newLeafNode(otherlv_4, grammarAccess.getLinkAccess().getUrlKeyword_4());
 		}
 		(
 			(
-				lv_url_4_0=RULE_STRING
+				lv_url_5_0=RULE_STRING
 				{
-					newLeafNode(lv_url_4_0, grammarAccess.getLinkAccess().getUrlSTRINGTerminalRuleCall_4_0());
+					newLeafNode(lv_url_5_0, grammarAccess.getLinkAccess().getUrlSTRINGTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -1010,14 +1048,14 @@ ruleLink returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"url",
-						lv_url_4_0,
+						lv_url_5_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_5='}'
+		otherlv_6='}'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getLinkAccess().getRightCurlyBracketKeyword_5());
+			newLeafNode(otherlv_6, grammarAccess.getLinkAccess().getRightCurlyBracketKeyword_6());
 		}
 	)
 ;

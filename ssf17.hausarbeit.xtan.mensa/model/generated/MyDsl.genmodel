@@ -22,8 +22,8 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/description"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/radio"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/checkbox"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/button"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/selector"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Siderbar/button"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Footer">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Footer/name"/>
@@ -35,6 +35,7 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//NAV">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NAV/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//NAV/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//NAV/href"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Radio">
@@ -59,6 +60,7 @@
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Link">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Link/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference MyDsl.ecore#//Link/description"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute MyDsl.ecore#//Link/url"/>
     </genClasses>
     <genClasses ecoreClass="MyDsl.ecore#//Menu">

@@ -61,14 +61,15 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSiderbarAccess().getDescriptionAssignment_3(), "rule__Siderbar__DescriptionAssignment_3");
 					put(grammarAccess.getSiderbarAccess().getRadioAssignment_4(), "rule__Siderbar__RadioAssignment_4");
 					put(grammarAccess.getSiderbarAccess().getCheckboxAssignment_5(), "rule__Siderbar__CheckboxAssignment_5");
-					put(grammarAccess.getSiderbarAccess().getButtonAssignment_6(), "rule__Siderbar__ButtonAssignment_6");
-					put(grammarAccess.getSiderbarAccess().getSelectorAssignment_7(), "rule__Siderbar__SelectorAssignment_7");
+					put(grammarAccess.getSiderbarAccess().getSelectorAssignment_6(), "rule__Siderbar__SelectorAssignment_6");
+					put(grammarAccess.getSiderbarAccess().getButtonAssignment_7(), "rule__Siderbar__ButtonAssignment_7");
 					put(grammarAccess.getFooterAccess().getNameAssignment_1(), "rule__Footer__NameAssignment_1");
 					put(grammarAccess.getFooterAccess().getDescriptionAssignment_3(), "rule__Footer__DescriptionAssignment_3");
 					put(grammarAccess.getFooterAccess().getLinksAssignment_4(), "rule__Footer__LinksAssignment_4");
 					put(grammarAccess.getDescriptionAccess().getNameAssignment_1(), "rule__Description__NameAssignment_1");
 					put(grammarAccess.getNAVAccess().getNameAssignment_1(), "rule__NAV__NameAssignment_1");
-					put(grammarAccess.getNAVAccess().getHrefAssignment_4(), "rule__NAV__HrefAssignment_4");
+					put(grammarAccess.getNAVAccess().getDescriptionAssignment_3(), "rule__NAV__DescriptionAssignment_3");
+					put(grammarAccess.getNAVAccess().getHrefAssignment_5(), "rule__NAV__HrefAssignment_5");
 					put(grammarAccess.getRadioAccess().getNameAssignment_1(), "rule__Radio__NameAssignment_1");
 					put(grammarAccess.getRadioAccess().getTitleAssignment_3(), "rule__Radio__TitleAssignment_3");
 					put(grammarAccess.getRadioAccess().getOptionsAssignment_4_1(), "rule__Radio__OptionsAssignment_4_1");
@@ -82,7 +83,8 @@ public class MyDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getSelectorAccess().getTitleAssignment_3(), "rule__Selector__TitleAssignment_3");
 					put(grammarAccess.getSelectorAccess().getOptionsAssignment_4_1(), "rule__Selector__OptionsAssignment_4_1");
 					put(grammarAccess.getLinkAccess().getNameAssignment_1(), "rule__Link__NameAssignment_1");
-					put(grammarAccess.getLinkAccess().getUrlAssignment_4(), "rule__Link__UrlAssignment_4");
+					put(grammarAccess.getLinkAccess().getDescriptionAssignment_3(), "rule__Link__DescriptionAssignment_3");
+					put(grammarAccess.getLinkAccess().getUrlAssignment_5(), "rule__Link__UrlAssignment_5");
 					put(grammarAccess.getMenuAccess().getNameAssignment_1(), "rule__Menu__NameAssignment_1");
 					put(grammarAccess.getMenuAccess().getMealAssignment_4(), "rule__Menu__MealAssignment_4");
 					put(grammarAccess.getMenuAccess().getDescriptionAssignment_5(), "rule__Menu__DescriptionAssignment_5");

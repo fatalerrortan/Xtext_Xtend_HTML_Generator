@@ -1,11 +1,18 @@
 grammar org.xtext.example.mydsl.MyDsl with org.eclipse.xtext.common.Terminals
 
 generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
-
+/*
+ * This Grammar defines that:
+ * A website consists of 
+ * 	- a header with title description and navigation links
+ * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+ * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
+ *  - footer with multiple links groups
+ */
 Mensamodel:
 	header=Header
-	(siderbar=Siderbar)?
-	footer=Footer
+	(siderbar+=Siderbar)*
+	(footer+=Footer)*
 	(menus+=Menu)*
 ;	
 Header:
@@ -19,8 +26,8 @@ Siderbar:
 		description=Description
 		(radio+=Radio)*
 		(checkbox+=Checkbox)*
-		(button+=Button)*
 		(selector+=Selector)*
+		(button+=Button)*
 	'}' 
 ;
 Footer:
@@ -34,6 +41,7 @@ Description:
 ;
 NAV:
 	'nav' name=ID '{'
+		description=Description
 		'href' href=STRING
 	'}'
 ;
@@ -63,6 +71,7 @@ Selector:
 ;
 Link:
 	'link' name=ID '{'
+		description=Description
 		'url' url=STRING
 	'}'
 ;
@@ -71,6 +80,10 @@ Menu:
 		'name' meal=STRING
 		description=Description
 		'price' price=STRING
+/*
+ * plug will generate a imgs folder in runtime-EclipseApplication
+ * you should type mensa related image name after keyword 'image' and place the related images in the imgs folder
+ */
 		'image' image=STRING
 	'}' 
 ;

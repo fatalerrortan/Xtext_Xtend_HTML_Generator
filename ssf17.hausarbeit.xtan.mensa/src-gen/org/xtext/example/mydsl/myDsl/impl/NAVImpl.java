@@ -4,12 +4,15 @@
 package org.xtext.example.mydsl.myDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.NAV;
 
@@ -22,6 +25,7 @@ import org.xtext.example.mydsl.myDsl.NAV;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.NAVImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.NAVImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.NAVImpl#getHref <em>Href</em>}</li>
  * </ul>
  *
@@ -48,6 +52,16 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected Description description;
 
   /**
    * The default value of the '{@link #getHref() <em>Href</em>}' attribute.
@@ -118,6 +132,54 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
    * <!-- end-user-doc -->
    * @generated
    */
+  public Description getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDescription(Description newDescription, NotificationChain msgs)
+  {
+    Description oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.NAV__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(Description newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.NAV__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.NAV__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.NAV__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getHref()
   {
     return href;
@@ -142,12 +204,30 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.NAV__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case MyDslPackage.NAV__NAME:
         return getName();
+      case MyDslPackage.NAV__DESCRIPTION:
+        return getDescription();
       case MyDslPackage.NAV__HREF:
         return getHref();
     }
@@ -166,6 +246,9 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
     {
       case MyDslPackage.NAV__NAME:
         setName((String)newValue);
+        return;
+      case MyDslPackage.NAV__DESCRIPTION:
+        setDescription((Description)newValue);
         return;
       case MyDslPackage.NAV__HREF:
         setHref((String)newValue);
@@ -187,6 +270,9 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
       case MyDslPackage.NAV__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.NAV__DESCRIPTION:
+        setDescription((Description)null);
+        return;
       case MyDslPackage.NAV__HREF:
         setHref(HREF_EDEFAULT);
         return;
@@ -206,6 +292,8 @@ public class NAVImpl extends MinimalEObjectImpl.Container implements NAV
     {
       case MyDslPackage.NAV__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.NAV__DESCRIPTION:
+        return description != null;
       case MyDslPackage.NAV__HREF:
         return HREF_EDEFAULT == null ? href != null : !HREF_EDEFAULT.equals(href);
     }

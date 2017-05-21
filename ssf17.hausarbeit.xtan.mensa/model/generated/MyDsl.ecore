@@ -4,10 +4,10 @@
   <eClassifiers xsi:type="ecore:EClass" name="Mensamodel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//Header"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="siderbar" eType="#//Siderbar"
-        containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="footer" eType="#//Footer"
-        containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="siderbar" upperBound="-1"
+        eType="#//Siderbar" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="footer" upperBound="-1"
+        eType="#//Footer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
         eType="#//Menu" containment="true"/>
   </eClassifiers>
@@ -26,10 +26,10 @@
         eType="#//Radio" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="checkbox" upperBound="-1"
         eType="#//Checkbox" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
-        eType="#//Button" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="selector" upperBound="-1"
         eType="#//Selector" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="button" upperBound="-1"
+        eType="#//Button" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Footer">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -43,6 +43,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="NAV">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="href" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Radio">
@@ -74,6 +76,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Link">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
+        containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="url" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Menu">

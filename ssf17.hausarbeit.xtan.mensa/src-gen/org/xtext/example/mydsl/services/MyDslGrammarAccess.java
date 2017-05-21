@@ -33,14 +33,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cMenusAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cMenusMenuParserRuleCall_3_0 = (RuleCall)cMenusAssignment_3.eContents().get(0);
 		
-		//Mensamodel:
+		/// *
+		// * This Grammar defines that:
+		// * A website consists of 
+		// * 	- a header with title description and navigation links
+		// * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+		// * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
+		// *  - footer with multiple links groups
+		// * / Mensamodel:
 		//	header=Header
-		//	siderbar=Siderbar?
-		//	footer=Footer
+		//	siderbar+=Siderbar*
+		//	footer+=Footer*
 		//	menus+=Menu*;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//header=Header siderbar=Siderbar? footer=Footer menus+=Menu*
+		//header=Header siderbar+=Siderbar* footer+=Footer* menus+=Menu*
 		public Group getGroup() { return cGroup; }
 		
 		//header=Header
@@ -49,13 +56,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Header
 		public RuleCall getHeaderHeaderParserRuleCall_0_0() { return cHeaderHeaderParserRuleCall_0_0; }
 		
-		//siderbar=Siderbar?
+		//siderbar+=Siderbar*
 		public Assignment getSiderbarAssignment_1() { return cSiderbarAssignment_1; }
 		
 		//Siderbar
 		public RuleCall getSiderbarSiderbarParserRuleCall_1_0() { return cSiderbarSiderbarParserRuleCall_1_0; }
 		
-		//footer=Footer
+		//footer+=Footer*
 		public Assignment getFooterAssignment_2() { return cFooterAssignment_2; }
 		
 		//Footer
@@ -130,10 +137,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cRadioRadioParserRuleCall_4_0 = (RuleCall)cRadioAssignment_4.eContents().get(0);
 		private final Assignment cCheckboxAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cCheckboxCheckboxParserRuleCall_5_0 = (RuleCall)cCheckboxAssignment_5.eContents().get(0);
-		private final Assignment cButtonAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cButtonButtonParserRuleCall_6_0 = (RuleCall)cButtonAssignment_6.eContents().get(0);
-		private final Assignment cSelectorAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cSelectorSelectorParserRuleCall_7_0 = (RuleCall)cSelectorAssignment_7.eContents().get(0);
+		private final Assignment cSelectorAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cSelectorSelectorParserRuleCall_6_0 = (RuleCall)cSelectorAssignment_6.eContents().get(0);
+		private final Assignment cButtonAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cButtonButtonParserRuleCall_7_0 = (RuleCall)cButtonAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Siderbar:
@@ -141,12 +148,12 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	description=Description
 		//	radio+=Radio*
 		//	checkbox+=Checkbox*
-		//	button+=Button*
 		//	selector+=Selector*
+		//	button+=Button*
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'siderbar' name=ID '{' description=Description radio+=Radio* checkbox+=Checkbox* button+=Button* selector+=Selector* '}'
+		//'siderbar' name=ID '{' description=Description radio+=Radio* checkbox+=Checkbox* selector+=Selector* button+=Button* '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'siderbar'
@@ -179,17 +186,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Checkbox
 		public RuleCall getCheckboxCheckboxParserRuleCall_5_0() { return cCheckboxCheckboxParserRuleCall_5_0; }
 		
-		//button+=Button*
-		public Assignment getButtonAssignment_6() { return cButtonAssignment_6; }
-		
-		//Button
-		public RuleCall getButtonButtonParserRuleCall_6_0() { return cButtonButtonParserRuleCall_6_0; }
-		
 		//selector+=Selector*
-		public Assignment getSelectorAssignment_7() { return cSelectorAssignment_7; }
+		public Assignment getSelectorAssignment_6() { return cSelectorAssignment_6; }
 		
 		//Selector
-		public RuleCall getSelectorSelectorParserRuleCall_7_0() { return cSelectorSelectorParserRuleCall_7_0; }
+		public RuleCall getSelectorSelectorParserRuleCall_6_0() { return cSelectorSelectorParserRuleCall_6_0; }
+		
+		//button+=Button*
+		public Assignment getButtonAssignment_7() { return cButtonAssignment_7; }
+		
+		//Button
+		public RuleCall getButtonButtonParserRuleCall_7_0() { return cButtonButtonParserRuleCall_7_0; }
 		
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -274,18 +281,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cHrefKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cHrefAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cHrefSTRINGTerminalRuleCall_4_0 = (RuleCall)cHrefAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
+		private final Keyword cHrefKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cHrefAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cHrefSTRINGTerminalRuleCall_5_0 = (RuleCall)cHrefAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//NAV:
 		//	'nav' name=ID '{'
+		//	description=Description
 		//	'href' href=STRING
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'nav' name=ID '{' 'href' href=STRING '}'
+		//'nav' name=ID '{' description=Description 'href' href=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'nav'
@@ -300,17 +310,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//description=Description
+		public Assignment getDescriptionAssignment_3() { return cDescriptionAssignment_3; }
+		
+		//Description
+		public RuleCall getDescriptionDescriptionParserRuleCall_3_0() { return cDescriptionDescriptionParserRuleCall_3_0; }
+		
 		//'href'
-		public Keyword getHrefKeyword_3() { return cHrefKeyword_3; }
+		public Keyword getHrefKeyword_4() { return cHrefKeyword_4; }
 		
 		//href=STRING
-		public Assignment getHrefAssignment_4() { return cHrefAssignment_4; }
+		public Assignment getHrefAssignment_5() { return cHrefAssignment_5; }
 		
 		//STRING
-		public RuleCall getHrefSTRINGTerminalRuleCall_4_0() { return cHrefSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getHrefSTRINGTerminalRuleCall_5_0() { return cHrefSTRINGTerminalRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class RadioElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Radio");
@@ -544,18 +560,21 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cUrlKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cUrlAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cUrlSTRINGTerminalRuleCall_4_0 = (RuleCall)cUrlAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDescriptionAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDescriptionDescriptionParserRuleCall_3_0 = (RuleCall)cDescriptionAssignment_3.eContents().get(0);
+		private final Keyword cUrlKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cUrlAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cUrlSTRINGTerminalRuleCall_5_0 = (RuleCall)cUrlAssignment_5.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Link:
 		//	'link' name=ID '{'
+		//	description=Description
 		//	'url' url=STRING
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'link' name=ID '{' 'url' url=STRING '}'
+		//'link' name=ID '{' description=Description 'url' url=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'link'
@@ -570,17 +589,23 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'{'
 		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
 		
+		//description=Description
+		public Assignment getDescriptionAssignment_3() { return cDescriptionAssignment_3; }
+		
+		//Description
+		public RuleCall getDescriptionDescriptionParserRuleCall_3_0() { return cDescriptionDescriptionParserRuleCall_3_0; }
+		
 		//'url'
-		public Keyword getUrlKeyword_3() { return cUrlKeyword_3; }
+		public Keyword getUrlKeyword_4() { return cUrlKeyword_4; }
 		
 		//url=STRING
-		public Assignment getUrlAssignment_4() { return cUrlAssignment_4; }
+		public Assignment getUrlAssignment_5() { return cUrlAssignment_5; }
 		
 		//STRING
-		public RuleCall getUrlSTRINGTerminalRuleCall_4_0() { return cUrlSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getUrlSTRINGTerminalRuleCall_5_0() { return cUrlSTRINGTerminalRuleCall_5_0; }
 		
 		//'}'
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 	public class MenuElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Menu");
@@ -607,11 +632,18 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'name' meal=STRING
 		//	description=Description
 		//	'price' price=STRING
+		//	/ *
+		// * plug will generate a imgs folder in runtime-EclipseApplication
+		// * you should type mensa related image name after keyword 'image' and place the related images in the imgs folder
+		// * /
 		//	'image' image=STRING
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'menu' name=ID '{' 'name' meal=STRING description=Description 'price' price=STRING 'image' image=STRING '}'
+		//'menu' name=ID '{' 'name' meal=STRING description=Description 'price' price=STRING / *
+		// * plug will generate a imgs folder in runtime-EclipseApplication
+		// * you should type mensa related image name after keyword 'image' and place the related images in the imgs folder
+		// * / 'image' image=STRING '}'
 		public Group getGroup() { return cGroup; }
 		
 		//'menu'
@@ -650,7 +682,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getPriceSTRINGTerminalRuleCall_7_0() { return cPriceSTRINGTerminalRuleCall_7_0; }
 		
-		//'image'
+		/// *
+		// * plug will generate a imgs folder in runtime-EclipseApplication
+		// * you should type mensa related image name after keyword 'image' and place the related images in the imgs folder
+		// * / 'image'
 		public Keyword getImageKeyword_8() { return cImageKeyword_8; }
 		
 		//image=STRING
@@ -727,10 +762,17 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	}
 
 	
-	//Mensamodel:
+	/// *
+	// * This Grammar defines that:
+	// * A website consists of 
+	// * 	- a header with title description and navigation links
+	// * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+	// * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
+	// *  - footer with multiple links groups
+	// * / Mensamodel:
 	//	header=Header
-	//	siderbar=Siderbar?
-	//	footer=Footer
+	//	siderbar+=Siderbar*
+	//	footer+=Footer*
 	//	menus+=Menu*;
 	public MensamodelElements getMensamodelAccess() {
 		return pMensamodel;
@@ -758,8 +800,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	description=Description
 	//	radio+=Radio*
 	//	checkbox+=Checkbox*
-	//	button+=Button*
 	//	selector+=Selector*
+	//	button+=Button*
 	//	'}';
 	public SiderbarElements getSiderbarAccess() {
 		return pSiderbar;
@@ -794,6 +836,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//NAV:
 	//	'nav' name=ID '{'
+	//	description=Description
 	//	'href' href=STRING
 	//	'}';
 	public NAVElements getNAVAccess() {
@@ -855,6 +898,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Link:
 	//	'link' name=ID '{'
+	//	description=Description
 	//	'url' url=STRING
 	//	'}';
 	public LinkElements getLinkAccess() {
@@ -870,6 +914,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	//	'name' meal=STRING
 	//	description=Description
 	//	'price' price=STRING
+	//	/ *
+	// * plug will generate a imgs folder in runtime-EclipseApplication
+	// * you should type mensa related image name after keyword 'image' and place the related images in the imgs folder
+	// * /
 	//	'image' image=STRING
 	//	'}';
 	public MenuElements getMenuAccess() {

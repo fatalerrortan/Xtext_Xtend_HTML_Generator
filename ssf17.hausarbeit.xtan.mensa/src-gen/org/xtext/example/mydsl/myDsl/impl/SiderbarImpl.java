@@ -39,8 +39,8 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getRadio <em>Radio</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getCheckbox <em>Checkbox</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getButton <em>Button</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getSelector <em>Selector</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.SiderbarImpl#getButton <em>Button</em>}</li>
  * </ul>
  *
  * @generated
@@ -98,16 +98,6 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
   protected EList<Checkbox> checkbox;
 
   /**
-   * The cached value of the '{@link #getButton() <em>Button</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getButton()
-   * @generated
-   * @ordered
-   */
-  protected EList<Button> button;
-
-  /**
    * The cached value of the '{@link #getSelector() <em>Selector</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -116,6 +106,16 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
    * @ordered
    */
   protected EList<Selector> selector;
+
+  /**
+   * The cached value of the '{@link #getButton() <em>Button</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getButton()
+   * @generated
+   * @ordered
+   */
+  protected EList<Button> button;
 
   /**
    * <!-- begin-user-doc -->
@@ -242,20 +242,6 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Button> getButton()
-  {
-    if (button == null)
-    {
-      button = new EObjectContainmentEList<Button>(Button.class, this, MyDslPackage.SIDERBAR__BUTTON);
-    }
-    return button;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Selector> getSelector()
   {
     if (selector == null)
@@ -263,6 +249,20 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       selector = new EObjectContainmentEList<Selector>(Selector.class, this, MyDslPackage.SIDERBAR__SELECTOR);
     }
     return selector;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Button> getButton()
+  {
+    if (button == null)
+    {
+      button = new EObjectContainmentEList<Button>(Button.class, this, MyDslPackage.SIDERBAR__BUTTON);
+    }
+    return button;
   }
 
   /**
@@ -281,10 +281,10 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return ((InternalEList<?>)getRadio()).basicRemove(otherEnd, msgs);
       case MyDslPackage.SIDERBAR__CHECKBOX:
         return ((InternalEList<?>)getCheckbox()).basicRemove(otherEnd, msgs);
-      case MyDslPackage.SIDERBAR__BUTTON:
-        return ((InternalEList<?>)getButton()).basicRemove(otherEnd, msgs);
       case MyDslPackage.SIDERBAR__SELECTOR:
         return ((InternalEList<?>)getSelector()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return ((InternalEList<?>)getButton()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -307,10 +307,10 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return getRadio();
       case MyDslPackage.SIDERBAR__CHECKBOX:
         return getCheckbox();
-      case MyDslPackage.SIDERBAR__BUTTON:
-        return getButton();
       case MyDslPackage.SIDERBAR__SELECTOR:
         return getSelector();
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return getButton();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -340,13 +340,13 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         getCheckbox().clear();
         getCheckbox().addAll((Collection<? extends Checkbox>)newValue);
         return;
-      case MyDslPackage.SIDERBAR__BUTTON:
-        getButton().clear();
-        getButton().addAll((Collection<? extends Button>)newValue);
-        return;
       case MyDslPackage.SIDERBAR__SELECTOR:
         getSelector().clear();
         getSelector().addAll((Collection<? extends Selector>)newValue);
+        return;
+      case MyDslPackage.SIDERBAR__BUTTON:
+        getButton().clear();
+        getButton().addAll((Collection<? extends Button>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -374,11 +374,11 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
       case MyDslPackage.SIDERBAR__CHECKBOX:
         getCheckbox().clear();
         return;
-      case MyDslPackage.SIDERBAR__BUTTON:
-        getButton().clear();
-        return;
       case MyDslPackage.SIDERBAR__SELECTOR:
         getSelector().clear();
+        return;
+      case MyDslPackage.SIDERBAR__BUTTON:
+        getButton().clear();
         return;
     }
     super.eUnset(featureID);
@@ -402,10 +402,10 @@ public class SiderbarImpl extends MinimalEObjectImpl.Container implements Siderb
         return radio != null && !radio.isEmpty();
       case MyDslPackage.SIDERBAR__CHECKBOX:
         return checkbox != null && !checkbox.isEmpty();
-      case MyDslPackage.SIDERBAR__BUTTON:
-        return button != null && !button.isEmpty();
       case MyDslPackage.SIDERBAR__SELECTOR:
         return selector != null && !selector.isEmpty();
+      case MyDslPackage.SIDERBAR__BUTTON:
+        return button != null && !button.isEmpty();
     }
     return super.eIsSet(featureID);
   }

@@ -1,0 +1,1 @@
+Please place mensa related images in this folder

@@ -167,18 +167,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Link returns Link
 	 *
 	 * Constraint:
-	 *     (name=ID url=STRING)
+	 *     (name=ID description=Description url=STRING)
 	 */
 	protected void sequence_Link(ISerializationContext context, Link semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINK__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINK__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINK__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINK__DESCRIPTION));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.LINK__URL) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.LINK__URL));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getLinkAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getLinkAccess().getUrlSTRINGTerminalRuleCall_4_0(), semanticObject.getUrl());
+		feeder.accept(grammarAccess.getLinkAccess().getDescriptionDescriptionParserRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getLinkAccess().getUrlSTRINGTerminalRuleCall_5_0(), semanticObject.getUrl());
 		feeder.finish();
 	}
 	
@@ -188,7 +191,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Mensamodel returns Mensamodel
 	 *
 	 * Constraint:
-	 *     (header=Header siderbar=Siderbar? footer=Footer menus+=Menu*)
+	 *     (header=Header siderbar+=Siderbar* footer+=Footer* menus+=Menu*)
 	 */
 	protected void sequence_Mensamodel(ISerializationContext context, Mensamodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -230,18 +233,21 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     NAV returns NAV
 	 *
 	 * Constraint:
-	 *     (name=ID href=STRING)
+	 *     (name=ID description=Description href=STRING)
 	 */
 	protected void sequence_NAV(ISerializationContext context, NAV semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAV__NAME) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAV__NAME));
+			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAV__DESCRIPTION) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAV__DESCRIPTION));
 			if (transientValues.isValueTransient(semanticObject, MyDslPackage.Literals.NAV__HREF) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, MyDslPackage.Literals.NAV__HREF));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getNAVAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.accept(grammarAccess.getNAVAccess().getHrefSTRINGTerminalRuleCall_4_0(), semanticObject.getHref());
+		feeder.accept(grammarAccess.getNAVAccess().getDescriptionDescriptionParserRuleCall_3_0(), semanticObject.getDescription());
+		feeder.accept(grammarAccess.getNAVAccess().getHrefSTRINGTerminalRuleCall_5_0(), semanticObject.getHref());
 		feeder.finish();
 	}
 	
@@ -280,8 +286,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         description=Description 
 	 *         radio+=Radio* 
 	 *         checkbox+=Checkbox* 
-	 *         button+=Button* 
-	 *         selector+=Selector*
+	 *         selector+=Selector* 
+	 *         button+=Button*
 	 *     )
 	 */
 	protected void sequence_Siderbar(ISerializationContext context, Siderbar semanticObject) {

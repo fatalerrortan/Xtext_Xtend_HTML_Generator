@@ -17,6 +17,8 @@ import org.xtext.example.mydsl.myDsl.Selector
 import org.xtext.example.mydsl.myDsl.Radio
 import org.xtext.example.mydsl.myDsl.Checkbox
 import org.xtext.example.mydsl.myDsl.Menu
+import java.io.File
+
 //import java.io.FileReader
 //import java.io.BufferedReader
 
@@ -31,6 +33,8 @@ class MyDslGenerator extends AbstractGenerator {
 //	FileReader fileReader = new FileReader(fileName);
 //	BufferedReader bufferedReader = new BufferedReader(fileReader);
 //	public String css_file = bufferedReader.toString();
+		File varImgDir = new File("imgs");
+		boolean exists = varImgDir.exists();
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
    	val header_html = '''
    			    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -50,7 +54,7 @@ class MyDslGenerator extends AbstractGenerator {
    			                   					<h1>«header_html.description.name»</h1>
    			                   					«FOR NAV nav : header_html.nav»
    			                   						<li>
-   			                   							<a href="«nav.href»">«nav.name»</a>
+   			                   							<a href="«nav.href»">«nav.description.name»</a>
    			                   						</li>	
    			                   					«ENDFOR»
    			                   				«ENDFOR»
@@ -64,13 +68,6 @@ class MyDslGenerator extends AbstractGenerator {
 				                «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
 				                <div class="well">				                 
 				                     	<h4>«siderbar_html.description.name»</h4>
-«««				                     	 Generator for Button
-				                     	 «FOR Button tool : siderbar_html.button»
-				                     	 	<div class='mensa_button'>
-				                     	 		<h5>«tool.title.name»</h5>
-				                     	 		<button type="button" class="btn btn-info">«tool.name»</button>
-				                     	 	</div>
-				                     	 «ENDFOR»
 «««				                     	 Generator for select
 				                     	 «FOR Selector tool : siderbar_html.selector»
 				                     	 	<div class="mensa_select">
@@ -104,7 +101,14 @@ class MyDslGenerator extends AbstractGenerator {
 						                   	 			«ENDFOR»			              	
 												</div>
 				           				  «ENDFOR»
-				                  		</div>
+«««				                     	 Generator for Button
+			                     	 	«FOR Button tool : siderbar_html.button»
+				           				<div class='mensa_button'>
+«««				           					<h5>«tool.title.name»</h5>
+				           					<a href="«tool.href»"><button type="button" class="btn btn-info">«tool.title.name»</button></a>
+				           				</div>
+				           				«ENDFOR»
+				          </div>
 				                  		<br />
 				                    «ENDFOR»
 				            </div>
@@ -116,7 +120,7 @@ class MyDslGenerator extends AbstractGenerator {
  			                    <div class="col-md-2">
  			                       	<h4>«footer_html.description.name»</h4>
  			                     	«FOR Link link : footer_html.links»
- 			                     	<p><a href="«link.url»">«link.name»</a></p>
+ 			                     	<p><a href="«link.url»">«link.description.name»</a></p>
  			                       «ENDFOR»
  			                     </div> 	
  			                    «ENDFOR»			          	      		          
@@ -128,10 +132,6 @@ class MyDslGenerator extends AbstractGenerator {
 					<h1>Speiseplan</h1>
 					<ul>
 					«FOR Menu menu_html : resource.allContents.toIterable.filter(Menu)»
-«««					 	<h1>«footer_html.description.name»</h1>
-«««					 		«FOR Link link : footer_html.links»
-«««					 			<p><a href="«link.url»">«link.name»</a></p>
-«««					 		«ENDFOR»
 						<li>
 							<h3>«menu_html.meal»</h3>
 							<div class="row">
@@ -181,7 +181,9 @@ class MyDslGenerator extends AbstractGenerator {
 		'''
 //   	generate food menu html structure
    	fsa.generateFile('mensa_speiseplan.html', html.toString());
-//   	generate image folder
-//	fsa.generateFile('imgs/readme.txt', 'Please place mensa related images in this folder');	
+//   	generate image folder with readme
+	if(!exists){
+		fsa.generateFile('imgs/readme.txt', 'Please place mensa related images in this folder');
+		}
 	}
 }

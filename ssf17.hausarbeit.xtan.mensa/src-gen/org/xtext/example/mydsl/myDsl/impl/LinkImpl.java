@@ -4,12 +4,15 @@
 package org.xtext.example.mydsl.myDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.xtext.example.mydsl.myDsl.Description;
 import org.xtext.example.mydsl.myDsl.Link;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 
@@ -22,6 +25,7 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinkImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinkImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.LinkImpl#getUrl <em>Url</em>}</li>
  * </ul>
  *
@@ -48,6 +52,16 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
+
+  /**
+   * The cached value of the '{@link #getDescription() <em>Description</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDescription()
+   * @generated
+   * @ordered
+   */
+  protected Description description;
 
   /**
    * The default value of the '{@link #getUrl() <em>Url</em>}' attribute.
@@ -118,6 +132,54 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * <!-- end-user-doc -->
    * @generated
    */
+  public Description getDescription()
+  {
+    return description;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetDescription(Description newDescription, NotificationChain msgs)
+  {
+    Description oldDescription = description;
+    description = newDescription;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK__DESCRIPTION, oldDescription, newDescription);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDescription(Description newDescription)
+  {
+    if (newDescription != description)
+    {
+      NotificationChain msgs = null;
+      if (description != null)
+        msgs = ((InternalEObject)description).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK__DESCRIPTION, null, msgs);
+      if (newDescription != null)
+        msgs = ((InternalEObject)newDescription).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - MyDslPackage.LINK__DESCRIPTION, null, msgs);
+      msgs = basicSetDescription(newDescription, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, MyDslPackage.LINK__DESCRIPTION, newDescription, newDescription));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getUrl()
   {
     return url;
@@ -142,12 +204,30 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case MyDslPackage.LINK__DESCRIPTION:
+        return basicSetDescription(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case MyDslPackage.LINK__NAME:
         return getName();
+      case MyDslPackage.LINK__DESCRIPTION:
+        return getDescription();
       case MyDslPackage.LINK__URL:
         return getUrl();
     }
@@ -166,6 +246,9 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     {
       case MyDslPackage.LINK__NAME:
         setName((String)newValue);
+        return;
+      case MyDslPackage.LINK__DESCRIPTION:
+        setDescription((Description)newValue);
         return;
       case MyDslPackage.LINK__URL:
         setUrl((String)newValue);
@@ -187,6 +270,9 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
       case MyDslPackage.LINK__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case MyDslPackage.LINK__DESCRIPTION:
+        setDescription((Description)null);
+        return;
       case MyDslPackage.LINK__URL:
         setUrl(URL_EDEFAULT);
         return;
@@ -206,6 +292,8 @@ public class LinkImpl extends MinimalEObjectImpl.Container implements Link
     {
       case MyDslPackage.LINK__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case MyDslPackage.LINK__DESCRIPTION:
+        return description != null;
       case MyDslPackage.LINK__URL:
         return URL_EDEFAULT == null ? url != null : !URL_EDEFAULT.equals(url);
     }

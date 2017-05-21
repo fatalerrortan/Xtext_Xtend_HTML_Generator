@@ -1,115 +1,140 @@
 header mensaHeader {
-	description 'this is a Header'
-	nav home {
-		href 'www.xulin-tan.de'
+	description 'Studentenwerk SSF17'
+	nav wohnen {
+		description 'Wohnen'
+		href 'https://www.studentenwerk-leipzig.de/wohnen'
 	}
-	nav admin {
-		href 'www.admin.com'
+	nav MensenCafeterien {
+		description 'Mensen & Cafeterien'
+		href 'https://www.studentenwerk-leipzig.de/mensen-cafeterien'
 	}
-	nav test2 {
-		href 'www.test.com'
+	nav bafogFinanz {
+		description 'BAföG & Finanzierung'
+		href 'https://www.studentenwerk-leipzig.de/bafoeg-finanzierung'
 	}
+	nav beratungSozisal {
+		description 'Beratung & Soziales'
+		href 'https://www.studentenwerk-leipzig.de/beratung-soziales'
+	}
+	nav mobiliaet{
+		description 'MOBILITÄT'
+		href 'https://www.studentenwerk-leipzig.de/mobilitaet'
+	}
+	nav kultur {
+		description 'INTERNATIONALES & KULTUR'
+		href 'https://www.studentenwerk-leipzig.de/internationales-kultur'
+	}			
 }
+
 siderbar mensaSiderbar {
-	description 'this is a siderbar!'
-	radio testR {
-		description 'this! is a test radio'
-		option 'radio1'
-		option 'radio2'
+	description 'SPEISEPLAN FILTERN'
+	selector einrichtung {
+		description 'EINRICHTUNG'
+		option 'Ort 1'
+		option 'Ort 2'
+		option 'Ort 3'
 	}
-	checkbox testC {
-		description 'this i!!s a test checkbox!'
-		option 'check1'
-		option 'check2'
+	selector tag {
+		description 'TAG'
+		option 'Tag 1'
+		option 'Tag 2'
+		option 'Tag x'
 	}
-	button uni {
-		description 'this is a button'
-		href 'www.button.com'
-	}
-	selector testS {
-		description 'this is a test selector'
-		option 'option1'
-		option 'option2'
-		option 'option3'
+	button buttonTest {
+		description 'Speiseplan Filter'
+		href 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 }
+
 siderbar mensaSiderbar2 {
-	description 'this is a siderbar!!'
-	radio testR {
-		description 'this! is a test radio'
+	description 'TEST Siderbar'
+	radio testRadio {
+		description 'this is a test Radio'
 		option 'radio1'
 		option 'radio2'
 	}
-	checkbox testC {
-		description 'this i!!s a test checkbox!'
+	checkbox testCheckbox {
+		description 'this is a checkbox'
 		option 'check1'
 		option 'check2'
 	}
-	button uni {
-		description 'this is a button'
-		href 'www.button.com'
-	}
-	selector testS {
+	selector testSelect {
 		description 'this is a test selector'
 		option 'option1'
 		option 'option2'
 		option 'option3'
 	}
+	button testButton {
+		description 'this is a test button'
+		href 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
+
+	}
 }
+
 footer mensaFooter1 {
-	description 'this is a X'
+	description 'links group 1'
 	link home {
-		url 'www.hom1e.de'
+		description 'link 1'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 	link htwk {
-		url 'www.htw2k.com'
+		description 'link 2'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 	link ham {
-		url 'www.htw2k.com'
+		description 'link 3'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 }
 footer mensaFooter2 {
-	description 'this is a y'
+	description 'links group 2'
 	link home {
-		url 'www.hom1e.de'
+		description 'link 1'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 	link htwk {
-		url 'www.htw2k.com'
+		description 'link 2'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 }
 footer mensaFooter3 {
-	description 'this is a z'
+	description 'links group 3'
 	link home {
-		url 'www.hom1e.de'
+		description 'link 1'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 	link htwk {
-		url 'www.htw2k.com'
+		description 'link 2'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 }
 footer mensaFooter4 {
-	description 'this is a ty'
+	description 'links group 4'
 	link home {
-		url 'www.hom1e.de'
+		description 'link 1'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 	link htwk {
-		url 'www.htw2k.com'
+		description 'link 2'
+		url 'https://github.com/fatalerrortan/Xtext_Xtend_HTML_Generator'
 	}
 }
 menu speise1 {
-	name "Speise 1"
-	description "Komponent 1, Komponent 2, Komponent 3 Zusatz: Komponent 1, Komponent 2, Komponent 3"
-	price '3,2'
+	name "Fischspeisen"
+	description "Fleisch mit dem Saft und der geriebenen Schale der Limette mischen, salzen und pfeffern. Daraus Fleischbällchen herstellen und in der Stärke wälzen. 
+				In einem Wok oder in einer Pfanne mit Öl und Sesamöl kross frittieren. Zur Seite stellen ."
+	price '3,1'
 	image 'fisch.png'
 }
 menu speise2 {
-	name "Speise 2"
-	description "Komponent 1, Komponent 2, Komponent 3 Zusatz: Komponent 1, Komponent 2, Komponent 3"
+	name "Rrei"
+	description "Den Reis nach Packungsanweisung im Salzwasser kochen und zur Seite stellen. Die Schalotten (oder gewöhnliche Zwiebeln) und den Knoblauch klein hacken."
 	price '2,7'
 	image 'rice.png'
 }
 menu speise3 {
-	name "Speise  3"
-	description "Komponent 1, Komponent 2, Komponent 3 Zusatz: Komponent 1, Komponent 2, Komponent 3"
+	name "Spaghetti"
+	description "Die Knoblauchzehen abziehen und in Scheiben schneiden. Die Petersilie waschen, trocken schütteln und die Blättchen abzupfen. Die Chilischoten zerstoßen. Die Zitrone heiß waschen und in Scheiben schneiden."
 	price '1,7'
 	image 'spaghetti.png'
 }
