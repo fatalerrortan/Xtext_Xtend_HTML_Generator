@@ -87,10 +87,10 @@ public class MyDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case MyDslPackage.SIDERBAR:
+      case MyDslPackage.SIDEBAR:
       {
-        Siderbar siderbar = (Siderbar)theEObject;
-        T result = caseSiderbar(siderbar);
+        Sidebar sidebar = (Sidebar)theEObject;
+        T result = caseSidebar(sidebar);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -194,17 +194,17 @@ public class MyDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Siderbar</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Sidebar</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Siderbar</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Sidebar</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseSiderbar(Siderbar object)
+  public T caseSidebar(Sidebar object)
   {
     return null;
   }

@@ -9,26 +9,26 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Siderbar</b></em>'.
+ * A representation of the model object '<em><b>Sidebar</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getRadio <em>Radio</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getCheckbox <em>Checkbox</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getSelector <em>Selector</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Siderbar#getButton <em>Button</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getName <em>Name</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getDescription <em>Description</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getRadio <em>Radio</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getCheckbox <em>Checkbox</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getSelector <em>Selector</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Sidebar#getButton <em>Button</em>}</li>
  * </ul>
  *
- * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar()
+ * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar()
  * @model
  * @generated
  */
-public interface Siderbar extends EObject
+public interface Sidebar extends EObject
 {
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.
@@ -40,14 +40,14 @@ public interface Siderbar extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Name</em>' attribute.
    * @see #setName(String)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Name()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Name()
    * @model
    * @generated
    */
   String getName();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Siderbar#getName <em>Name</em>}' attribute.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Sidebar#getName <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Name</em>' attribute.
@@ -66,14 +66,14 @@ public interface Siderbar extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Description</em>' containment reference.
    * @see #setDescription(Description)
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Description()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Description()
    * @model containment="true"
    * @generated
    */
   Description getDescription();
 
   /**
-   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Siderbar#getDescription <em>Description</em>}' containment reference.
+   * Sets the value of the '{@link org.xtext.example.mydsl.myDsl.Sidebar#getDescription <em>Description</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Description</em>' containment reference.
@@ -92,7 +92,7 @@ public interface Siderbar extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Radio</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Radio()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Radio()
    * @model containment="true"
    * @generated
    */
@@ -108,7 +108,7 @@ public interface Siderbar extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Checkbox</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Checkbox()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Checkbox()
    * @model containment="true"
    * @generated
    */
@@ -124,7 +124,7 @@ public interface Siderbar extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Selector</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Selector()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Selector()
    * @model containment="true"
    * @generated
    */
@@ -140,10 +140,10 @@ public interface Siderbar extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Button</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSiderbar_Button()
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getSidebar_Button()
    * @model containment="true"
    * @generated
    */
   EList<Button> getButton();
 
-} // Siderbar
+} // Sidebar

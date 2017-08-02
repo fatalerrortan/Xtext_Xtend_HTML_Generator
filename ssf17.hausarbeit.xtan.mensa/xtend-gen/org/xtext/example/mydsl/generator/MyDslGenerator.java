@@ -24,11 +24,10 @@ import org.xtext.example.mydsl.myDsl.Menu;
 import org.xtext.example.mydsl.myDsl.NAV;
 import org.xtext.example.mydsl.myDsl.Radio;
 import org.xtext.example.mydsl.myDsl.Selector;
-import org.xtext.example.mydsl.myDsl.Siderbar;
+import org.xtext.example.mydsl.myDsl.Sidebar;
 
 /**
  * Generates code from your model files on save.
- * 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 @SuppressWarnings("all")
@@ -75,21 +74,21 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder.append("        ");
     _builder.append("<div class=\"collapse navbar-collapse\" id=\"bs-example-navbar-collapse-1\">");
     _builder.newLine();
-    _builder.append("            ");
-    _builder.append("<ul class=\"nav navbar-nav\">");
-    _builder.newLine();
     {
       TreeIterator<EObject> _allContents = resource.getAllContents();
       Iterable<EObject> _iterable = IteratorExtensions.<EObject>toIterable(_allContents);
       Iterable<Header> _filter = Iterables.<Header>filter(_iterable, Header.class);
       for(final Header header_html : _filter) {
         _builder.append("               \t\t\t\t");
-        _builder.append("<h1>");
+        _builder.append("<h1 style=\"color: blue\">");
         Description _description = header_html.getDescription();
         String _name = _description.getName();
         _builder.append(_name, "               \t\t\t\t");
         _builder.append("</h1>");
         _builder.newLineIfNotEmpty();
+        _builder.append("   \t\t\t          \t\t\t                ");
+        _builder.append("<ul class=\"nav navbar-nav\">   \t\t\t                   \t\t\t\t\t");
+        _builder.newLine();
         {
           EList<NAV> _nav = header_html.getNav();
           for(final NAV nav : _nav) {
@@ -112,11 +111,11 @@ public class MyDslGenerator extends AbstractGenerator {
             _builder.newLine();
           }
         }
+        _builder.append("               \t\t\t\t");
+        _builder.append("</ul>\t");
+        _builder.newLine();
       }
     }
-    _builder.append("            ");
-    _builder.append("</ul>");
-    _builder.newLine();
     _builder.append("        ");
     _builder.append("</div>");
     _builder.newLine();
@@ -132,20 +131,20 @@ public class MyDslGenerator extends AbstractGenerator {
     {
       TreeIterator<EObject> _allContents_1 = resource.getAllContents();
       Iterable<EObject> _iterable_1 = IteratorExtensions.<EObject>toIterable(_allContents_1);
-      Iterable<Siderbar> _filter_1 = Iterables.<Siderbar>filter(_iterable_1, Siderbar.class);
-      for(final Siderbar siderbar_html : _filter_1) {
+      Iterable<Sidebar> _filter_1 = Iterables.<Sidebar>filter(_iterable_1, Sidebar.class);
+      for(final Sidebar sidebar_html : _filter_1) {
         _builder_1.append("\t\t\t\t                ");
         _builder_1.append("<div class=\"well\">\t\t\t\t                 ");
         _builder_1.newLine();
         _builder_1.append("\t\t\t\t                     \t");
         _builder_1.append("<h4>");
-        Description _description_2 = siderbar_html.getDescription();
+        Description _description_2 = sidebar_html.getDescription();
         String _name_2 = _description_2.getName();
         _builder_1.append(_name_2, "\t\t\t\t                     \t");
         _builder_1.append("</h4>");
         _builder_1.newLineIfNotEmpty();
         {
-          EList<Selector> _selector = siderbar_html.getSelector();
+          EList<Selector> _selector = sidebar_html.getSelector();
           for(final Selector tool : _selector) {
             _builder_1.append("\t\t\t\t                     \t ");
             _builder_1.append("<div class=\"mensa_select\">");
@@ -185,7 +184,7 @@ public class MyDslGenerator extends AbstractGenerator {
           }
         }
         {
-          EList<Radio> _radio = siderbar_html.getRadio();
+          EList<Radio> _radio = sidebar_html.getRadio();
           for(final Radio tool_1 : _radio) {
             _builder_1.append("<div class=\"mensa_raido\">");
             _builder_1.newLine();
@@ -217,7 +216,7 @@ public class MyDslGenerator extends AbstractGenerator {
           }
         }
         {
-          EList<Checkbox> _checkbox = siderbar_html.getCheckbox();
+          EList<Checkbox> _checkbox = sidebar_html.getCheckbox();
           for(final Checkbox tool_2 : _checkbox) {
             _builder_1.append("<div class=\"mensa_checkbox\">");
             _builder_1.newLine();
@@ -248,7 +247,7 @@ public class MyDslGenerator extends AbstractGenerator {
           }
         }
         {
-          EList<Button> _button = siderbar_html.getButton();
+          EList<Button> _button = sidebar_html.getButton();
           for(final Button tool_3 : _button) {
             _builder_1.append("<div class=\'mensa_button\'>");
             _builder_1.newLine();
@@ -277,7 +276,7 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder_1.append("     ");
     _builder_1.append("</div>");
     _builder_1.newLine();
-    final String siderbar_html_1 = _builder_1.toString();
+    final String sidebar_html_1 = _builder_1.toString();
     StringConcatenation _builder_2 = new StringConcatenation();
     _builder_2.append("<footer>");
     _builder_2.newLine();
@@ -471,7 +470,7 @@ public class MyDslGenerator extends AbstractGenerator {
     _builder_4.append(menus_html, "\t\t\t");
     _builder_4.newLineIfNotEmpty();
     _builder_4.append("\t\t\t");
-    _builder_4.append(siderbar_html_1, "\t\t\t");
+    _builder_4.append(sidebar_html_1, "\t\t\t");
     _builder_4.newLineIfNotEmpty();
     _builder_4.append("\t\t");
     _builder_4.append("</div>");

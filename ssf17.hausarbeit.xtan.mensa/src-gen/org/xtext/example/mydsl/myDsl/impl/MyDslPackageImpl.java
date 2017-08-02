@@ -22,7 +22,7 @@ import org.xtext.example.mydsl.myDsl.MyDslFactory;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.Radio;
 import org.xtext.example.mydsl.myDsl.Selector;
-import org.xtext.example.mydsl.myDsl.Siderbar;
+import org.xtext.example.mydsl.myDsl.Sidebar;
 
 /**
  * <!-- begin-user-doc -->
@@ -51,7 +51,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass siderbarEClass = null;
+  private EClass sidebarEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -204,7 +204,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getMensamodel_Siderbar()
+  public EReference getMensamodel_Sidebar()
   {
     return (EReference)mensamodelEClass.getEStructuralFeatures().get(1);
   }
@@ -274,9 +274,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getSiderbar()
+  public EClass getSidebar()
   {
-    return siderbarEClass;
+    return sidebarEClass;
   }
 
   /**
@@ -284,9 +284,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getSiderbar_Name()
+  public EAttribute getSidebar_Name()
   {
-    return (EAttribute)siderbarEClass.getEStructuralFeatures().get(0);
+    return (EAttribute)sidebarEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -294,9 +294,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Description()
+  public EReference getSidebar_Description()
   {
-    return (EReference)siderbarEClass.getEStructuralFeatures().get(1);
+    return (EReference)sidebarEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -304,9 +304,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Radio()
+  public EReference getSidebar_Radio()
   {
-    return (EReference)siderbarEClass.getEStructuralFeatures().get(2);
+    return (EReference)sidebarEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -314,9 +314,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Checkbox()
+  public EReference getSidebar_Checkbox()
   {
-    return (EReference)siderbarEClass.getEStructuralFeatures().get(3);
+    return (EReference)sidebarEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -324,9 +324,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Selector()
+  public EReference getSidebar_Selector()
   {
-    return (EReference)siderbarEClass.getEStructuralFeatures().get(4);
+    return (EReference)sidebarEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -334,9 +334,9 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getSiderbar_Button()
+  public EReference getSidebar_Button()
   {
-    return (EReference)siderbarEClass.getEStructuralFeatures().get(5);
+    return (EReference)sidebarEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -731,7 +731,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     // Create classes and their features
     mensamodelEClass = createEClass(MENSAMODEL);
     createEReference(mensamodelEClass, MENSAMODEL__HEADER);
-    createEReference(mensamodelEClass, MENSAMODEL__SIDERBAR);
+    createEReference(mensamodelEClass, MENSAMODEL__SIDEBAR);
     createEReference(mensamodelEClass, MENSAMODEL__FOOTER);
     createEReference(mensamodelEClass, MENSAMODEL__MENUS);
 
@@ -740,13 +740,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     createEReference(headerEClass, HEADER__DESCRIPTION);
     createEReference(headerEClass, HEADER__NAV);
 
-    siderbarEClass = createEClass(SIDERBAR);
-    createEAttribute(siderbarEClass, SIDERBAR__NAME);
-    createEReference(siderbarEClass, SIDERBAR__DESCRIPTION);
-    createEReference(siderbarEClass, SIDERBAR__RADIO);
-    createEReference(siderbarEClass, SIDERBAR__CHECKBOX);
-    createEReference(siderbarEClass, SIDERBAR__SELECTOR);
-    createEReference(siderbarEClass, SIDERBAR__BUTTON);
+    sidebarEClass = createEClass(SIDEBAR);
+    createEAttribute(sidebarEClass, SIDEBAR__NAME);
+    createEReference(sidebarEClass, SIDEBAR__DESCRIPTION);
+    createEReference(sidebarEClass, SIDEBAR__RADIO);
+    createEReference(sidebarEClass, SIDEBAR__CHECKBOX);
+    createEReference(sidebarEClass, SIDEBAR__SELECTOR);
+    createEReference(sidebarEClass, SIDEBAR__BUTTON);
 
     footerEClass = createEClass(FOOTER);
     createEAttribute(footerEClass, FOOTER__NAME);
@@ -827,7 +827,7 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     // Initialize classes and features; add operations and parameters
     initEClass(mensamodelEClass, Mensamodel.class, "Mensamodel", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMensamodel_Header(), this.getHeader(), null, "header", null, 0, 1, Mensamodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMensamodel_Siderbar(), this.getSiderbar(), null, "siderbar", null, 0, -1, Mensamodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMensamodel_Sidebar(), this.getSidebar(), null, "sidebar", null, 0, -1, Mensamodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMensamodel_Footer(), this.getFooter(), null, "footer", null, 0, -1, Mensamodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMensamodel_Menus(), this.getMenu(), null, "menus", null, 0, -1, Mensamodel.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -836,13 +836,13 @@ public class MyDslPackageImpl extends EPackageImpl implements MyDslPackage
     initEReference(getHeader_Description(), this.getDescription(), null, "description", null, 0, 1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getHeader_Nav(), this.getNAV(), null, "nav", null, 0, -1, Header.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(siderbarEClass, Siderbar.class, "Siderbar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getSiderbar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Description(), this.getDescription(), null, "description", null, 0, 1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Radio(), this.getRadio(), null, "radio", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Checkbox(), this.getCheckbox(), null, "checkbox", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Selector(), this.getSelector(), null, "selector", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getSiderbar_Button(), this.getButton(), null, "button", null, 0, -1, Siderbar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(sidebarEClass, Sidebar.class, "Sidebar", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getSidebar_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSidebar_Description(), this.getDescription(), null, "description", null, 0, 1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSidebar_Radio(), this.getRadio(), null, "radio", null, 0, -1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSidebar_Checkbox(), this.getCheckbox(), null, "checkbox", null, 0, -1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSidebar_Selector(), this.getSelector(), null, "selector", null, 0, -1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getSidebar_Button(), this.getButton(), null, "button", null, 0, -1, Sidebar.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(footerEClass, Footer.class, "Footer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getFooter_Name(), ecorePackage.getEString(), "name", null, 0, 1, Footer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

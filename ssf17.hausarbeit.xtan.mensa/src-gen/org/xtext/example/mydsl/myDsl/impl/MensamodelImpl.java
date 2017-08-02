@@ -24,7 +24,7 @@ import org.xtext.example.mydsl.myDsl.Header;
 import org.xtext.example.mydsl.myDsl.Mensamodel;
 import org.xtext.example.mydsl.myDsl.Menu;
 import org.xtext.example.mydsl.myDsl.MyDslPackage;
-import org.xtext.example.mydsl.myDsl.Siderbar;
+import org.xtext.example.mydsl.myDsl.Sidebar;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,7 +35,7 @@ import org.xtext.example.mydsl.myDsl.Siderbar;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getHeader <em>Header</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getSiderbar <em>Siderbar</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getSidebar <em>Sidebar</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.impl.MensamodelImpl#getMenus <em>Menus</em>}</li>
  * </ul>
@@ -55,14 +55,14 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
   protected Header header;
 
   /**
-   * The cached value of the '{@link #getSiderbar() <em>Siderbar</em>}' containment reference list.
+   * The cached value of the '{@link #getSidebar() <em>Sidebar</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getSiderbar()
+   * @see #getSidebar()
    * @generated
    * @ordered
    */
-  protected EList<Siderbar> siderbar;
+  protected EList<Sidebar> sidebar;
 
   /**
    * The cached value of the '{@link #getFooter() <em>Footer</em>}' containment reference list.
@@ -158,13 +158,13 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Siderbar> getSiderbar()
+  public EList<Sidebar> getSidebar()
   {
-    if (siderbar == null)
+    if (sidebar == null)
     {
-      siderbar = new EObjectContainmentEList<Siderbar>(Siderbar.class, this, MyDslPackage.MENSAMODEL__SIDERBAR);
+      sidebar = new EObjectContainmentEList<Sidebar>(Sidebar.class, this, MyDslPackage.MENSAMODEL__SIDEBAR);
     }
-    return siderbar;
+    return sidebar;
   }
 
   /**
@@ -207,8 +207,8 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return basicSetHeader(null, msgs);
-      case MyDslPackage.MENSAMODEL__SIDERBAR:
-        return ((InternalEList<?>)getSiderbar()).basicRemove(otherEnd, msgs);
+      case MyDslPackage.MENSAMODEL__SIDEBAR:
+        return ((InternalEList<?>)getSidebar()).basicRemove(otherEnd, msgs);
       case MyDslPackage.MENSAMODEL__FOOTER:
         return ((InternalEList<?>)getFooter()).basicRemove(otherEnd, msgs);
       case MyDslPackage.MENSAMODEL__MENUS:
@@ -229,8 +229,8 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return getHeader();
-      case MyDslPackage.MENSAMODEL__SIDERBAR:
-        return getSiderbar();
+      case MyDslPackage.MENSAMODEL__SIDEBAR:
+        return getSidebar();
       case MyDslPackage.MENSAMODEL__FOOTER:
         return getFooter();
       case MyDslPackage.MENSAMODEL__MENUS:
@@ -253,9 +253,9 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
       case MyDslPackage.MENSAMODEL__HEADER:
         setHeader((Header)newValue);
         return;
-      case MyDslPackage.MENSAMODEL__SIDERBAR:
-        getSiderbar().clear();
-        getSiderbar().addAll((Collection<? extends Siderbar>)newValue);
+      case MyDslPackage.MENSAMODEL__SIDEBAR:
+        getSidebar().clear();
+        getSidebar().addAll((Collection<? extends Sidebar>)newValue);
         return;
       case MyDslPackage.MENSAMODEL__FOOTER:
         getFooter().clear();
@@ -282,8 +282,8 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
       case MyDslPackage.MENSAMODEL__HEADER:
         setHeader((Header)null);
         return;
-      case MyDslPackage.MENSAMODEL__SIDERBAR:
-        getSiderbar().clear();
+      case MyDslPackage.MENSAMODEL__SIDEBAR:
+        getSidebar().clear();
         return;
       case MyDslPackage.MENSAMODEL__FOOTER:
         getFooter().clear();
@@ -307,8 +307,8 @@ public class MensamodelImpl extends MinimalEObjectImpl.Container implements Mens
     {
       case MyDslPackage.MENSAMODEL__HEADER:
         return header != null;
-      case MyDslPackage.MENSAMODEL__SIDERBAR:
-        return siderbar != null && !siderbar.isEmpty();
+      case MyDslPackage.MENSAMODEL__SIDEBAR:
+        return sidebar != null && !sidebar.isEmpty();
       case MyDslPackage.MENSAMODEL__FOOTER:
         return footer != null && !footer.isEmpty();
       case MyDslPackage.MENSAMODEL__MENUS:

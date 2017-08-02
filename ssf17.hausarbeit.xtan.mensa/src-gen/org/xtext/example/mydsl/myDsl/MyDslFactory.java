@@ -42,13 +42,13 @@ public interface MyDslFactory extends EFactory
   Header createHeader();
 
   /**
-   * Returns a new object of class '<em>Siderbar</em>'.
+   * Returns a new object of class '<em>Sidebar</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Siderbar</em>'.
+   * @return a new object of class '<em>Sidebar</em>'.
    * @generated
    */
-  Siderbar createSiderbar();
+  Sidebar createSidebar();
 
   /**
    * Returns a new object of class '<em>Footer</em>'.

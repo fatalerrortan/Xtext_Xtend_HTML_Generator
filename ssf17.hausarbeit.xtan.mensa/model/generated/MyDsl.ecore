@@ -4,8 +4,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="Mensamodel">
     <eStructuralFeatures xsi:type="ecore:EReference" name="header" eType="#//Header"
         containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="siderbar" upperBound="-1"
-        eType="#//Siderbar" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sidebar" upperBound="-1"
+        eType="#//Sidebar" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="footer" upperBound="-1"
         eType="#//Footer" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="menus" upperBound="-1"
@@ -18,7 +18,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="nav" upperBound="-1" eType="#//NAV"
         containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Siderbar">
+  <eClassifiers xsi:type="ecore:EClass" name="Sidebar">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="description" eType="#//Description"
         containment="true"/>

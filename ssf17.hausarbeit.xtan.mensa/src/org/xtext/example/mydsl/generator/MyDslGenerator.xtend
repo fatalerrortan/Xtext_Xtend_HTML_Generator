@@ -9,7 +9,7 @@ import org.eclipse.xtext.generator.IFileSystemAccess2
 import org.eclipse.xtext.generator.IGeneratorContext
 import org.xtext.example.mydsl.myDsl.Header
 import org.xtext.example.mydsl.myDsl.NAV
-import org.xtext.example.mydsl.myDsl.Siderbar
+import org.xtext.example.mydsl.myDsl.Sidebar
 import org.xtext.example.mydsl.myDsl.Footer
 import org.xtext.example.mydsl.myDsl.Link
 import org.xtext.example.mydsl.myDsl.Button
@@ -23,8 +23,7 @@ import java.io.File
 //import java.io.BufferedReader
 
 /**
- * Generates code from your model files on save.
- * 
+ * Generates code from your model files on save. 
  * See https://www.eclipse.org/Xtext/documentation/303_runtime_concepts.html#code-generation
  */
 class MyDslGenerator extends AbstractGenerator {
@@ -49,27 +48,27 @@ class MyDslGenerator extends AbstractGenerator {
    			                <a class="navbar-brand" href="#">Mensa</a>
    			            </div>
    			            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-   			                <ul class="nav navbar-nav">
    			                   				«FOR Header header_html : resource.allContents.toIterable.filter(Header)»
-   			                   					<h1>«header_html.description.name»</h1>
+   			                   					<h1 style="color: blue">«header_html.description.name»</h1>
+   			          			                <ul class="nav navbar-nav">   			                   					
    			                   					«FOR NAV nav : header_html.nav»
    			                   						<li>
    			                   							<a href="«nav.href»">«nav.description.name»</a>
    			                   						</li>	
    			                   					«ENDFOR»
+   			                   					</ul>	
    			                   				«ENDFOR»
-   			                </ul>
    			            </div>
    			        </div>
    			    </nav>  
 		'''
-	val siderbar_html = '''
+	val sidebar_html = '''
 				       <div class="col-md-4">
-				                «FOR Siderbar siderbar_html : resource.allContents.toIterable.filter(Siderbar)»
+				                «FOR Sidebar sidebar_html : resource.allContents.toIterable.filter(Sidebar)»
 				                <div class="well">				                 
-				                     	<h4>«siderbar_html.description.name»</h4>
+				                     	<h4>«sidebar_html.description.name»</h4>
 «««				                     	 Generator for select
-				                     	 «FOR Selector tool : siderbar_html.selector»
+				                     	 «FOR Selector tool : sidebar_html.selector»
 				                     	 	<div class="mensa_select">
 				                     	 		<h5>«tool.title.name»</h5>
 				                     	 		<select>
@@ -80,7 +79,7 @@ class MyDslGenerator extends AbstractGenerator {
 				                     	 	</div>
 				           				  «ENDFOR»
 «««				           				  Generator for Radio
-										  «FOR Radio tool : siderbar_html.radio»
+										  «FOR Radio tool : sidebar_html.radio»
 											<div class="mensa_raido">
 												<h5>«tool.title.name»</h5>								
 														«FOR option : tool.options»	
@@ -91,7 +90,7 @@ class MyDslGenerator extends AbstractGenerator {
 												</div>
 				           				  «ENDFOR»
 «««				           				  Generator for Checkbox
-										  «FOR Checkbox tool : siderbar_html.checkbox»
+										  «FOR Checkbox tool : sidebar_html.checkbox»
 											<div class="mensa_checkbox">
 												<h5>«tool.title.name»</h5>								
 														«FOR option : tool.options»	
@@ -102,7 +101,7 @@ class MyDslGenerator extends AbstractGenerator {
 												</div>
 				           				  «ENDFOR»
 «««				                     	 Generator for Button
-			                     	 	«FOR Button tool : siderbar_html.button»
+			                     	 	«FOR Button tool : sidebar_html.button»
 				           				<div class='mensa_button'>
 «««				           					<h5>«tool.title.name»</h5>
 				           					<a href="«tool.href»"><button type="button" class="btn btn-info">«tool.title.name»</button></a>
@@ -160,7 +159,6 @@ class MyDslGenerator extends AbstractGenerator {
 					    <meta name="viewport" content="width=device-width, initial-scale=1">
 					    <title>Mensa Speiseplan</title>
 					    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-«««					    <link href="css/blog-home.css" rel="stylesheet">
 					</head>
 				</head>
 				<body>
@@ -170,7 +168,7 @@ class MyDslGenerator extends AbstractGenerator {
 					<br /><br /><br /><br /><br /><br /><br />
 					<div class="row">
 						«menus_html»
-						«siderbar_html»
+						«sidebar_html»
 					</div>
 					<div class="row">
 						«footer_html»	
@@ -179,6 +177,7 @@ class MyDslGenerator extends AbstractGenerator {
 				</body>
 			</html>
 		'''
+		
 //   	generate food menu html structure
    	fsa.generateFile('mensa_speiseplan.html', html.toString());
 //   	generate image folder with readme

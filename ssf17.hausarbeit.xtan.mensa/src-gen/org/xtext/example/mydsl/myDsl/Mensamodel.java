@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  * </p>
  * <ul>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getHeader <em>Header</em>}</li>
- *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSiderbar <em>Siderbar</em>}</li>
+ *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getSidebar <em>Sidebar</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getFooter <em>Footer</em>}</li>
  *   <li>{@link org.xtext.example.mydsl.myDsl.Mensamodel#getMenus <em>Menus</em>}</li>
  * </ul>
@@ -55,20 +55,20 @@ public interface Mensamodel extends EObject
   void setHeader(Header value);
 
   /**
-   * Returns the value of the '<em><b>Siderbar</b></em>' containment reference list.
-   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Siderbar}.
+   * Returns the value of the '<em><b>Sidebar</b></em>' containment reference list.
+   * The list contents are of type {@link org.xtext.example.mydsl.myDsl.Sidebar}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Siderbar</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Sidebar</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Siderbar</em>' containment reference list.
-   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Siderbar()
+   * @return the value of the '<em>Sidebar</em>' containment reference list.
+   * @see org.xtext.example.mydsl.myDsl.MyDslPackage#getMensamodel_Sidebar()
    * @model containment="true"
    * @generated
    */
-  EList<Siderbar> getSiderbar();
+  EList<Sidebar> getSidebar();
 
   /**
    * Returns the value of the '<em><b>Footer</b></em>' containment reference list.

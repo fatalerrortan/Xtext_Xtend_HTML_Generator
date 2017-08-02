@@ -86,9 +86,9 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
         return createHeaderAdapter();
       }
       @Override
-      public Adapter caseSiderbar(Siderbar object)
+      public Adapter caseSidebar(Sidebar object)
       {
-        return createSiderbarAdapter();
+        return createSidebarAdapter();
       }
       @Override
       public Adapter caseFooter(Footer object)
@@ -188,16 +188,16 @@ public class MyDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Siderbar <em>Siderbar</em>}'.
+   * Creates a new adapter for an object of class '{@link org.xtext.example.mydsl.myDsl.Sidebar <em>Sidebar</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.xtext.example.mydsl.myDsl.Siderbar
+   * @see org.xtext.example.mydsl.myDsl.Sidebar
    * @generated
    */
-  public Adapter createSiderbarAdapter()
+  public Adapter createSidebarAdapter()
   {
     return null;
   }

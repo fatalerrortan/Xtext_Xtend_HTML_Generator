@@ -26,8 +26,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cHeaderAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cHeaderHeaderParserRuleCall_0_0 = (RuleCall)cHeaderAssignment_0.eContents().get(0);
-		private final Assignment cSiderbarAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cSiderbarSiderbarParserRuleCall_1_0 = (RuleCall)cSiderbarAssignment_1.eContents().get(0);
+		private final Assignment cSidebarAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cSidebarSidebarParserRuleCall_1_0 = (RuleCall)cSidebarAssignment_1.eContents().get(0);
 		private final Assignment cFooterAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cFooterFooterParserRuleCall_2_0 = (RuleCall)cFooterAssignment_2.eContents().get(0);
 		private final Assignment cMenusAssignment_3 = (Assignment)cGroup.eContents().get(3);
@@ -37,17 +37,16 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		// * This Grammar defines that:
 		// * A website consists of 
 		// * 	- a header with title description and navigation links
-		// * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+		// * 	- multiple sidebars with necessary configurable components (Button, Checkbox, Radio and Select)
 		// * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
 		// *  - footer with multiple links groups
 		// * / Mensamodel:
-		//	header=Header
-		//	siderbar+=Siderbar*
-		//	footer+=Footer*
-		//	menus+=Menu*;
+		//	header=Header sidebar+=Sidebar*
+		//	footer+=Footer+
+		//	menus+=Menu+;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//header=Header siderbar+=Siderbar* footer+=Footer* menus+=Menu*
+		//header=Header sidebar+=Sidebar* footer+=Footer+ menus+=Menu+
 		public Group getGroup() { return cGroup; }
 		
 		//header=Header
@@ -56,19 +55,19 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//Header
 		public RuleCall getHeaderHeaderParserRuleCall_0_0() { return cHeaderHeaderParserRuleCall_0_0; }
 		
-		//siderbar+=Siderbar*
-		public Assignment getSiderbarAssignment_1() { return cSiderbarAssignment_1; }
+		//sidebar+=Sidebar*
+		public Assignment getSidebarAssignment_1() { return cSidebarAssignment_1; }
 		
-		//Siderbar
-		public RuleCall getSiderbarSiderbarParserRuleCall_1_0() { return cSiderbarSiderbarParserRuleCall_1_0; }
+		//Sidebar
+		public RuleCall getSidebarSidebarParserRuleCall_1_0() { return cSidebarSidebarParserRuleCall_1_0; }
 		
-		//footer+=Footer*
+		//footer+=Footer+
 		public Assignment getFooterAssignment_2() { return cFooterAssignment_2; }
 		
 		//Footer
 		public RuleCall getFooterFooterParserRuleCall_2_0() { return cFooterFooterParserRuleCall_2_0; }
 		
-		//menus+=Menu*
+		//menus+=Menu+
 		public Assignment getMenusAssignment_3() { return cMenusAssignment_3; }
 		
 		//Menu
@@ -124,10 +123,10 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//'}'
 		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
 	}
-	public class SiderbarElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Siderbar");
+	public class SidebarElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "org.xtext.example.mydsl.MyDsl.Sidebar");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cSiderbarKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Keyword cSidebarKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
@@ -143,8 +142,8 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cButtonButtonParserRuleCall_7_0 = (RuleCall)cButtonAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
-		//Siderbar:
-		//	'siderbar' name=ID '{'
+		//Sidebar:
+		//	'sidebar' name=ID '{'
 		//	description=Description
 		//	radio+=Radio*
 		//	checkbox+=Checkbox*
@@ -153,11 +152,11 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		//	'}';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//'siderbar' name=ID '{' description=Description radio+=Radio* checkbox+=Checkbox* selector+=Selector* button+=Button* '}'
+		//'sidebar' name=ID '{' description=Description radio+=Radio* checkbox+=Checkbox* selector+=Selector* button+=Button* '}'
 		public Group getGroup() { return cGroup; }
 		
-		//'siderbar'
-		public Keyword getSiderbarKeyword_0() { return cSiderbarKeyword_0; }
+		//'sidebar'
+		public Keyword getSidebarKeyword_0() { return cSidebarKeyword_0; }
 		
 		//name=ID
 		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
@@ -701,7 +700,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	
 	private final MensamodelElements pMensamodel;
 	private final HeaderElements pHeader;
-	private final SiderbarElements pSiderbar;
+	private final SidebarElements pSidebar;
 	private final FooterElements pFooter;
 	private final DescriptionElements pDescription;
 	private final NAVElements pNAV;
@@ -723,7 +722,7 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		this.gaTerminals = gaTerminals;
 		this.pMensamodel = new MensamodelElements();
 		this.pHeader = new HeaderElements();
-		this.pSiderbar = new SiderbarElements();
+		this.pSidebar = new SidebarElements();
 		this.pFooter = new FooterElements();
 		this.pDescription = new DescriptionElements();
 		this.pNAV = new NAVElements();
@@ -766,14 +765,13 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 	// * This Grammar defines that:
 	// * A website consists of 
 	// * 	- a header with title description and navigation links
-	// * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+	// * 	- multiple sidebars with necessary configurable components (Button, Checkbox, Radio and Select)
 	// * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
 	// *  - footer with multiple links groups
 	// * / Mensamodel:
-	//	header=Header
-	//	siderbar+=Siderbar*
-	//	footer+=Footer*
-	//	menus+=Menu*;
+	//	header=Header sidebar+=Sidebar*
+	//	footer+=Footer+
+	//	menus+=Menu+;
 	public MensamodelElements getMensamodelAccess() {
 		return pMensamodel;
 	}
@@ -795,20 +793,20 @@ public class MyDslGrammarAccess extends AbstractGrammarElementFinder {
 		return getHeaderAccess().getRule();
 	}
 	
-	//Siderbar:
-	//	'siderbar' name=ID '{'
+	//Sidebar:
+	//	'sidebar' name=ID '{'
 	//	description=Description
 	//	radio+=Radio*
 	//	checkbox+=Checkbox*
 	//	selector+=Selector*
 	//	button+=Button*
 	//	'}';
-	public SiderbarElements getSiderbarAccess() {
-		return pSiderbar;
+	public SidebarElements getSidebarAccess() {
+		return pSidebar;
 	}
 	
-	public ParserRule getSiderbarRule() {
-		return getSiderbarAccess().getRule();
+	public ParserRule getSidebarRule() {
+		return getSidebarAccess().getRule();
 	}
 	
 	//Footer:

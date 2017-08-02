@@ -5,15 +5,15 @@ generate myDsl "http://www.xtext.org/example/mydsl/MyDsl"
  * This Grammar defines that:
  * A website consists of 
  * 	- a header with title description and navigation links
- * 	- multiple siderbars with necessary configurable components (Button, Checkbox, Radio and Select)
+ * 	- multiple sidebars with necessary configurable components (Button, Checkbox, Radio and Select)
  * 	- multiple menu blocks(each block contains a menu with Name, Description, Image and Price)
  *  - footer with multiple links groups
  */
 Mensamodel:
 	header=Header
-	(siderbar+=Siderbar)*
-	(footer+=Footer)*
-	(menus+=Menu)*
+	(sidebar+=Sidebar)*
+	(footer+=Footer)+
+	(menus+=Menu)+
 ;	
 Header:
 	'header' name=ID '{'
@@ -21,8 +21,8 @@ Header:
 		(nav+=NAV)*
 	'}' 
 ;
-Siderbar:
-	'siderbar' name=ID '{'
+Sidebar:
+	'sidebar' name=ID '{'
 		description=Description
 		(radio+=Radio)*
 		(checkbox+=Checkbox)*

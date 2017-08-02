@@ -26,7 +26,7 @@ import org.xtext.example.mydsl.myDsl.MyDslPackage;
 import org.xtext.example.mydsl.myDsl.NAV;
 import org.xtext.example.mydsl.myDsl.Radio;
 import org.xtext.example.mydsl.myDsl.Selector;
-import org.xtext.example.mydsl.myDsl.Siderbar;
+import org.xtext.example.mydsl.myDsl.Sidebar;
 import org.xtext.example.mydsl.services.MyDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -76,8 +76,8 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 			case MyDslPackage.SELECTOR:
 				sequence_Selector(context, (Selector) semanticObject); 
 				return; 
-			case MyDslPackage.SIDERBAR:
-				sequence_Siderbar(context, (Siderbar) semanticObject); 
+			case MyDslPackage.SIDEBAR:
+				sequence_Sidebar(context, (Sidebar) semanticObject); 
 				return; 
 			}
 		if (errorAcceptor != null)
@@ -191,7 +191,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *     Mensamodel returns Mensamodel
 	 *
 	 * Constraint:
-	 *     (header=Header siderbar+=Siderbar* footer+=Footer* menus+=Menu*)
+	 *     (header=Header sidebar+=Sidebar* footer+=Footer+ menus+=Menu+)
 	 */
 	protected void sequence_Mensamodel(ISerializationContext context, Mensamodel semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -278,7 +278,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	
 	/**
 	 * Contexts:
-	 *     Siderbar returns Siderbar
+	 *     Sidebar returns Sidebar
 	 *
 	 * Constraint:
 	 *     (
@@ -290,7 +290,7 @@ public class MyDslSemanticSequencer extends AbstractDelegatingSemanticSequencer 
 	 *         button+=Button*
 	 *     )
 	 */
-	protected void sequence_Siderbar(ISerializationContext context, Siderbar semanticObject) {
+	protected void sequence_Sidebar(ISerializationContext context, Sidebar semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

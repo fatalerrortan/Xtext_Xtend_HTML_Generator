@@ -98,18 +98,18 @@ ruleMensamodel returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getMensamodelAccess().getSiderbarSiderbarParserRuleCall_1_0());
+					newCompositeNode(grammarAccess.getMensamodelAccess().getSidebarSidebarParserRuleCall_1_0());
 				}
-				lv_siderbar_1_0=ruleSiderbar
+				lv_sidebar_1_0=ruleSidebar
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getMensamodelRule());
 					}
 					add(
 						$current,
-						"siderbar",
-						lv_siderbar_1_0,
-						"org.xtext.example.mydsl.MyDsl.Siderbar");
+						"sidebar",
+						lv_sidebar_1_0,
+						"org.xtext.example.mydsl.MyDsl.Sidebar");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -132,7 +132,7 @@ ruleMensamodel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)+
 		(
 			(
 				{
@@ -151,7 +151,7 @@ ruleMensamodel returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)*
+		)+
 	)
 ;
 
@@ -242,15 +242,15 @@ ruleHeader returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleSiderbar
-entryRuleSiderbar returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getSiderbarRule()); }
-	iv_ruleSiderbar=ruleSiderbar
-	{ $current=$iv_ruleSiderbar.current; }
+// Entry rule entryRuleSidebar
+entryRuleSidebar returns [EObject current=null]:
+	{ newCompositeNode(grammarAccess.getSidebarRule()); }
+	iv_ruleSidebar=ruleSidebar
+	{ $current=$iv_ruleSidebar.current; }
 	EOF;
 
-// Rule Siderbar
-ruleSiderbar returns [EObject current=null]
+// Rule Sidebar
+ruleSidebar returns [EObject current=null]
 @init {
 	enterRule();
 }
@@ -258,19 +258,19 @@ ruleSiderbar returns [EObject current=null]
 	leaveRule();
 }:
 	(
-		otherlv_0='siderbar'
+		otherlv_0='sidebar'
 		{
-			newLeafNode(otherlv_0, grammarAccess.getSiderbarAccess().getSiderbarKeyword_0());
+			newLeafNode(otherlv_0, grammarAccess.getSidebarAccess().getSidebarKeyword_0());
 		}
 		(
 			(
 				lv_name_1_0=RULE_ID
 				{
-					newLeafNode(lv_name_1_0, grammarAccess.getSiderbarAccess().getNameIDTerminalRuleCall_1_0());
+					newLeafNode(lv_name_1_0, grammarAccess.getSidebarAccess().getNameIDTerminalRuleCall_1_0());
 				}
 				{
 					if ($current==null) {
-						$current = createModelElement(grammarAccess.getSiderbarRule());
+						$current = createModelElement(grammarAccess.getSidebarRule());
 					}
 					setWithLastConsumed(
 						$current,
@@ -282,17 +282,17 @@ ruleSiderbar returns [EObject current=null]
 		)
 		otherlv_2='{'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getSiderbarAccess().getLeftCurlyBracketKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getSidebarAccess().getLeftCurlyBracketKeyword_2());
 		}
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getDescriptionDescriptionParserRuleCall_3_0());
+					newCompositeNode(grammarAccess.getSidebarAccess().getDescriptionDescriptionParserRuleCall_3_0());
 				}
 				lv_description_3_0=ruleDescription
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+						$current = createModelElementForParent(grammarAccess.getSidebarRule());
 					}
 					set(
 						$current,
@@ -306,12 +306,12 @@ ruleSiderbar returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getRadioRadioParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getSidebarAccess().getRadioRadioParserRuleCall_4_0());
 				}
 				lv_radio_4_0=ruleRadio
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+						$current = createModelElementForParent(grammarAccess.getSidebarRule());
 					}
 					add(
 						$current,
@@ -325,12 +325,12 @@ ruleSiderbar returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getCheckboxCheckboxParserRuleCall_5_0());
+					newCompositeNode(grammarAccess.getSidebarAccess().getCheckboxCheckboxParserRuleCall_5_0());
 				}
 				lv_checkbox_5_0=ruleCheckbox
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+						$current = createModelElementForParent(grammarAccess.getSidebarRule());
 					}
 					add(
 						$current,
@@ -344,12 +344,12 @@ ruleSiderbar returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getSelectorSelectorParserRuleCall_6_0());
+					newCompositeNode(grammarAccess.getSidebarAccess().getSelectorSelectorParserRuleCall_6_0());
 				}
 				lv_selector_6_0=ruleSelector
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+						$current = createModelElementForParent(grammarAccess.getSidebarRule());
 					}
 					add(
 						$current,
@@ -363,12 +363,12 @@ ruleSiderbar returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getSiderbarAccess().getButtonButtonParserRuleCall_7_0());
+					newCompositeNode(grammarAccess.getSidebarAccess().getButtonButtonParserRuleCall_7_0());
 				}
 				lv_button_7_0=ruleButton
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getSiderbarRule());
+						$current = createModelElementForParent(grammarAccess.getSidebarRule());
 					}
 					add(
 						$current,
@@ -381,7 +381,7 @@ ruleSiderbar returns [EObject current=null]
 		)*
 		otherlv_8='}'
 		{
-			newLeafNode(otherlv_8, grammarAccess.getSiderbarAccess().getRightCurlyBracketKeyword_8());
+			newLeafNode(otherlv_8, grammarAccess.getSidebarAccess().getRightCurlyBracketKeyword_8());
 		}
 	)
 ;

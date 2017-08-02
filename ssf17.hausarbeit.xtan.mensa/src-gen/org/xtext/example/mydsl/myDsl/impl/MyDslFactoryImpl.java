@@ -67,7 +67,7 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
     {
       case MyDslPackage.MENSAMODEL: return createMensamodel();
       case MyDslPackage.HEADER: return createHeader();
-      case MyDslPackage.SIDERBAR: return createSiderbar();
+      case MyDslPackage.SIDEBAR: return createSidebar();
       case MyDslPackage.FOOTER: return createFooter();
       case MyDslPackage.DESCRIPTION: return createDescription();
       case MyDslPackage.NAV: return createNAV();
@@ -109,10 +109,10 @@ public class MyDslFactoryImpl extends EFactoryImpl implements MyDslFactory
    * <!-- end-user-doc -->
    * @generated
    */
-  public Siderbar createSiderbar()
+  public Sidebar createSidebar()
   {
-    SiderbarImpl siderbar = new SiderbarImpl();
-    return siderbar;
+    SidebarImpl sidebar = new SidebarImpl();
+    return sidebar;
   }
 
   /**
